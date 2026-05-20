@@ -149,14 +149,14 @@ a { color: inherit; text-decoration: none; }
 }
 .time-cards { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
 
-/* MATCH-KORT */
+/* MATCH-KORT — fast bredd på lag-kolumnen så motståndarnamnen alltid linjerar */
 .match {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 14px 16px;
   display: grid;
-  grid-template-columns: minmax(0, auto) minmax(0, 1fr) auto;
+  grid-template-columns: 132px minmax(0, 1fr) auto;
   gap: 14px;
   align-items: center;
   transition: background 0.15s ease, border-color 0.15s ease;
@@ -167,7 +167,11 @@ a { color: inherit; text-decoration: none; }
 .match.is-next { border-color: var(--hk-yellow); box-shadow: 0 0 0 1px var(--hk-yellow); }
 .match.is-done { opacity: 0.78; }
 
-.match-id { display: flex; flex-direction: column; gap: 7px; min-width: 0; }
+.match-id {
+  display: flex; flex-direction: column; gap: 7px;
+  align-items: flex-end;  /* högerställ pill + bana så motståndaren börjar på samma rad */
+  min-width: 0;
+}
 .team-pill {
   padding: 6px 12px;
   border-radius: 8px;
@@ -177,6 +181,9 @@ a { color: inherit; text-decoration: none; }
   white-space: nowrap;
   text-align: center;
   display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .bana-tag {
   font-size: 0.8rem;
@@ -270,7 +277,7 @@ a { color: inherit; text-decoration: none; }
   .time-big { font-size: 1.55rem; }
   .clash-note { font-size: 0.6rem; }
   .match {
-    grid-template-columns: minmax(0, auto) minmax(0, 1fr) auto;
+    grid-template-columns: 116px minmax(0, 1fr) auto;
     padding: 12px 13px; gap: 10px;
     min-height: 76px;
   }
@@ -291,7 +298,9 @@ a { color: inherit; text-decoration: none; }
   .container { padding: 0 10px; }
   .time-slot { grid-template-columns: 50px 1fr; gap: 14px; }
   .time-big { font-size: 1.4rem; }
-  .match { padding: 11px 12px; }
+  .match { grid-template-columns: 104px minmax(0, 1fr) auto; padding: 11px 12px; }
+  .team-pill { font-size: 0.8rem; padding: 4px 9px; }
+  .bana-tag { font-size: 0.72rem; padding: 3px 8px; }
   .opponent { font-size: 0.9rem; }
   .next-banner .next-row {
     grid-template-columns: auto 1fr;
