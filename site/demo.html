@@ -18,214 +18,325 @@
     }
     .demo .desc { font-size: 0.85rem; color: var(--text-very-dim); margin: 0 0 12px; }
     .demo h2 { font-size: 1.4rem; margin: 0 0 4px; color: var(--hk-yellow); }
+    .demo .pair { display: flex; flex-direction: column; gap: 10px; margin-bottom: 6px; }
 
-    /* ─── STIL A: Scoreboard / VS ─── */
-    .a-card {
+    /* ─── A1 — TIGHT SCOREBOARD (komprimerad A) ─── */
+    .a1 {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 16px 18px;
-      display: flex; flex-direction: column; gap: 10px;
-    }
-    .a-top {
-      display: flex; justify-content: space-between; align-items: center;
-      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em;
-      color: var(--text-very-dim); font-weight: 800;
-    }
-    .a-class { color: var(--hk-yellow); }
-    .a-matchup {
+      border-radius: 12px;
+      padding: 12px 14px;
       display: grid;
       grid-template-columns: 1fr auto 1fr;
-      gap: 14px; align-items: center;
+      grid-template-rows: auto auto;
+      gap: 4px 12px;
+      align-items: center;
     }
-    .a-team {
-      font-size: 1.05rem; font-weight: 800; line-height: 1.15;
-      overflow: hidden; text-overflow: ellipsis;
+    .a1-class {
+      grid-column: 1; grid-row: 1;
+      font-size: 0.7rem; font-weight: 800; letter-spacing: 0.12em;
+      color: var(--hk-yellow); text-transform: uppercase;
     }
-    .a-team.home { text-align: right; }
-    .a-team.away { text-align: left; }
-    .a-team.hk { color: var(--hk-yellow); }
-    .a-vs {
-      font-size: 1.5rem; font-weight: 900; color: var(--text-very-dim);
-      padding: 0 6px;
+    .a1-bana {
+      grid-column: 3; grid-row: 1;
+      font-size: 0.7rem; font-weight: 800; letter-spacing: 0.12em;
+      color: var(--text-dim); text-transform: uppercase;
+      text-align: right;
     }
-    .a-bottom {
-      display: flex; gap: 10px; justify-content: space-between;
-      padding-top: 8px; border-top: 1px solid var(--border);
-      font-size: 0.82rem; color: var(--text-dim);
-    }
-    .a-bottom .right { color: var(--text); font-weight: 700; }
+    .a1-home { grid-column: 1; grid-row: 2; font-size: 1rem; font-weight: 800; text-align: right; overflow: hidden; text-overflow: ellipsis; }
+    .a1-vs { grid-column: 2; grid-row: 2; font-size: 1.25rem; font-weight: 900; color: var(--text-very-dim); }
+    .a1-away { grid-column: 3; grid-row: 2; font-size: 1rem; font-weight: 800; text-align: left; overflow: hidden; text-overflow: ellipsis; }
+    .a1 .hk { color: var(--hk-yellow); }
 
-    /* ─── STIL B: Ticket / boarding pass ─── */
-    .b-card {
-      display: grid;
-      grid-template-columns: 92px 1fr;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      overflow: hidden;
-    }
-    .b-bana {
-      background: var(--hk-yellow);
-      color: #000;
-      padding: 16px 12px;
-      display: flex; flex-direction: column; justify-content: center;
-      align-items: center; text-align: center;
-      position: relative;
-    }
-    .b-bana::after {
-      content: ""; position: absolute;
-      top: 8px; right: -6px; bottom: 8px;
-      border-right: 2px dashed rgba(0,0,0,0.25);
-    }
-    .b-bana-label { font-size: 0.62rem; font-weight: 800; letter-spacing: 0.16em; opacity: 0.7; }
-    .b-bana-number { font-size: 2rem; font-weight: 900; line-height: 1; letter-spacing: -0.02em; }
-    .b-body { padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
-    .b-top {
-      display: flex; gap: 8px; align-items: center;
-      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em;
-      color: var(--text-very-dim); font-weight: 800;
-    }
-    .b-class-chip {
-      background: rgba(255, 214, 10, 0.16);
-      color: var(--hk-yellow);
-      padding: 3px 8px; border-radius: 6px;
-      font-weight: 800;
-    }
-    .b-opponent { font-size: 1.1rem; font-weight: 800; line-height: 1.2; }
-    .b-meta { font-size: 0.78rem; color: var(--text-dim); display: flex; gap: 8px; align-items: center; }
-    .b-dot { width: 3px; height: 3px; background: var(--text-very-dim); border-radius: 50%; }
-
-    /* ─── STIL C: Color-stripe minimal ─── */
-    .c-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--hk-yellow);
-      border-radius: 8px;
-      padding: 12px 16px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 12px; align-items: center;
-    }
-    .c-main { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
-    .c-opponent { font-size: 1.05rem; font-weight: 800; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; }
-    .c-meta { font-size: 0.78rem; color: var(--text-dim); font-weight: 600; }
-    .c-meta .hk { color: var(--hk-yellow); }
-    .c-side { font-size: 1.3rem; font-weight: 900; color: var(--text-very-dim); min-width: 32px; text-align: right; }
-
-    /* ─── STIL D: Stacked card ─── */
-    .d-card {
+    /* ─── A2 — BIG SCORE i mitten ─── */
+    .a2 {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 14px;
       padding: 14px 16px;
       display: flex; flex-direction: column; gap: 10px;
     }
-    .d-row1 {
+    .a2-top {
       display: flex; justify-content: space-between; align-items: center;
-    }
-    .d-class-pill {
-      background: var(--hk-yellow);
-      color: #000;
-      padding: 4px 10px; border-radius: 6px;
-      font-size: 0.85rem; font-weight: 900;
-    }
-    .d-score-chip {
-      font-size: 1.3rem; font-weight: 900; color: var(--text-very-dim);
-    }
-    .d-opponent {
-      font-size: 1.25rem; font-weight: 800; line-height: 1.2;
-      margin: 0;
-    }
-    .d-row3 {
-      display: flex; gap: 14px; flex-wrap: wrap;
-      padding-top: 8px; border-top: 1px solid var(--border);
       font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em;
       color: var(--text-very-dim); font-weight: 800;
     }
-    .d-row3 .key { color: var(--text); }
+    .a2-class-pill {
+      background: var(--hk-yellow); color: #000;
+      padding: 4px 10px; border-radius: 6px; font-weight: 900;
+    }
+    .a2-matchup {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 10px; align-items: stretch;
+    }
+    .a2-team {
+      font-size: 1.05rem; font-weight: 800; line-height: 1.2;
+      display: flex; align-items: center;
+      overflow: hidden; text-overflow: ellipsis;
+    }
+    .a2-team.home { justify-content: flex-end; text-align: right; }
+    .a2-team.away { justify-content: flex-start; text-align: left; }
+    .a2-team.hk { color: var(--hk-yellow); }
+    .a2-score {
+      background: #000;
+      border: 1px solid var(--border-strong);
+      border-radius: 10px;
+      padding: 8px 16px;
+      font-size: 1.6rem; font-weight: 900;
+      color: var(--text-very-dim);
+      letter-spacing: -0.04em;
+      min-width: 64px; text-align: center;
+    }
+    .a2-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.78rem; color: var(--text-dim);
+    }
+    .a2-bana-chip {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border-strong);
+      padding: 3px 9px; border-radius: 6px;
+      color: var(--text); font-weight: 800;
+    }
+
+    /* ─── A3 — HK SIDE-STRIPE ─── */
+    .a3 {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 16px;
+      display: flex; flex-direction: column; gap: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+    .a3.away::after {
+      content: ""; position: absolute;
+      top: 0; right: 0; bottom: 0; width: 5px;
+      background: var(--hk-yellow);
+    }
+    .a3.home::after {
+      content: ""; position: absolute;
+      top: 0; left: 0; bottom: 0; width: 5px;
+      background: var(--hk-yellow);
+    }
+    .a3-top {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em;
+      color: var(--text-very-dim); font-weight: 800;
+    }
+    .a3-class { color: var(--hk-yellow); }
+    .a3-matchup {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 12px; align-items: center;
+    }
+    .a3-team {
+      font-size: 1.08rem; font-weight: 800; line-height: 1.2;
+      overflow: hidden; text-overflow: ellipsis;
+    }
+    .a3-team.home { text-align: right; }
+    .a3-team.away { text-align: left; }
+    .a3-team.hk { color: var(--hk-yellow); }
+    .a3-vs {
+      font-size: 1.4rem; font-weight: 900; color: var(--text-very-dim);
+      padding: 0 4px;
+    }
+    .a3-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 8px; border-top: 1px solid var(--border);
+      font-size: 0.78rem; color: var(--text-dim); font-weight: 700;
+    }
+
+    /* ─── A4 — TICKET-SCOREBOARD ─── */
+    .a4 {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 16px 14px;
+      display: flex; flex-direction: column; gap: 10px;
+      position: relative;
+    }
+    .a4-top {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em;
+      color: var(--text-very-dim); font-weight: 800;
+      padding-bottom: 10px;
+      border-bottom: 1.5px dashed var(--border-strong);
+    }
+    .a4-class { color: var(--hk-yellow); font-weight: 900; }
+    .a4-matchup {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr 88px;
+      gap: 12px; align-items: center;
+    }
+    .a4-team {
+      font-size: 1.05rem; font-weight: 800; line-height: 1.2;
+      overflow: hidden; text-overflow: ellipsis;
+    }
+    .a4-team.home { text-align: right; }
+    .a4-team.away { text-align: left; }
+    .a4-team.hk { color: var(--hk-yellow); }
+    .a4-vs { font-size: 1.3rem; font-weight: 900; color: var(--text-very-dim); }
+    .a4-gate {
+      grid-column: 4;
+      background: var(--hk-yellow);
+      color: #000;
+      border-radius: 10px;
+      padding: 8px 4px;
+      display: flex; flex-direction: column; align-items: center;
+      line-height: 1;
+    }
+    .a4-gate .gate-label { font-size: 0.55rem; font-weight: 800; letter-spacing: 0.18em; opacity: 0.7; }
+    .a4-gate .gate-num { font-size: 1.6rem; font-weight: 900; letter-spacing: -0.02em; }
+
+    @media (max-width: 480px) {
+      .a4-matchup { grid-template-columns: 1fr auto 1fr 72px; gap: 8px; }
+      .a4-gate { padding: 6px 4px; }
+      .a4-gate .gate-num { font-size: 1.35rem; }
+      .a2-score { font-size: 1.4rem; padding: 6px 12px; min-width: 56px; }
+      .a1, .a2, .a3, .a4 { padding: 12px 13px; }
+    }
   </style>
 </head>
 <body>
   <header class="header">
     <div class="container">
       <div class="header-inner">
-        <div class="brand">JVC <span class="accent">26</span> · stilar</div>
+        <div class="brand">JVC <span class="accent">26</span> · stilar A</div>
         <a class="updated" href="index.html">← tillbaka</a>
       </div>
     </div>
   </header>
 
   <main class="container demo">
-    <h2>Jämför fyra stilar</h2>
-    <p class="desc">Samma exempelmatch: P10 · P10 borta mot Eskilstuna Guif:3 på Bana 11, Grupp 1.</p>
+    <h2>Fyra varianter på Stil A</h2>
+    <p class="desc">Samma matchup (Eskilstuna Guif:3 vs HK Järnvägen P10) men olika tonläge — tätare, större score, identitets-stripe eller ticket-gate.</p>
 
-    <!-- STIL A -->
-    <div class="label">Stil A — Scoreboard / VS</div>
-    <p class="desc">Båda lagen sida vid sida med tydligt match-up, hemma vänster och borta höger. Klassisk TV-scoreboard-känsla. HK alltid markerad gul. Resultat/datum längst ned.</p>
-    <div class="a-card">
-      <div class="a-top">
-        <span class="a-class">P10 · P10</span>
-        <span>Lör 08:20 · Grupp 1</span>
+    <!-- A1: TIGHT -->
+    <div class="label">A1 — Tight scoreboard</div>
+    <p class="desc">Komprimerad version. Klass och bana som små caps över rätt sida. Mindre höjd, bra om man vill se många matcher utan att scrolla.</p>
+    <div class="pair">
+      <div class="a1">
+        <div class="a1-class">P10 · P10</div>
+        <div class="a1-bana">Bana 11 · Grupp 1</div>
+        <div class="a1-home">Eskilstuna Guif:3</div>
+        <div class="a1-vs">–</div>
+        <div class="a1-away hk">HK Järnvägen P10</div>
       </div>
-      <div class="a-matchup">
-        <div class="a-team home">Eskilstuna Guif:3</div>
-        <div class="a-vs">–</div>
-        <div class="a-team away hk">HK Järnvägen P10</div>
-      </div>
-      <div class="a-bottom">
-        <span>Borta</span>
-        <span class="right">Bana 11</span>
+      <div class="a1">
+        <div class="a1-class">F16/15 · Svart</div>
+        <div class="a1-bana">Bana 40 · Grupp 5</div>
+        <div class="a1-home hk">HK Järnvägen:Svart</div>
+        <div class="a1-vs">12 – 8</div>
+        <div class="a1-away">BK Heid:Vit</div>
       </div>
     </div>
 
-    <!-- STIL B -->
-    <div class="label">Stil B — Ticket / boarding pass</div>
-    <p class="desc">Stort bana-nummer som "gate" till vänster i klubbgul. Lätt att hitta i hallen — siffran sticker ut. Resten av matchen i läsbar text. Streckad linje för biljett-känsla.</p>
-    <div class="b-card">
-      <div class="b-bana">
-        <div class="b-bana-label">Bana</div>
-        <div class="b-bana-number">11</div>
+    <!-- A2: BIG SCORE -->
+    <div class="label">A2 — Big score-box</div>
+    <p class="desc">Score-rutan i mitten är dominerande som på en TV-scoreboard. Klasspill i gult, bana som chip nedanför. Live-känsla maximerad.</p>
+    <div class="pair">
+      <div class="a2">
+        <div class="a2-top">
+          <span class="a2-class-pill">P10 · P10</span>
+          <span>Lör 08:20</span>
+        </div>
+        <div class="a2-matchup">
+          <div class="a2-team home">Eskilstuna Guif:3</div>
+          <div class="a2-score">–</div>
+          <div class="a2-team away hk">HK Järnvägen P10</div>
+        </div>
+        <div class="a2-bottom">
+          <span>Borta · Grupp 1</span>
+          <span class="a2-bana-chip">Bana 11</span>
+        </div>
       </div>
-      <div class="b-body">
-        <div class="b-top">
-          <span class="b-class-chip">P10 · P10</span>
+      <div class="a2">
+        <div class="a2-top">
+          <span class="a2-class-pill">F16/15 · Svart</span>
+          <span>Lör 17:30</span>
+        </div>
+        <div class="a2-matchup">
+          <div class="a2-team home hk">HK Järnvägen:Svart</div>
+          <div class="a2-score" style="color:var(--hk-yellow);border-color:var(--hk-yellow);">12 – 8</div>
+          <div class="a2-team away">BK Heid:Vit</div>
+        </div>
+        <div class="a2-bottom">
+          <span>Hemma · Grupp 5</span>
+          <span class="a2-bana-chip">Bana 40</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- A3: SIDE STRIPE -->
+    <div class="label">A3 — HK side-stripe</div>
+    <p class="desc">Gul 5px-stripe på den sida där HK står. Ögat låser sig direkt vid klubben — du ser hemma/borta utan att läsa. Klassisk A i övrigt.</p>
+    <div class="pair">
+      <div class="a3 away">
+        <div class="a3-top">
+          <span class="a3-class">P10 · P10</span>
+          <span>Lör 08:20 · Grupp 1</span>
+        </div>
+        <div class="a3-matchup">
+          <div class="a3-team home">Eskilstuna Guif:3</div>
+          <div class="a3-vs">–</div>
+          <div class="a3-team away hk">HK Järnvägen P10</div>
+        </div>
+        <div class="a3-bottom">
           <span>Borta</span>
+          <span>Bana 11</span>
         </div>
-        <div class="b-opponent">mot Eskilstuna Guif:3</div>
-        <div class="b-meta">
-          <span>Grupp 1</span>
-          <span class="b-dot"></span>
-          <span>– resultat</span>
+      </div>
+      <div class="a3 home">
+        <div class="a3-top">
+          <span class="a3-class">F16/15 · Svart</span>
+          <span>Lör 17:30 · Grupp 5</span>
+        </div>
+        <div class="a3-matchup">
+          <div class="a3-team home hk">HK Järnvägen:Svart</div>
+          <div class="a3-vs">12 – 8</div>
+          <div class="a3-team away">BK Heid:Vit</div>
+        </div>
+        <div class="a3-bottom">
+          <span>Hemma</span>
+          <span>Bana 40</span>
         </div>
       </div>
     </div>
 
-    <!-- STIL C -->
-    <div class="label">Stil C — Minimalist row med färgstrimma</div>
-    <p class="desc">Tunn färgad linje till vänster (klubbgul / klass-färg). Allt på max två rader. Tätare layout — får plats med fler matcher utan att scrolla.</p>
-    <div class="c-card">
-      <div class="c-main">
-        <div class="c-opponent">Eskilstuna Guif:3</div>
-        <div class="c-meta">
-          <span class="hk">P10 · P10</span> · borta · Bana 11 · Gr 1
+    <!-- A4: TICKET-GATE -->
+    <div class="label">A4 — Scoreboard + bana-gate</div>
+    <p class="desc">Som A men med en stor klubbgul "gate"-tag för bana längst till höger. Du hittar banan i hallen på ett ögonkast utan att läsa text. Streckad linje under topp-raden förstärker biljett-känslan.</p>
+    <div class="pair">
+      <div class="a4">
+        <div class="a4-top">
+          <span class="a4-class">P10 · P10</span>
+          <span>Lör 08:20 · Grupp 1 · borta</span>
+        </div>
+        <div class="a4-matchup">
+          <div class="a4-team home">Eskilstuna Guif:3</div>
+          <div class="a4-vs">–</div>
+          <div class="a4-team away hk">HK Järnvägen P10</div>
+          <div class="a4-gate">
+            <div class="gate-label">Bana</div>
+            <div class="gate-num">11</div>
+          </div>
         </div>
       </div>
-      <div class="c-side">–</div>
-    </div>
-
-    <!-- STIL D -->
-    <div class="label">Stil D — Stacked card</div>
-    <p class="desc">Vertikal stapling, inga sidoindelningar. Mobil-först-känsla. Klasspill överst, motståndare som rubrik, metadata som rubrikrad nederst. Inga horisontella krockar — funkar väldigt smalt.</p>
-    <div class="d-card">
-      <div class="d-row1">
-        <span class="d-class-pill">P10 · P10</span>
-        <span class="d-score-chip">–</span>
-      </div>
-      <h3 class="d-opponent">Borta mot Eskilstuna Guif:3</h3>
-      <div class="d-row3">
-        <span><span class="key">Bana 11</span></span>
-        <span>Grupp 1</span>
+      <div class="a4">
+        <div class="a4-top">
+          <span class="a4-class">F16/15 · Svart</span>
+          <span>Lör 17:30 · Grupp 5 · hemma</span>
+        </div>
+        <div class="a4-matchup">
+          <div class="a4-team home hk">HK Järnvägen:Svart</div>
+          <div class="a4-vs">12 – 8</div>
+          <div class="a4-team away">BK Heid:Vit</div>
+          <div class="a4-gate">
+            <div class="gate-label">Bana</div>
+            <div class="gate-num">40</div>
+          </div>
+        </div>
       </div>
     </div>
 
