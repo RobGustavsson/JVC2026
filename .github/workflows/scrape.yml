@@ -7,8 +7,9 @@ on:
   schedule:
     # Pre-cup: en gång per dag kl 08:00 UTC (10:00 svensk tid)
     - cron: "0 8 * * *"
-    # Cup-dagen 30 maj 2026: var 30:e min mellan 06:00–20:00 UTC (08:00–22:00 svensk tid)
-    - cron: "*/30 6-20 * * *"
+    # Cupdagarna 30–31 maj 2026: var 10:e min mellan 06:00–20:00 UTC (08:00–22:00 svensk tid)
+    # (kör varje dag — scrape.py är idempotent och hoppar över commit om datan är oförändrad)
+    - cron: "*/10 6-20 * * *"
 
 concurrency:
   group: scrape
