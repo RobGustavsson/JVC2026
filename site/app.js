@@ -109,10 +109,10 @@ function renderMatch(match, opts = {}) {
 
   // Mitten: motståndare + status-badge
   const meta = el("div", { class: "meta" });
-  const vsRow = el("div", { class: "vs-row" });
-  vsRow.appendChild(el("span", { class: "vs-prefix", text: match.is_home ? "Hemma mot" : "Borta mot" }));
-  vsRow.appendChild(el("span", { class: "opponent", text: match.opponent }));
-  meta.appendChild(vsRow);
+  const oppRow = el("div", { class: "opponent-row" });
+  oppRow.appendChild(el("span", { class: "opponent", text: match.opponent }));
+  oppRow.appendChild(el("span", { class: "venue-tag", text: match.is_home ? "hemma" : "borta" }));
+  meta.appendChild(oppRow);
 
   const subRow = el("div", { class: "sub-row" });
   if (match.grupp) subRow.appendChild(el("span", { class: "grupp-tag", text: `Grupp ${match.grupp}` }));
@@ -122,15 +122,15 @@ function renderMatch(match, opts = {}) {
   if (subRow.childNodes.length) meta.appendChild(subRow);
   card.appendChild(meta);
 
-  // Höger: resultat eller dash
+  // Höger: resultat eller indikator
   const score = el("div", { class: "score" });
   if (match.resultat) {
     const outcome = hkOutcome(match);
     score.classList.add(outcome || "");
     score.textContent = match.resultat;
   } else if (isLive) {
-    score.classList.add("pending");
-    score.textContent = "spelas";
+    score.classList.add("live-pulse");
+    score.textContent = "● spelas";
   } else {
     score.classList.add("pending");
     score.textContent = "–";
@@ -313,7 +313,11 @@ async function bootTimeline() {
       lastMatches = data.matches || [];
       renderTimeline(timelineEl, lastMatches);
       if (bannerEl) renderNextBanner(bannerEl, lastMatches);
-      if (updatedEl) updatedEl.textContent = `Uppdaterad ${fmtRelative(meta.iso)}`;
+      if (updatedEl) {
+        updatedEl.textContent = `Uppdaterad ${fmtRelative(meta.iso)}`;
+        const ageMs = meta.iso ? (Date.now() - new Date(meta.iso).getTime()) : 0;
+        updatedEl.classList.toggle("stale", ageMs > 60 * 60 * 1000);
+      }
     } catch (e) {
       console.error(e);
       if (!lastMatches.length) timelineEl.innerHTML = `<div class="empty">Kunde inte ladda data. <br><small>${e.message}</small></div>`;
