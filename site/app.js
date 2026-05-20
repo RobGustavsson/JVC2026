@@ -43,6 +43,16 @@ function fmtRelative(isoStr) {
   return new Date(isoStr).toLocaleString("sv-SE");
 }
 
+const DAYS = ["Sön", "Mån", "Tis", "Ons", "Tor", "Fre", "Lör"];
+const DAYS_LONG = ["Söndag", "Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag"];
+const MONTHS = ["jan", "feb", "mar", "apr", "maj", "jun", "jul", "aug", "sep", "okt", "nov", "dec"];
+
+function fmtDayLong(datum) {
+  if (!datum) return "";
+  const d = new Date(datum + "T12:00:00");
+  return `${DAYS_LONG[d.getDay()]} ${d.getDate()} ${MONTHS[d.getMonth()]}`;
+}
+
 function matchStatus(match, now = Date.now()) {
   if (match.resultat) return "done";
   if (!match.iso_start) return "scheduled";
@@ -50,7 +60,7 @@ function matchStatus(match, now = Date.now()) {
   const end = start + MATCH_LIVE_WINDOW_MIN * 60 * 1000;
   if (now >= start && now <= end) return "live";
   if (now < start) return "scheduled";
-  return "scheduled-late";  // start tid passerad men inget resultat — vis som väntar
+  return "scheduled-late";
 }
 
 function parseScore(s) {
@@ -72,7 +82,7 @@ function hkOutcome(match) {
 function renderMatch(match, opts = {}) {
   const T = window.JVC_TEAMS;
   const color = T.classColor(match.klass);
-  const label = T.teamLabel(match.klass, match.hk_team_raw);
+  const suffix = T.squadSuffix(match.hk_team_raw);
   const status = matchStatus(match);
 
   const isLive = status === "live";
@@ -84,33 +94,35 @@ function renderMatch(match, opts = {}) {
     attrs: { href: `team.html?klass=${encodeURIComponent(match.klass)}` }
   });
 
-  const left = el("div");
-  left.appendChild(el("div", { class: "tid", text: match.tid || "—" }));
-  left.appendChild(el("div", { class: "tid-sub", text: match.grupp ? `Gr ${match.grupp}` : "" }));
+  // Vänsterspalt: stor lag-pill (klass + squad-suffix) + bana
+  const left = el("div", { class: "match-id" });
+  const pillText = suffix ? `${match.klass} · ${suffix}` : match.klass;
+  left.appendChild(el("span", {
+    class: "team-pill",
+    text: pillText,
+    style: `background:${color.bg};color:${color.fg};`
+  }));
+  if (match.bana) {
+    left.appendChild(el("span", { class: "bana-tag", text: match.bana }));
+  }
   card.appendChild(left);
 
+  // Mitten: motståndare + status-badge
   const meta = el("div", { class: "meta" });
-  const home = el("span", { class: `home ${match.is_home ? "hk" : ""}`, text: match.hemmalag });
-  const vs = el("span", { class: "vs", text: " – " });
-  const away = el("span", { class: `away ${!match.is_home ? "hk" : ""}`, text: match.bortalag });
-  const teams = el("div", { class: "teams" });
-  teams.appendChild(home); teams.appendChild(vs); teams.appendChild(away);
-  meta.appendChild(teams);
+  const vsRow = el("div", { class: "vs-row" });
+  vsRow.appendChild(el("span", { class: "vs-prefix", text: match.is_home ? "Hemma mot" : "Borta mot" }));
+  vsRow.appendChild(el("span", { class: "opponent", text: match.opponent }));
+  meta.appendChild(vsRow);
 
-  const row2 = el("div", { class: "row2" });
-  const pill = el("span", {
-    class: "badge",
-    text: label,
-    style: `background:${color.bg};color:${color.fg};`
-  });
-  row2.appendChild(pill);
-  if (match.bana) row2.appendChild(el("span", { text: match.bana }));
-  if (isLive) row2.appendChild(el("span", { class: "badge live", text: "LIVE" }));
-  else if (isNext) row2.appendChild(el("span", { class: "badge next", text: "NÄSTA" }));
-  else if (isDone) row2.appendChild(el("span", { class: "badge done", text: "KLAR" }));
-  meta.appendChild(row2);
+  const subRow = el("div", { class: "sub-row" });
+  if (match.grupp) subRow.appendChild(el("span", { class: "grupp-tag", text: `Grupp ${match.grupp}` }));
+  if (isLive) subRow.appendChild(el("span", { class: "badge live", text: "● LIVE" }));
+  else if (isNext) subRow.appendChild(el("span", { class: "badge next", text: "NÄSTA" }));
+  else if (isDone) subRow.appendChild(el("span", { class: "badge done", text: "KLAR" }));
+  if (subRow.childNodes.length) meta.appendChild(subRow);
   card.appendChild(meta);
 
+  // Höger: resultat eller dash
   const score = el("div", { class: "score" });
   if (match.resultat) {
     const outcome = hkOutcome(match);
@@ -158,6 +170,59 @@ function partitionMatches(matches, now = Date.now()) {
   return { done, live, upcoming };
 }
 
+// Gruppera matcher: först per datum, sedan per tid inom dagen.
+function groupByDateAndTime(matches) {
+  const byDate = new Map();  // datum -> Map<tid, [matches]>
+  for (const m of matches) {
+    const d = m.datum || "okänt";
+    if (!byDate.has(d)) byDate.set(d, new Map());
+    const byTime = byDate.get(d);
+    const t = m.tid || "??:??";
+    if (!byTime.has(t)) byTime.set(t, []);
+    byTime.get(t).push(m);
+  }
+  // sortera dagar
+  const sortedDates = [...byDate.keys()].sort();
+  return sortedDates.map(date => ({
+    date,
+    slots: [...byDate.get(date).entries()]
+      .sort((a, b) => a[0].localeCompare(b[0]))
+      .map(([tid, ms]) => ({ tid, matches: ms }))
+  }));
+}
+
+// Renderar en grupp av matcher som delar samma tidpunkt.
+function renderTimeSlot(slot, opts = {}) {
+  const wrap = el("div", { class: `time-slot ${slot.matches.length > 1 ? "is-clash" : ""}` });
+  const head = el("div", { class: "time-head" });
+  head.appendChild(el("div", { class: "time-big", text: slot.tid }));
+  if (slot.matches.length > 1) {
+    head.appendChild(el("div", { class: "clash-note", text: `${slot.matches.length} matcher samtidigt` }));
+  }
+  wrap.appendChild(head);
+
+  const cards = el("div", { class: "time-cards" });
+  for (const m of slot.matches) {
+    const isNext = opts.nextMnr && m.mnr === opts.nextMnr;
+    cards.appendChild(renderMatch(m, { isNext }));
+  }
+  wrap.appendChild(cards);
+  return wrap;
+}
+
+function renderDaySection(day, opts = {}) {
+  const section = el("section", { class: "day-section" });
+  const header = el("div", { class: "day-header" });
+  header.appendChild(el("div", { class: "day-name", text: fmtDayLong(day.date) }));
+  header.appendChild(el("div", { class: "day-count", text: `${day.slots.reduce((n, s) => n + s.matches.length, 0)} matcher` }));
+  section.appendChild(header);
+
+  for (const slot of day.slots) {
+    section.appendChild(renderTimeSlot(slot, opts));
+  }
+  return section;
+}
+
 function renderTimeline(root, matches) {
   root.innerHTML = "";
   if (!matches.length) {
@@ -167,22 +232,38 @@ function renderTimeline(root, matches) {
   const now = Date.now();
   const { done, live, upcoming } = partitionMatches(matches, now);
   const next = findNextMatch(matches, now);
+  const nextMnr = next ? next.mnr : null;
 
   if (live.length) {
-    root.appendChild(el("div", { class: "section-title", text: "Pågår nu" }));
-    for (const m of live) root.appendChild(renderMatch(m, { isNext: false }));
+    const section = el("section", { class: "day-section live-section" });
+    const header = el("div", { class: "day-header live" });
+    header.appendChild(el("div", { class: "day-name", text: "● Pågår nu" }));
+    header.appendChild(el("div", { class: "day-count", text: `${live.length} match${live.length > 1 ? "er" : ""}` }));
+    section.appendChild(header);
+    const liveGroups = groupByDateAndTime(live);
+    for (const d of liveGroups) for (const slot of d.slots) section.appendChild(renderTimeSlot(slot));
+    root.appendChild(section);
   }
 
   if (upcoming.length) {
-    root.appendChild(el("div", { class: "section-title", text: "Kommande" }));
-    for (const m of upcoming) root.appendChild(renderMatch(m, { isNext: next && m.mnr === next.mnr }));
+    const upcomingDays = groupByDateAndTime(upcoming);
+    for (const day of upcomingDays) {
+      root.appendChild(renderDaySection(day, { nextMnr }));
+    }
   }
 
   if (done.length) {
-    const div = el("div", { class: "divider" });
-    div.innerHTML = `<span class="now-pulse"></span>Spelade matcher`;
-    root.appendChild(div);
-    for (const m of done.slice().reverse()) root.appendChild(renderMatch(m));
+    const doneDays = groupByDateAndTime(done);
+    for (const day of doneDays.reverse()) {
+      const section = renderDaySection(day);
+      section.classList.add("done-day");
+      // omvänd ordning i klara dagar — senaste först
+      const slots = $$(".time-slot", section);
+      const head = $(".day-header", section);
+      const parent = head.parentNode;
+      for (const s of slots.reverse()) parent.appendChild(s);
+      root.appendChild(section);
+    }
   }
 }
 
@@ -190,13 +271,15 @@ function renderNextBanner(root, matches) {
   const next = findNextMatch(matches);
   if (!next) { root.innerHTML = ""; return; }
   const T = window.JVC_TEAMS;
-  const label = T.teamLabel(next.klass, next.hk_team_raw);
-  const when = next.iso_start ? new Date(next.iso_start).toLocaleTimeString("sv-SE", { hour: "2-digit", minute: "2-digit" }) : next.tid;
-  const opp = next.opponent;
+  const suffix = T.squadSuffix(next.hk_team_raw);
+  const label = suffix ? `${next.klass} · ${suffix}` : next.klass;
+  const when = next.iso_start
+    ? new Date(next.iso_start).toLocaleString("sv-SE", { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })
+    : next.tid;
   root.innerHTML = "";
   root.appendChild(el("div", { class: "label", text: "Nästa match" }));
-  root.appendChild(el("div", { class: "who", text: `${label} mot ${opp}` }));
-  root.appendChild(el("div", { class: "when", text: `${when} ${next.is_home ? "(hemma)" : "(borta)"}` }));
+  root.appendChild(el("div", { class: "who", text: `${label} ${next.is_home ? "hemma" : "borta"} mot ${next.opponent}` }));
+  root.appendChild(el("div", { class: "when", text: when }));
   if (next.bana) root.appendChild(el("div", { class: "where", text: next.bana }));
 }
 
@@ -228,4 +311,4 @@ async function bootTimeline() {
   }, ONE_MIN);
 }
 
-window.JVC = { bootTimeline, fetchJson, fmtRelative, matchStatus, partitionMatches, renderMatch, renderTimeline, renderNextBanner, parseScore, hkOutcome, findNextMatch, el, $ , $$ };
+window.JVC = { bootTimeline, fetchJson, fmtRelative, matchStatus, partitionMatches, renderMatch, renderTimeline, renderNextBanner, parseScore, hkOutcome, findNextMatch, groupByDateAndTime, renderTimeSlot, renderDaySection, el, $ , $$ };
