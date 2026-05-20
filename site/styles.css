@@ -49,10 +49,22 @@ a { color: inherit; text-decoration: none; }
   display: flex; flex-direction: column; gap: 4px;
 }
 .next-banner:empty { display: none; }
-.next-banner .label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.18em; opacity: 0.85; }
-.next-banner .who { font-size: 1.45rem; font-weight: 800; line-height: 1.2; }
-.next-banner .when { font-size: 1rem; opacity: 0.95; }
-.next-banner .where { font-size: 0.95rem; opacity: 0.85; font-weight: 700; }
+.next-banner .label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.18em; opacity: 0.85; font-weight: 800; }
+.next-banner .when { font-size: 1.45rem; font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; text-transform: capitalize; }
+.next-banner .next-list { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
+.next-banner .next-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  align-items: baseline;
+  padding: 8px 10px;
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 10px;
+  font-size: 0.96rem;
+}
+.next-banner .next-team { font-weight: 900; letter-spacing: 0.01em; white-space: nowrap; }
+.next-banner .next-versus { font-weight: 600; opacity: 0.92; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.next-banner .next-bana { font-weight: 800; opacity: 0.85; white-space: nowrap; }
 
 /* DAG-SEKTION */
 .day-section {

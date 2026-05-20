@@ -141,12 +141,19 @@ function renderMatch(match, opts = {}) {
 }
 
 function findNextMatch(matches, now = Date.now()) {
+  return findNextMatches(matches, now)[0];
+}
+
+// Returnera ALLA matcher som delar den tidigaste kommande avsparken (för "NÄSTA"-markering vid krock).
+function findNextMatches(matches, now = Date.now()) {
   const upcoming = matches
     .filter(m => !m.resultat && m.iso_start)
     .map(m => ({ m, t: new Date(m.iso_start).getTime() }))
     .filter(x => x.t + MATCH_LIVE_WINDOW_MIN * 60 * 1000 >= now)
     .sort((a, b) => a.t - b.t);
-  return upcoming[0]?.m;
+  if (!upcoming.length) return [];
+  const earliest = upcoming[0].t;
+  return upcoming.filter(x => x.t === earliest).map(x => x.m);
 }
 
 function partitionMatches(matches, now = Date.now()) {
@@ -203,7 +210,7 @@ function renderTimeSlot(slot, opts = {}) {
 
   const cards = el("div", { class: "time-cards" });
   for (const m of slot.matches) {
-    const isNext = opts.nextMnr && m.mnr === opts.nextMnr;
+    const isNext = opts.nextMnrs && opts.nextMnrs.has(m.mnr);
     cards.appendChild(renderMatch(m, { isNext }));
   }
   wrap.appendChild(cards);
@@ -231,8 +238,8 @@ function renderTimeline(root, matches) {
   }
   const now = Date.now();
   const { done, live, upcoming } = partitionMatches(matches, now);
-  const next = findNextMatch(matches, now);
-  const nextMnr = next ? next.mnr : null;
+  const nextMatches = findNextMatches(matches, now);
+  const nextMnrs = new Set(nextMatches.map(m => m.mnr));
 
   if (live.length) {
     const section = el("section", { class: "day-section live-section" });
@@ -248,7 +255,7 @@ function renderTimeline(root, matches) {
   if (upcoming.length) {
     const upcomingDays = groupByDateAndTime(upcoming);
     for (const day of upcomingDays) {
-      root.appendChild(renderDaySection(day, { nextMnr }));
+      root.appendChild(renderDaySection(day, { nextMnrs }));
     }
   }
 
@@ -268,19 +275,27 @@ function renderTimeline(root, matches) {
 }
 
 function renderNextBanner(root, matches) {
-  const next = findNextMatch(matches);
-  if (!next) { root.innerHTML = ""; return; }
+  const nexts = findNextMatches(matches);
+  if (!nexts.length) { root.innerHTML = ""; return; }
   const T = window.JVC_TEAMS;
-  const suffix = T.squadSuffix(next.hk_team_raw);
-  const label = suffix ? `${next.klass} · ${suffix}` : next.klass;
-  const when = next.iso_start
-    ? new Date(next.iso_start).toLocaleString("sv-SE", { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })
-    : next.tid;
+  const first = nexts[0];
+  const when = first.iso_start
+    ? new Date(first.iso_start).toLocaleString("sv-SE", { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })
+    : first.tid;
   root.innerHTML = "";
-  root.appendChild(el("div", { class: "label", text: "Nästa match" }));
-  root.appendChild(el("div", { class: "who", text: `${label} ${next.is_home ? "hemma" : "borta"} mot ${next.opponent}` }));
+  root.appendChild(el("div", { class: "label", text: nexts.length > 1 ? `Nästa matcher (${nexts.length} samtidigt)` : "Nästa match" }));
   root.appendChild(el("div", { class: "when", text: when }));
-  if (next.bana) root.appendChild(el("div", { class: "where", text: next.bana }));
+  const list = el("div", { class: "next-list" });
+  for (const m of nexts) {
+    const suffix = T.squadSuffix(m.hk_team_raw);
+    const label = suffix ? `${m.klass} · ${suffix}` : m.klass;
+    const row = el("div", { class: "next-row" });
+    row.appendChild(el("span", { class: "next-team", text: label }));
+    row.appendChild(el("span", { class: "next-versus", text: `${m.is_home ? "hemma" : "borta"} mot ${m.opponent}` }));
+    if (m.bana) row.appendChild(el("span", { class: "next-bana", text: m.bana }));
+    list.appendChild(row);
+  }
+  root.appendChild(list);
 }
 
 async function bootTimeline() {
@@ -311,4 +326,4 @@ async function bootTimeline() {
   }, ONE_MIN);
 }
 
-window.JVC = { bootTimeline, fetchJson, fmtRelative, matchStatus, partitionMatches, renderMatch, renderTimeline, renderNextBanner, parseScore, hkOutcome, findNextMatch, groupByDateAndTime, renderTimeSlot, renderDaySection, el, $ , $$ };
+window.JVC = { bootTimeline, fetchJson, fmtRelative, matchStatus, partitionMatches, renderMatch, renderTimeline, renderNextBanner, parseScore, hkOutcome, findNextMatch, findNextMatches, groupByDateAndTime, renderTimeSlot, renderDaySection, el, $ , $$ };
