@@ -79,9 +79,14 @@ function hkOutcome(match) {
   return "draw";
 }
 
+function banaNumber(bana) {
+  if (!bana) return null;
+  const m = String(bana).match(/(\d+)/);
+  return m ? m[1] : bana;
+}
+
 function renderMatch(match, opts = {}) {
   const T = window.JVC_TEAMS;
-  const color = T.classColor(match.klass);
   const suffix = T.squadSuffix(match.hk_team_raw);
   const status = matchStatus(match);
 
@@ -94,48 +99,54 @@ function renderMatch(match, opts = {}) {
     attrs: { href: `team.html?klass=${encodeURIComponent(match.klass)}` }
   });
 
-  // Vänsterspalt: stor lag-pill (klass + squad-suffix) + bana
-  const left = el("div", { class: "match-id" });
-  const pillText = suffix ? `${match.klass} · ${suffix}` : match.klass;
-  left.appendChild(el("span", {
-    class: "team-pill",
-    text: pillText,
-    style: `background:${color.bg};color:${color.fg};`
-  }));
-  if (match.bana) {
-    left.appendChild(el("span", { class: "bana-tag", text: match.bana }));
-  }
-  card.appendChild(left);
+  // TOPPRAD: klass · grupp · status-badge
+  const top = el("div", { class: "match-top" });
+  const classText = suffix ? `${match.klass} · ${suffix}` : match.klass;
+  top.appendChild(el("span", { class: "match-class", text: classText }));
+  if (match.grupp) top.appendChild(el("span", { class: "match-grupp", text: `Grupp ${match.grupp}` }));
+  let badge = null;
+  if (isLive) badge = el("span", { class: "badge live", text: "● LIVE" });
+  else if (isNext) badge = el("span", { class: "badge next", text: "NÄSTA" });
+  else if (isDone) badge = el("span", { class: "badge done", text: "KLAR" });
+  if (badge) top.appendChild(badge);
+  card.appendChild(top);
 
-  // Mitten: motståndare + status-badge
-  const meta = el("div", { class: "meta" });
-  const oppRow = el("div", { class: "opponent-row" });
-  oppRow.appendChild(el("span", { class: "opponent", text: match.opponent }));
-  oppRow.appendChild(el("span", { class: "venue-tag", text: match.is_home ? "hemma" : "borta" }));
-  meta.appendChild(oppRow);
+  // MATCH-RAD: hemma — vs/score — borta — gate (bana)
+  const row = el("div", { class: "match-row" });
+  const home = el("div", {
+    class: `match-team home ${match.is_home ? "hk" : ""}`.trim(),
+    text: match.hemmalag,
+  });
+  const away = el("div", {
+    class: `match-team away ${!match.is_home ? "hk" : ""}`.trim(),
+    text: match.bortalag,
+  });
+  row.appendChild(home);
 
-  const subRow = el("div", { class: "sub-row" });
-  if (match.grupp) subRow.appendChild(el("span", { class: "grupp-tag", text: `Grupp ${match.grupp}` }));
-  if (isLive) subRow.appendChild(el("span", { class: "badge live", text: "● LIVE" }));
-  else if (isNext) subRow.appendChild(el("span", { class: "badge next", text: "NÄSTA" }));
-  else if (isDone) subRow.appendChild(el("span", { class: "badge done", text: "KLAR" }));
-  if (subRow.childNodes.length) meta.appendChild(subRow);
-  card.appendChild(meta);
-
-  // Höger: resultat eller indikator
-  const score = el("div", { class: "score" });
+  const vs = el("div", { class: "match-vs" });
   if (match.resultat) {
     const outcome = hkOutcome(match);
-    score.classList.add(outcome || "");
-    score.textContent = match.resultat;
+    if (outcome) vs.classList.add(outcome);
+    vs.textContent = match.resultat.replace("-", " – ");
   } else if (isLive) {
-    score.classList.add("live-pulse");
-    score.textContent = "● spelas";
+    vs.classList.add("live-pulse");
+    vs.textContent = "● spelas";
   } else {
-    score.classList.add("pending");
-    score.textContent = "–";
+    vs.textContent = "–";
   }
-  card.appendChild(score);
+  row.appendChild(vs);
+  row.appendChild(away);
+
+  const banaNum = banaNumber(match.bana);
+  if (banaNum) {
+    const gate = el("div", { class: "match-gate" });
+    gate.appendChild(el("div", { class: "gate-label", text: "Bana" }));
+    gate.appendChild(el("div", { class: "gate-num", text: banaNum }));
+    row.appendChild(gate);
+  } else {
+    row.appendChild(el("div"));  // tom platshållare för grid-alignment
+  }
+  card.appendChild(row);
 
   return card;
 }
@@ -202,9 +213,9 @@ function groupByDateAndTime(matches) {
 function renderTimeSlot(slot, opts = {}) {
   const wrap = el("div", { class: `time-slot ${slot.matches.length > 1 ? "is-clash" : ""}` });
   const head = el("div", { class: "time-head" });
-  head.appendChild(el("div", { class: "time-big", text: slot.tid }));
+  head.appendChild(el("span", { class: "time-big", text: slot.tid }));
   if (slot.matches.length > 1) {
-    head.appendChild(el("div", { class: "clash-note", text: `${slot.matches.length} matcher samtidigt` }));
+    head.appendChild(el("span", { class: "clash-note", text: `${slot.matches.length} matcher samtidigt` }));
   }
   wrap.appendChild(head);
 

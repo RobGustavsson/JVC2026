@@ -129,120 +129,96 @@ a { color: inherit; text-decoration: none; }
 .day-name { font-size: 1.1rem; font-weight: 800; letter-spacing: 0.01em; text-transform: capitalize; }
 .day-count { font-size: 0.74rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; }
 
-/* TIDSLOT — alltid orange tid, ingen krock-färg */
-.time-slot {
-  display: grid;
-  grid-template-columns: 76px 1fr;
-  gap: 14px;
-  margin: 0 0 22px;
-  align-items: start;
+/* TIDSLOT — tid som horisontell rubrik ÖVER matcherna */
+.time-slot { margin: 0 0 22px; }
+.time-head {
+  display: flex; align-items: baseline; gap: 12px;
+  padding: 6px 4px 8px;
+  border-bottom: 1px dashed var(--border-strong);
+  margin-bottom: 10px;
 }
-.time-head { padding-top: 4px; position: sticky; top: 96px; }
 .time-big {
-  font-size: 1.85rem; font-weight: 900;
+  font-size: 1.6rem; font-weight: 900;
   letter-spacing: -0.02em; line-height: 1;
   color: var(--time);
 }
 .clash-note {
-  font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em;
-  color: var(--text-dim); margin-top: 6px; font-weight: 700; line-height: 1.25;
+  font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--text-dim); font-weight: 800;
 }
-.time-cards { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.time-cards { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
 
-/* MATCH-KORT — fast bredd på lag-kolumnen så motståndarnamnen alltid linjerar */
+/* MATCH-KORT (A4-layout: matchup-rad + bana-gate) */
 .match {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 14px;
-  padding: 14px 16px;
-  display: grid;
-  grid-template-columns: 132px minmax(0, 1fr) auto;
-  gap: 14px;
-  align-items: center;
+  padding: 12px 14px;
+  display: flex; flex-direction: column; gap: 10px;
   transition: background 0.15s ease, border-color 0.15s ease;
-  min-height: 78px;
 }
 .match:hover { background: var(--bg-card-hover); }
 .match.is-live { border-color: var(--live); box-shadow: 0 0 0 1px var(--live), 0 6px 24px -8px rgba(239, 68, 68, 0.4); }
 .match.is-next { border-color: var(--hk-yellow); box-shadow: 0 0 0 1px var(--hk-yellow); }
 .match.is-done { opacity: 0.78; }
 
-.match-id {
-  display: flex; flex-direction: column; gap: 7px;
-  align-items: flex-end;  /* högerställ pill + bana så motståndaren börjar på samma rad */
-  min-width: 0;
-}
-.team-pill {
-  padding: 6px 12px;
-  border-radius: 8px;
+.match-top {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.14em;
   font-weight: 800;
-  font-size: 0.9rem;
-  letter-spacing: 0.01em;
-  white-space: nowrap;
-  text-align: center;
-  display: inline-block;
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  padding-bottom: 10px;
+  border-bottom: 1.5px dashed var(--border-strong);
 }
-.bana-tag {
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--text);
-  padding: 4px 10px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--border-strong);
-  border-radius: 8px;
-  text-align: center;
-  white-space: nowrap;
-}
+.match-class { color: var(--hk-yellow); font-weight: 900; }
+.match-grupp { color: var(--text-dim); }
+.match-top .badge { margin-left: auto; }
 
-/* META — opponent + venue tag */
-.meta { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
-.opponent-row {
-  display: flex; align-items: baseline; gap: 8px;
-  min-width: 0; flex-wrap: wrap;
+.match-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) 80px;
+  gap: 10px; align-items: center;
 }
-.opponent {
-  font-size: 1rem; font-weight: 700;
+.match-team {
+  font-size: 1.02rem; font-weight: 800; line-height: 1.2;
   overflow: hidden; text-overflow: ellipsis;
-  line-height: 1.25;
-  min-width: 0;
 }
-.venue-tag {
-  font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.12em;
-  font-weight: 800; color: var(--text-very-dim);
-  padding: 2px 6px; border-radius: 5px;
-  background: rgba(255, 255, 255, 0.05);
-  white-space: nowrap;
-}
-.sub-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
-.grupp-tag { font-size: 0.72rem; color: var(--text-dim); font-weight: 600; }
+.match-team.home { text-align: right; }
+.match-team.away { text-align: left; }
+.match-team.hk { color: var(--hk-yellow); }
 
-.badge { padding: 3px 9px; border-radius: 999px; font-weight: 800; font-size: 0.68rem; letter-spacing: 0.04em; white-space: nowrap; }
-.badge.live { background: var(--live); color: #fff; animation: pulse 1.4s ease-in-out infinite; }
-.badge.next { background: var(--hk-yellow); color: #000; }
-.badge.done { background: #2a2a2a; color: #b0b0b0; }
-
-/* Score */
-.score {
-  font-size: 1.4rem; font-weight: 900;
+.match-vs {
+  font-size: 1.3rem; font-weight: 900;
+  color: var(--text-very-dim);
   letter-spacing: -0.02em;
-  min-width: 56px; text-align: right;
-  line-height: 1;
+  white-space: nowrap;
+  padding: 0 4px;
 }
-.score.win { color: #22c55e; }
-.score.loss { color: var(--live); }
-.score.draw { color: var(--hk-yellow); }
-.score.pending { color: var(--text-very-dim); font-weight: 700; font-size: 1.1rem; }
-.score.live-pulse {
+.match-vs.win { color: #22c55e; }
+.match-vs.loss { color: var(--live); }
+.match-vs.draw { color: var(--hk-yellow); }
+.match-vs.live-pulse {
   color: var(--live);
-  font-size: 1.05rem;
-  font-weight: 800;
+  font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   animation: pulse 1.4s ease-in-out infinite;
 }
+
+.match-gate {
+  background: var(--hk-yellow);
+  color: #000;
+  border-radius: 10px;
+  padding: 6px 4px;
+  display: flex; flex-direction: column; align-items: center;
+  line-height: 1;
+}
+.match-gate .gate-label { font-size: 0.55rem; font-weight: 800; letter-spacing: 0.18em; opacity: 0.7; }
+.match-gate .gate-num { font-size: 1.5rem; font-weight: 900; letter-spacing: -0.02em; }
+
+.badge { padding: 3px 9px; border-radius: 999px; font-weight: 800; font-size: 0.62rem; letter-spacing: 0.06em; white-space: nowrap; }
+.badge.live { background: var(--live); color: #fff; animation: pulse 1.4s ease-in-out infinite; }
+.badge.next { background: var(--hk-yellow); color: #000; }
+.badge.done { background: #2a2a2a; color: #b0b0b0; }
 
 .empty {
   text-align: center; color: var(--text-dim);
@@ -272,22 +248,16 @@ a { color: inherit; text-decoration: none; }
   .container { padding: 0 12px; }
   .hero h1 { font-size: 1.5rem; }
   .day-section { padding: 14px 12px 4px; border-radius: 14px; }
-  .time-slot { grid-template-columns: 56px 1fr; gap: 16px; margin-bottom: 18px; }
-  .time-head { position: static; padding-top: 0; }  /* sticky är kaos på mobil */
-  .time-big { font-size: 1.55rem; }
-  .clash-note { font-size: 0.6rem; }
-  .match {
-    grid-template-columns: 116px minmax(0, 1fr) auto;
-    padding: 12px 13px; gap: 10px;
-    min-height: 76px;
-  }
-  .team-pill { font-size: 0.85rem; padding: 5px 10px; }
-  .bana-tag { font-size: 0.76rem; padding: 4px 9px; }
-  .opponent { font-size: 0.95rem; }
-  .venue-tag { font-size: 0.62rem; }
-  .score { font-size: 1.2rem; min-width: 50px; }
-  .score.pending { font-size: 1rem; }
-  .score.live-pulse { font-size: 0.92rem; }
+  .time-big { font-size: 1.4rem; }
+  .clash-note { font-size: 0.62rem; }
+  .match { padding: 11px 12px; gap: 9px; }
+  .match-top { padding-bottom: 8px; }
+  .match-row { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) 64px; gap: 8px; }
+  .match-team { font-size: 0.94rem; }
+  .match-vs { font-size: 1.15rem; padding: 0 2px; }
+  .match-vs.live-pulse { font-size: 0.85rem; }
+  .match-gate { padding: 5px 3px; border-radius: 8px; }
+  .match-gate .gate-num { font-size: 1.3rem; }
   .next-banner { padding: 16px 14px; }
   .next-banner .when { font-size: 1.15rem; }
   .next-banner .next-row { font-size: 0.9rem; padding: 8px 10px; }
@@ -296,12 +266,11 @@ a { color: inherit; text-decoration: none; }
 /* SMÅMOBIL — 380px */
 @media (max-width: 380px) {
   .container { padding: 0 10px; }
-  .time-slot { grid-template-columns: 50px 1fr; gap: 14px; }
-  .time-big { font-size: 1.4rem; }
-  .match { grid-template-columns: 104px minmax(0, 1fr) auto; padding: 11px 12px; }
-  .team-pill { font-size: 0.8rem; padding: 4px 9px; }
-  .bana-tag { font-size: 0.72rem; padding: 3px 8px; }
-  .opponent { font-size: 0.9rem; }
+  .time-big { font-size: 1.25rem; }
+  .match-row { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) 56px; gap: 6px; }
+  .match-team { font-size: 0.88rem; }
+  .match-vs { font-size: 1.05rem; }
+  .match-gate .gate-num { font-size: 1.15rem; }
   .next-banner .next-row {
     grid-template-columns: auto 1fr;
     row-gap: 4px;
