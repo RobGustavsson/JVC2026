@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0b0f">
+  <title>JVC 2026 · HK Järnvägens matcher</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <div class="brand">JVC <span class="accent">26</span></div>
+        <div class="updated" id="updated">Laddar…</div>
+      </div>
+      <nav class="nav">
+        <a href="index.html" class="active">Tidslinje</a>
+        <a href="grupper.html">Grupper</a>
+        <a href="slutspel.html">Slutspel</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Järnvägen<br>Cup 2026</h1>
+      <div class="sub">HK Järnvägens matcher · 30 maj · Hallsberg</div>
+    </section>
+
+    <div class="next-banner" id="next-banner"></div>
+
+    <div id="timeline"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">Heja gula och svarta · <span id="updated-footer"></span></div>
+  </footer>
+
+  <script src="teams.js"></script>
+  <script src="app.js"></script>
+  <script>JVC.bootTimeline();</script>
+</body>
+</html>

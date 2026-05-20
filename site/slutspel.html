@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0b0f">
+  <title>Slutspel · JVC 2026</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <div class="brand">JVC <span class="accent">26</span></div>
+        <div class="updated" id="updated">Laddar…</div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Tidslinje</a>
+        <a href="grupper.html">Grupper</a>
+        <a href="slutspel.html" class="active">Slutspel</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Slutspel</h1>
+      <div class="sub">Publiceras under cupdagen när grupperna är klara</div>
+    </section>
+
+    <div id="content"><div class="empty">Laddar…</div></div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">Heja gula och svarta</div>
+  </footer>
+
+  <script src="teams.js"></script>
+  <script src="app.js"></script>
+  <script>
+    (async function() {
+      const content = JVC.$("#content");
+      const updated = JVC.$("#updated");
+      try {
+        const [brackets, meta] = await Promise.all([
+          JVC.fetchJson("brackets.json"),
+          JVC.fetchJson("last_updated.json"),
+        ]);
+        updated.textContent = `Uppdaterad ${JVC.fmtRelative(meta.iso)}`;
+        content.innerHTML = "";
+
+        // Group brackets by klass
+        const byKlass = {};
+        for (const b of brackets.brackets || []) {
+          if (!byKlass[b.klass]) byKlass[b.klass] = [];
+          byKlass[b.klass].push(b);
+        }
+
+        const klasses = Object.keys(byKlass).filter(k => byKlass[k].some(b => (b.matches || []).length > 0));
+        if (!klasses.length) {
+          content.innerHTML = '<div class="empty">Slutspelet publiceras under cupdagen.</div>';
+          return;
+        }
+
+        for (const klass of klasses) {
+          const color = window.JVC_TEAMS.classColor(klass);
+          const title = JVC.el("div", { class: "section-title" });
+          title.innerHTML = `<span class="badge" style="background:${color.bg};color:${color.fg};">${klass}</span>`;
+          content.appendChild(title);
+
+          for (const b of byKlass[klass]) {
+            if (!b.matches || !b.matches.length) continue;
+            const card = JVC.el("div", { class: "standings" });
+            card.appendChild(JVC.el("h3", { text: `Slutspel ${b.abcd}` }));
+            const tbl = JVC.el("table");
+            tbl.innerHTML = `<thead><tr><th>Match</th><th>Tid</th><th>Bana</th></tr></thead>`;
+            const tb = JVC.el("tbody");
+            for (const r of b.matches) {
+              const tr = JVC.el("tr");
+              const isHk = /järnvägen/i.test(r.match || "");
+              if (isHk) tr.classList.add("is-hk");
+              tr.innerHTML = `<td>${r.match || r.namn || ""}</td><td>${r.tid || ""}</td><td>${r.bana || ""}</td>`;
+              tb.appendChild(tr);
+            }
+            tbl.appendChild(tb);
+            card.appendChild(tbl);
+            content.appendChild(card);
+          }
+        }
+      } catch (e) {
+        console.error(e);
+        content.innerHTML = `<div class="empty">Kunde inte ladda data.<br><small>${e.message}</small></div>`;
+      }
+    })();
+  </script>
+</body>
+</html>

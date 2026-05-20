@@ -1,0 +1,525 @@
+{
+  "meta": {
+    "cup": "Järnvägen Cup 2026",
+    "ev": "39543",
+    "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
+    "scraped_at": "2026-05-20T20:35:46.569619+02:00"
+  },
+  "classes": [
+    {
+      "klass": "F09",
+      "groups": []
+    },
+    {
+      "klass": "F12",
+      "groups": [
+        {
+          "klass": "F12",
+          "grupp": "2",
+          "table": [
+            {
+              "lag": "Västervik HF",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "HK Järnvägen:2",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "Skogås HK",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "Backa HK Vit",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            }
+          ],
+          "teams": [
+            "Backa HK Vit - Röd",
+            "Västervik HF - Röd",
+            "HK Järnvägen:2 - Gul",
+            "Skogås HK - Grön"
+          ]
+        },
+        {
+          "klass": "F12",
+          "grupp": "7",
+          "table": [
+            {
+              "lag": "HK Brukspöjkera",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "BK Heid:svart",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "HK Järnvägen:1",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "IFK Nora",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            }
+          ],
+          "teams": [
+            "BK Heid:svart - Röd",
+            "HK Järnvägen:1 - Gul",
+            "IFK Nora - Blå",
+            "HK Brukspöjkera - Blå"
+          ]
+        }
+      ]
+    },
+    {
+      "klass": "F14/13",
+      "groups": [
+        {
+          "klass": "F14/13",
+          "grupp": "6",
+          "table": [
+            {
+              "lag": "GT Söder HK",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "BK Heid:Röd",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "Arbrå HK",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "HK Järnvägen",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            }
+          ],
+          "teams": [
+            "BK Heid:Röd - Röd",
+            "Arbrå HK - Blå",
+            "HK Järnvägen - Gul",
+            "GT Söder HK - Blå"
+          ]
+        }
+      ]
+    },
+    {
+      "klass": "F16/15",
+      "groups": [
+        {
+          "klass": "F16/15",
+          "grupp": "4",
+          "table": [
+            {
+              "lag": "HK Järnvägen:Gul",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "GT Söder HK",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "Katrineholms AIK",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "IF Hellton Karlstad",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            }
+          ],
+          "teams": [
+            "Katrineholms AIK - Svart",
+            "HK Järnvägen:Gul - Svart",
+            "GT Söder HK - Blå",
+            "IF Hellton Karlstad - Röd"
+          ]
+        },
+        {
+          "klass": "F16/15",
+          "grupp": "5",
+          "table": [
+            {
+              "lag": "HK Järnvägen:Svart",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "Årsta AIK",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "BK Heid:Vit",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "Eskilstuna Guif:3",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            }
+          ],
+          "teams": [
+            "BK Heid:Vit - Röd",
+            "HK Järnvägen:Svart - Svart",
+            "Årsta AIK - Röd",
+            "Eskilstuna Guif:3 - Röd"
+          ]
+        }
+      ]
+    },
+    {
+      "klass": "F19/17",
+      "groups": [
+        {
+          "klass": "F19/17",
+          "grupp": "2",
+          "table": [
+            {
+              "lag": "HK Järnvägen",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "AIK Handboll",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "Backa HK",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "Ludvika HF",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            }
+          ],
+          "teams": [
+            "Ludvika HF - Svart",
+            "HK Järnvägen - Svart",
+            "AIK Handboll - Svart",
+            "Backa HK - Röd"
+          ]
+        }
+      ]
+    },
+    {
+      "klass": "P09",
+      "groups": []
+    },
+    {
+      "klass": "P10",
+      "groups": []
+    },
+    {
+      "klass": "P12",
+      "groups": [
+        {
+          "klass": "P12",
+          "grupp": "4",
+          "table": [
+            {
+              "lag": "IFK Hammarö",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "Hultic BK",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "HK Järnvägen",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "Hammarby IF HF:2",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            }
+          ],
+          "teams": [
+            "Hultic BK - Gul",
+            "HK Järnvägen - Gul",
+            "Hammarby IF HF:2 - Grön",
+            "IFK Hammarö - Vita"
+          ]
+        }
+      ]
+    },
+    {
+      "klass": "P16/15",
+      "groups": [
+        {
+          "klass": "P16/15",
+          "grupp": "3",
+          "table": [
+            {
+              "lag": "H43:1",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "HK Järnvägen",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "BK Heid",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "NAIS HF",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            }
+          ],
+          "teams": [
+            "BK Heid - Röd",
+            "NAIS HF - Svart",
+            "HK Järnvägen - Svart",
+            "H43:1 - Blå"
+          ]
+        }
+      ]
+    },
+    {
+      "klass": "P19/17",
+      "groups": [
+        {
+          "klass": "P19/17",
+          "grupp": "1",
+          "table": [
+            {
+              "lag": "GT Söder HK",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "HK Järnvägen",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "BK Heid",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "Sannadals SK",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            }
+          ],
+          "teams": [
+            "Sannadals SK - Röd",
+            "GT Söder HK - Blå",
+            "HK Järnvägen - Svart",
+            "BK Heid - Röd"
+          ]
+        }
+      ]
+    }
+  ]
+}
