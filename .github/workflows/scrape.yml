@@ -55,8 +55,15 @@ jobs:
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "data: $(date -u +%Y-%m-%dT%H:%MZ)"
-            git push
-            echo "changed=true" >> "$GITHUB_OUTPUT"
+            # Retry with rebase if another workflow pushed concurrently
+            for i in 1 2 3; do
+              if git push; then
+                echo "changed=true" >> "$GITHUB_OUTPUT"
+                break
+              fi
+              echo "push rejected, rebasing and retrying ($i)..."
+              git pull --rebase --autostash origin main
+            done
           fi
 
   deploy:
