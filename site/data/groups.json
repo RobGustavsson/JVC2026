@@ -3,7 +3,7 @@
     "cup": "Järnvägen Cup 2026",
     "ev": "39543",
     "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
-    "scraped_at": "2026-05-25T23:20:50.906636+02:00"
+    "scraped_at": "2026-05-26T12:11:40.797337+02:00"
   },
   "classes": [
     {
@@ -293,27 +293,17 @@
           "grupp": "2",
           "table": [
             {
-              "lag": "HK Järnvägen",
-              "antal_spelade": "0",
-              "vinster": "0",
-              "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
-              "poang": "0"
-            },
-            {
-              "lag": "AIK Handboll",
-              "antal_spelade": "0",
-              "vinster": "0",
-              "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
-              "poang": "0"
-            },
-            {
               "lag": "Backa HK",
+              "antal_spelade": "0",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "0 - 0",
+              "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "HK Järnvägen",
               "antal_spelade": "0",
               "vinster": "0",
               "oavgjorda": "0",
@@ -336,7 +326,6 @@
           "teams": [
             "Ludvika HF - Svart",
             "HK Järnvägen - Svart",
-            "AIK Handboll - Svart",
             "Backa HK - Röd"
           ]
         }
