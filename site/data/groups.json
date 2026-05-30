@@ -3,7 +3,7 @@
     "cup": "Järnvägen Cup 2026",
     "ev": "39543",
     "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
-    "scraped_at": "2026-05-30T11:53:50.681561+02:00"
+    "scraped_at": "2026-05-30T12:29:45.752694+02:00"
   },
   "classes": [
     {
@@ -81,22 +81,22 @@
             },
             {
               "lag": "HK Järnvägen:1",
-              "antal_spelade": "0",
-              "vinster": "0",
+              "antal_spelade": "1",
+              "vinster": "1",
               "oavgjorda": "0",
               "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
-              "poang": "0"
+              "mal": "16 - 11",
+              "diff": "+5",
+              "poang": "2"
             },
             {
               "lag": "IFK Nora",
-              "antal_spelade": "0",
+              "antal_spelade": "1",
               "vinster": "0",
               "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
+              "forluster": "1",
+              "mal": "11 - 16",
+              "diff": "-5",
               "poang": "0"
             },
             {
@@ -404,6 +404,16 @@
           "grupp": "3",
           "table": [
             {
+              "lag": "H43:1",
+              "antal_spelade": "2",
+              "vinster": "2",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "48 - 29",
+              "diff": "+19",
+              "poang": "4"
+            },
+            {
               "lag": "BK Heid",
               "antal_spelade": "1",
               "vinster": "1",
@@ -414,26 +424,6 @@
               "poang": "2"
             },
             {
-              "lag": "H43:1",
-              "antal_spelade": "1",
-              "vinster": "1",
-              "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "18 - 17",
-              "diff": "+1",
-              "poang": "2"
-            },
-            {
-              "lag": "NAIS HF",
-              "antal_spelade": "0",
-              "vinster": "0",
-              "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
-              "poang": "0"
-            },
-            {
               "lag": "HK Järnvägen",
               "antal_spelade": "2",
               "vinster": "0",
@@ -441,6 +431,16 @@
               "forluster": "2",
               "mal": "28 - 42",
               "diff": "-14",
+              "poang": "0"
+            },
+            {
+              "lag": "NAIS HF",
+              "antal_spelade": "1",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "1",
+              "mal": "12 - 30",
+              "diff": "-18",
               "poang": "0"
             }
           ],
