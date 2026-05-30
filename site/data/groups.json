@@ -3,7 +3,7 @@
     "cup": "Järnvägen Cup 2026",
     "ev": "39543",
     "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
-    "scraped_at": "2026-05-30T13:34:18.765805+02:00"
+    "scraped_at": "2026-05-30T13:57:47.873502+02:00"
   },
   "classes": [
     {
@@ -18,6 +18,16 @@
           "grupp": "2",
           "table": [
             {
+              "lag": "HK Järnvägen:2",
+              "antal_spelade": "2",
+              "vinster": "2",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "47 - 33",
+              "diff": "+14",
+              "poang": "4"
+            },
+            {
               "lag": "Västervik HF",
               "antal_spelade": "2",
               "vinster": "1",
@@ -29,22 +39,12 @@
             },
             {
               "lag": "Backa HK Vit",
-              "antal_spelade": "1",
+              "antal_spelade": "2",
               "vinster": "1",
               "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "22 - 12",
-              "diff": "+10",
-              "poang": "2"
-            },
-            {
-              "lag": "HK Järnvägen:2",
-              "antal_spelade": "1",
-              "vinster": "1",
-              "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "22 - 15",
-              "diff": "+7",
+              "forluster": "1",
+              "mal": "40 - 37",
+              "diff": "+3",
               "poang": "2"
             },
             {
