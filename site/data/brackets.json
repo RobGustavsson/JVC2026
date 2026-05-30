@@ -3,7 +3,7 @@
     "cup": "Järnvägen Cup 2026",
     "ev": "39543",
     "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
-    "scraped_at": "2026-05-30T19:12:56.112390+02:00"
+    "scraped_at": "2026-05-30T19:46:23.676203+02:00"
   },
   "brackets": [
     {
@@ -33,7 +33,7 @@
           "namn": "A-8-dels:03",
           "datum": "Sön 31/5",
           "tid": "09:10",
-          "match": "1:an från Grupp 5 - Backa HK Röd",
+          "match": "Alingsås HK:Vit - Backa HK Röd",
           "bana": "Bana 21"
         },
         {
@@ -41,7 +41,7 @@
           "namn": "A-8-dels:05",
           "datum": "Sön 31/5",
           "tid": "09:10",
-          "match": "2:an från Grupp 7 - 2:an från Grupp 5",
+          "match": "2:an från Grupp 7 - NKIK",
           "bana": "Bana 23"
         },
         {
@@ -167,7 +167,7 @@
           "namn": "B-8-dels:03",
           "datum": "Sön 31/5",
           "tid": "08:20",
-          "match": "3:an från Grupp 5 - Vadstena HF",
+          "match": "Eskilstuna Guif:2 - Vadstena HF",
           "bana": "Bana 21"
         },
         {
@@ -175,7 +175,7 @@
           "namn": "B-8-dels:05",
           "datum": "Sön 31/5",
           "tid": "08:20",
-          "match": "4:an från Grupp 7 - 4:an från Grupp 5",
+          "match": "4:an från Grupp 7 - Karlskoga HK",
           "bana": "Bana 23"
         },
         {
