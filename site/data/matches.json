@@ -3,7 +3,7 @@
     "cup": "Järnvägen Cup 2026",
     "ev": "39543",
     "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
-    "scraped_at": "2026-05-30T18:56:38.624541+02:00"
+    "scraped_at": "2026-05-30T19:12:56.112390+02:00"
   },
   "matches": [
     {
@@ -868,12 +868,12 @@
       "datum": "2026-05-31",
       "tid": "08:20",
       "iso_start": "2026-05-31T08:20:00+02:00",
-      "hemmalag": "2:an från Grupp 10",
+      "hemmalag": "Örebro SK U:2",
       "bortalag": "HK Järnvägen",
       "bana": "Bana 30",
       "resultat": null,
       "hk_team_raw": "HK Järnvägen",
-      "opponent": "2:an från Grupp 10",
+      "opponent": "Örebro SK U:2",
       "is_home": false
     },
     {
@@ -907,6 +907,21 @@
       "is_home": false
     },
     {
+      "mnr": "579",
+      "klass": "P12",
+      "grupp": "A-kvartsfinal:02",
+      "datum": "2026-05-31",
+      "tid": "12:00",
+      "iso_start": "2026-05-31T12:00:00+02:00",
+      "hemmalag": "1:an från Grupp 3",
+      "bortalag": "HK Järnvägen",
+      "bana": "Bana 24",
+      "resultat": null,
+      "hk_team_raw": "HK Järnvägen",
+      "opponent": "1:an från Grupp 3",
+      "is_home": false
+    },
+    {
       "mnr": "465",
       "klass": "F16/15",
       "grupp": "B-8-dels:08",
@@ -914,11 +929,11 @@
       "tid": "09:10",
       "iso_start": "2026-05-31T09:10:00+02:00",
       "hemmalag": "HK Järnvägen:Svart",
-      "bortalag": "4:an från Grupp 1",
+      "bortalag": "Vadstena HF",
       "bana": "Bana 39",
       "resultat": null,
       "hk_team_raw": "HK Järnvägen:Svart",
-      "opponent": "4:an från Grupp 1",
+      "opponent": "Vadstena HF",
       "is_home": true
     }
   ]

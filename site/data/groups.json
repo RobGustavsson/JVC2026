@@ -3,7 +3,7 @@
     "cup": "Järnvägen Cup 2026",
     "ev": "39543",
     "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
-    "scraped_at": "2026-05-30T18:56:38.624541+02:00"
+    "scraped_at": "2026-05-30T19:12:56.112390+02:00"
   },
   "classes": [
     {
@@ -719,6 +719,16 @@
           "grupp": "4",
           "table": [
             {
+              "lag": "IFK Hammarö",
+              "antal_spelade": "3",
+              "vinster": "3",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "86 - 53",
+              "diff": "+33",
+              "poang": "6"
+            },
+            {
               "lag": "HK Järnvägen",
               "antal_spelade": "3",
               "vinster": "2",
@@ -729,23 +739,13 @@
               "poang": "4"
             },
             {
-              "lag": "IFK Hammarö",
-              "antal_spelade": "2",
-              "vinster": "2",
-              "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "61 - 41",
-              "diff": "+20",
-              "poang": "4"
-            },
-            {
               "lag": "Hammarby IF HF:2",
-              "antal_spelade": "2",
+              "antal_spelade": "3",
               "vinster": "1",
               "oavgjorda": "0",
-              "forluster": "1",
-              "mal": "45 - 39",
-              "diff": "+6",
+              "forluster": "2",
+              "mal": "57 - 64",
+              "diff": "-7",
               "poang": "2"
             },
             {
@@ -824,7 +824,7 @@
               "hemmalag": "Hammarby IF HF:2",
               "bortalag": "IFK Hammarö",
               "bana": "Bana 23",
-              "resultat": null
+              "resultat": "12-25"
             }
           ]
         }
