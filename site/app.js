@@ -53,6 +53,23 @@ function fmtDayLong(datum) {
   return `${DAYS_LONG[d.getDay()]} ${d.getDate()} ${MONTHS[d.getMonth()]}`;
 }
 
+// U12 och yngre kör "resultatlöst spel" på procup — vi markerar dem som klara med 0–0 efter start+45 min.
+const RESULTLESS_CLASSES = new Set(["F09", "F10", "F11", "P09", "P10", "P11"]);
+function isResultlessClass(klass) {
+  return RESULTLESS_CLASSES.has(klass);
+}
+
+function effectiveMatch(match, now = Date.now()) {
+  if (match.resultat) return match;
+  if (!match.iso_start) return match;
+  if (!isResultlessClass(match.klass)) return match;
+  const end = new Date(match.iso_start).getTime() + MATCH_LIVE_WINDOW_MIN * 60 * 1000;
+  if (now > end) {
+    return { ...match, resultat: "0-0", _synthetic_result: true };
+  }
+  return match;
+}
+
 function matchStatus(match, now = Date.now()) {
   if (match.resultat) return "done";
   if (!match.iso_start) return "scheduled";
@@ -180,7 +197,8 @@ function partitionMatches(matches, now = Date.now()) {
   const done = [];
   const live = [];
   const upcoming = [];
-  for (const m of matches) {
+  for (const raw of matches) {
+    const m = effectiveMatch(raw, now);  // U12-matcher får syntetisk 0–0 efter slutsignal
     const s = matchStatus(m, now);
     if (s === "done") done.push(m);
     else if (s === "live") live.push(m);
@@ -257,11 +275,10 @@ function renderTimeline(root, matches) {
     return;
   }
   const now = Date.now();
+  const { done, live, upcoming } = partitionMatches(matches, now);
   const nextMatches = findNextMatches(matches, now);
   const nextMnrs = new Set(nextMatches.map(m => m.mnr));
 
-  // Optional: "Pågår nu"-sektion högst upp för uppmärksamhet vid live-match
-  const live = matches.filter(m => matchStatus(m, now) === "live");
   if (live.length) {
     const section = el("section", { class: "day-section live-section" });
     const header = el("div", { class: "day-header live" });
@@ -273,11 +290,24 @@ function renderTimeline(root, matches) {
     root.appendChild(section);
   }
 
-  // ALLA matcher (spelade + kommande + live) i en enda kronologisk per-dag-lista.
-  // Korten markerar sin egen status via ramfärg (grön/röd/vit/gul/röd-puls).
-  const days = groupByDateAndTime(matches);
-  for (const day of days) {
-    root.appendChild(renderDaySection(day, { nextMnrs }));
+  if (upcoming.length) {
+    const upcomingDays = groupByDateAndTime(upcoming);
+    for (const day of upcomingDays) {
+      root.appendChild(renderDaySection(day, { nextMnrs }));
+    }
+  }
+
+  if (done.length) {
+    const doneDays = groupByDateAndTime(done);
+    for (const day of doneDays.reverse()) {
+      const section = renderDaySection(day);
+      section.classList.add("done-day");
+      const slots = $$(".time-slot", section);
+      const head = $(".day-header", section);
+      const parent = head.parentNode;
+      for (const s of slots.reverse()) parent.appendChild(s);
+      root.appendChild(section);
+    }
   }
 }
 
