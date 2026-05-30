@@ -61,6 +61,8 @@
           for (const g of klass.groups) {
             const card = JVC.el("div", { class: "standings" });
             card.appendChild(JVC.el("h3", { text: `Grupp ${g.grupp}` }));
+
+            // Tabell
             if (!g.table || !g.table.length) {
               card.appendChild(JVC.el("div", { class: "empty", text: "Inga ställningar än." }));
             } else {
@@ -77,6 +79,44 @@
               tbl.appendChild(tb);
               card.appendChild(tbl);
             }
+
+            // Alla matcher i gruppen (inkl. icke-HK)
+            const grpMatches = (g.matches || []).slice().sort((a, b) =>
+              (a.iso_start || "").localeCompare(b.iso_start || "")
+            );
+            if (grpMatches.length) {
+              const mWrap = JVC.el("div", { class: "group-matches" });
+              mWrap.appendChild(JVC.el("h4", { text: "Matcher", class: "group-matches-title" }));
+              for (const m of grpMatches) {
+                const isHomeHk = /järnvägen/i.test(m.hemmalag || "");
+                const isAwayHk = /järnvägen/i.test(m.bortalag || "");
+                const score = m.resultat ? m.resultat.replace("-", " – ") : "–";
+                let scoreClass = "pending";
+                if (m.resultat) {
+                  // bestäm vinst/förlust ur HK:s perspektiv (om HK är med); annars neutralt
+                  const sc = JVC.parseScore(m.resultat);
+                  if (sc) {
+                    if (isHomeHk || isAwayHk) {
+                      const hk = isHomeHk ? sc.home : sc.away;
+                      const op = isHomeHk ? sc.away : sc.home;
+                      scoreClass = hk > op ? "win" : hk < op ? "loss" : "draw";
+                    } else {
+                      scoreClass = "neutral";  // bara visa siffrorna i grått
+                    }
+                  }
+                }
+                const row = JVC.el("div", { class: "group-match" });
+                row.innerHTML = `
+                  <span class="gm-tid">${m.tid || "?"}</span>
+                  <span class="gm-team ${isHomeHk ? "hk" : ""}">${m.hemmalag}</span>
+                  <span class="gm-score ${scoreClass}">${score}</span>
+                  <span class="gm-team ${isAwayHk ? "hk" : ""}">${m.bortalag}</span>
+                `;
+                mWrap.appendChild(row);
+              }
+              card.appendChild(mWrap);
+            }
+
             content.appendChild(card);
           }
         }

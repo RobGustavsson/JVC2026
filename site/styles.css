@@ -238,6 +238,44 @@ a { color: inherit; text-decoration: none; }
 .standings th:first-child, .standings td:first-child { text-align: left; }
 .standings tr.is-hk td { color: var(--hk-yellow); font-weight: 700; }
 
+/* Matcher i gruppspels-vyn */
+.group-matches { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); }
+.group-matches-title {
+  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--text-dim); font-weight: 800; margin: 0 0 8px;
+}
+.group-match {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 10px;
+  align-items: baseline;
+  padding: 7px 4px;
+  border-bottom: 1px dashed rgba(255,255,255,0.04);
+  font-size: 0.86rem;
+}
+.group-match:last-child { border-bottom: none; }
+.gm-tid { color: var(--time); font-weight: 800; font-variant-numeric: tabular-nums; }
+.gm-team {
+  color: var(--text-dim); font-weight: 600;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.gm-team:first-of-type { text-align: right; }
+.gm-team.hk { color: var(--hk-yellow); font-weight: 800; }
+.gm-score {
+  font-weight: 900; font-variant-numeric: tabular-nums;
+  min-width: 56px; text-align: center;
+}
+.gm-score.pending { color: var(--text-very-dim); font-weight: 600; }
+.gm-score.win { color: #22c55e; }
+.gm-score.loss { color: var(--live); }
+.gm-score.draw { color: var(--hk-yellow); }
+.gm-score.neutral { color: var(--text); }
+
+@media (max-width: 480px) {
+  .group-match { grid-template-columns: 38px minmax(0, 1fr) auto minmax(0, 1fr); gap: 6px; font-size: 0.8rem; padding: 6px 2px; }
+  .gm-score { min-width: 48px; }
+}
+
 @keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.55; transform: scale(0.94); }
