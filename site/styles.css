@@ -117,7 +117,6 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 0 0 1px var(--live) inset, 0 8px 32px -10px rgba(239, 68, 68, 0.35);
   background: linear-gradient(180deg, rgba(239, 68, 68, 0.12), var(--bg-day) 40%);
 }
-.day-section.done-day { opacity: 0.72; }
 
 .day-header {
   display: flex; justify-content: space-between; align-items: baseline;
@@ -160,7 +159,9 @@ a { color: inherit; text-decoration: none; }
 .match:hover { background: var(--bg-card-hover); }
 .match.is-live { border-color: var(--live); box-shadow: 0 0 0 1px var(--live), 0 6px 24px -8px rgba(239, 68, 68, 0.4); }
 .match.is-next { border-color: var(--hk-yellow); box-shadow: 0 0 0 1px var(--hk-yellow); }
-.match.is-done { opacity: 0.78; }
+.match.is-win { border-color: #22c55e; box-shadow: 0 0 0 1px #22c55e; }
+.match.is-loss { border-color: var(--live); box-shadow: 0 0 0 1px var(--live); }
+.match.is-draw { border-color: #ffffff; box-shadow: 0 0 0 1px #ffffff; }
 
 .match-top {
   display: flex; align-items: center; gap: 10px;

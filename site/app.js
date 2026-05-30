@@ -94,8 +94,17 @@ function renderMatch(match, opts = {}) {
   const isNext = !!opts.isNext;
   const isDone = status === "done";
 
+  // Färgad ram baserat på utfall (bara om matchen är spelad)
+  let outcomeClass = "";
+  if (match.resultat) {
+    const out = hkOutcome(match);
+    if (out === "win") outcomeClass = "is-win";
+    else if (out === "loss") outcomeClass = "is-loss";
+    else if (out === "draw") outcomeClass = "is-draw";
+  }
+
   const card = el("a", {
-    class: `match ${isLive ? "is-live" : ""} ${isNext ? "is-next" : ""} ${isDone ? "is-done" : ""}`.trim(),
+    class: `match ${isLive ? "is-live" : ""} ${isNext ? "is-next" : ""} ${outcomeClass}`.trim(),
     attrs: { href: `team.html?klass=${encodeURIComponent(match.klass)}` }
   });
 
@@ -248,10 +257,11 @@ function renderTimeline(root, matches) {
     return;
   }
   const now = Date.now();
-  const { done, live, upcoming } = partitionMatches(matches, now);
   const nextMatches = findNextMatches(matches, now);
   const nextMnrs = new Set(nextMatches.map(m => m.mnr));
 
+  // Optional: "Pågår nu"-sektion högst upp för uppmärksamhet vid live-match
+  const live = matches.filter(m => matchStatus(m, now) === "live");
   if (live.length) {
     const section = el("section", { class: "day-section live-section" });
     const header = el("div", { class: "day-header live" });
@@ -263,25 +273,11 @@ function renderTimeline(root, matches) {
     root.appendChild(section);
   }
 
-  if (upcoming.length) {
-    const upcomingDays = groupByDateAndTime(upcoming);
-    for (const day of upcomingDays) {
-      root.appendChild(renderDaySection(day, { nextMnrs }));
-    }
-  }
-
-  if (done.length) {
-    const doneDays = groupByDateAndTime(done);
-    for (const day of doneDays.reverse()) {
-      const section = renderDaySection(day);
-      section.classList.add("done-day");
-      // omvänd ordning i klara dagar — senaste först
-      const slots = $$(".time-slot", section);
-      const head = $(".day-header", section);
-      const parent = head.parentNode;
-      for (const s of slots.reverse()) parent.appendChild(s);
-      root.appendChild(section);
-    }
+  // ALLA matcher (spelade + kommande + live) i en enda kronologisk per-dag-lista.
+  // Korten markerar sin egen status via ramfärg (grön/röd/vit/gul/röd-puls).
+  const days = groupByDateAndTime(matches);
+  for (const day of days) {
+    root.appendChild(renderDaySection(day, { nextMnrs }));
   }
 }
 
