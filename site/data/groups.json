@@ -3,7 +3,7 @@
     "cup": "Järnvägen Cup 2026",
     "ev": "39543",
     "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
-    "scraped_at": "2026-05-30T10:36:51.720940+02:00"
+    "scraped_at": "2026-05-30T11:53:50.681561+02:00"
   },
   "classes": [
     {
@@ -70,24 +70,14 @@
           "grupp": "7",
           "table": [
             {
-              "lag": "HK Brukspöjkera",
-              "antal_spelade": "0",
-              "vinster": "0",
-              "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
-              "poang": "0"
-            },
-            {
               "lag": "BK Heid:svart",
-              "antal_spelade": "0",
-              "vinster": "0",
+              "antal_spelade": "1",
+              "vinster": "1",
               "oavgjorda": "0",
               "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
-              "poang": "0"
+              "mal": "23 - 7",
+              "diff": "+16",
+              "poang": "2"
             },
             {
               "lag": "HK Järnvägen:1",
@@ -108,6 +98,16 @@
               "mal": "0 - 0",
               "diff": "0",
               "poang": "0"
+            },
+            {
+              "lag": "HK Brukspöjkera",
+              "antal_spelade": "1",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "1",
+              "mal": "7 - 23",
+              "diff": "-16",
+              "poang": "0"
             }
           ],
           "teams": [
@@ -127,6 +127,16 @@
           "grupp": "6",
           "table": [
             {
+              "lag": "Arbrå HK",
+              "antal_spelade": "1",
+              "vinster": "1",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "23 - 15",
+              "diff": "+8",
+              "poang": "2"
+            },
+            {
               "lag": "BK Heid:Röd",
               "antal_spelade": "1",
               "vinster": "1",
@@ -137,26 +147,6 @@
               "poang": "2"
             },
             {
-              "lag": "Arbrå HK",
-              "antal_spelade": "0",
-              "vinster": "0",
-              "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
-              "poang": "0"
-            },
-            {
-              "lag": "HK Järnvägen",
-              "antal_spelade": "0",
-              "vinster": "0",
-              "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
-              "poang": "0"
-            },
-            {
               "lag": "GT Söder HK",
               "antal_spelade": "1",
               "vinster": "0",
@@ -164,6 +154,16 @@
               "forluster": "1",
               "mal": "12 - 15",
               "diff": "-3",
+              "poang": "0"
+            },
+            {
+              "lag": "HK Järnvägen",
+              "antal_spelade": "1",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "1",
+              "mal": "15 - 23",
+              "diff": "-8",
               "poang": "0"
             }
           ],
@@ -247,23 +247,23 @@
             },
             {
               "lag": "BK Heid:Vit",
-              "antal_spelade": "0",
+              "antal_spelade": "1",
               "vinster": "0",
-              "oavgjorda": "0",
+              "oavgjorda": "1",
               "forluster": "0",
-              "mal": "0 - 0",
+              "mal": "11 - 11",
               "diff": "0",
-              "poang": "0"
+              "poang": "1"
             },
             {
               "lag": "Eskilstuna Guif:3",
-              "antal_spelade": "0",
+              "antal_spelade": "1",
               "vinster": "0",
-              "oavgjorda": "0",
+              "oavgjorda": "1",
               "forluster": "0",
-              "mal": "0 - 0",
+              "mal": "11 - 11",
               "diff": "0",
-              "poang": "0"
+              "poang": "1"
             },
             {
               "lag": "HK Järnvägen:Svart",
@@ -304,22 +304,22 @@
             },
             {
               "lag": "Ludvika HF",
-              "antal_spelade": "0",
-              "vinster": "0",
+              "antal_spelade": "1",
+              "vinster": "1",
               "oavgjorda": "0",
               "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
-              "poang": "0"
+              "mal": "12 - 10",
+              "diff": "+2",
+              "poang": "2"
             },
             {
               "lag": "Backa HK",
-              "antal_spelade": "1",
+              "antal_spelade": "2",
               "vinster": "0",
               "oavgjorda": "0",
-              "forluster": "1",
-              "mal": "11 - 13",
-              "diff": "-2",
+              "forluster": "2",
+              "mal": "21 - 25",
+              "diff": "-4",
               "poang": "0"
             }
           ],
@@ -404,6 +404,16 @@
           "grupp": "3",
           "table": [
             {
+              "lag": "BK Heid",
+              "antal_spelade": "1",
+              "vinster": "1",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "24 - 11",
+              "diff": "+13",
+              "poang": "2"
+            },
+            {
               "lag": "H43:1",
               "antal_spelade": "1",
               "vinster": "1",
@@ -412,16 +422,6 @@
               "mal": "18 - 17",
               "diff": "+1",
               "poang": "2"
-            },
-            {
-              "lag": "BK Heid",
-              "antal_spelade": "0",
-              "vinster": "0",
-              "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
-              "poang": "0"
             },
             {
               "lag": "NAIS HF",
@@ -435,12 +435,12 @@
             },
             {
               "lag": "HK Järnvägen",
-              "antal_spelade": "1",
+              "antal_spelade": "2",
               "vinster": "0",
               "oavgjorda": "0",
-              "forluster": "1",
-              "mal": "17 - 18",
-              "diff": "-1",
+              "forluster": "2",
+              "mal": "28 - 42",
+              "diff": "-14",
               "poang": "0"
             }
           ],
@@ -481,23 +481,23 @@
               "poang": "2"
             },
             {
-              "lag": "HK Järnvägen",
-              "antal_spelade": "1",
-              "vinster": "0",
+              "lag": "Sannadals SK",
+              "antal_spelade": "2",
+              "vinster": "1",
               "oavgjorda": "0",
               "forluster": "1",
-              "mal": "15 - 17",
-              "diff": "-2",
-              "poang": "0"
+              "mal": "29 - 35",
+              "diff": "-6",
+              "poang": "2"
             },
             {
-              "lag": "Sannadals SK",
-              "antal_spelade": "1",
+              "lag": "HK Järnvägen",
+              "antal_spelade": "2",
               "vinster": "0",
               "oavgjorda": "0",
-              "forluster": "1",
-              "mal": "11 - 24",
-              "diff": "-13",
+              "forluster": "2",
+              "mal": "26 - 35",
+              "diff": "-9",
               "poang": "0"
             }
           ],
