@@ -3,7 +3,7 @@
     "cup": "Järnvägen Cup 2026",
     "ev": "39543",
     "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
-    "scraped_at": "2026-05-30T12:29:45.752694+02:00"
+    "scraped_at": "2026-05-30T13:34:18.765805+02:00"
   },
   "classes": [
     {
@@ -17,6 +17,16 @@
           "klass": "F12",
           "grupp": "2",
           "table": [
+            {
+              "lag": "Västervik HF",
+              "antal_spelade": "2",
+              "vinster": "1",
+              "oavgjorda": "0",
+              "forluster": "1",
+              "mal": "38 - 27",
+              "diff": "+11",
+              "poang": "2"
+            },
             {
               "lag": "Backa HK Vit",
               "antal_spelade": "1",
@@ -38,23 +48,13 @@
               "poang": "2"
             },
             {
-              "lag": "Västervik HF",
-              "antal_spelade": "1",
-              "vinster": "0",
-              "oavgjorda": "0",
-              "forluster": "1",
-              "mal": "15 - 22",
-              "diff": "-7",
-              "poang": "0"
-            },
-            {
               "lag": "Skogås HK",
-              "antal_spelade": "1",
+              "antal_spelade": "2",
               "vinster": "0",
               "oavgjorda": "0",
-              "forluster": "1",
-              "mal": "12 - 22",
-              "diff": "-10",
+              "forluster": "2",
+              "mal": "17 - 45",
+              "diff": "-28",
               "poang": "0"
             }
           ],
@@ -184,43 +184,43 @@
           "grupp": "4",
           "table": [
             {
-              "lag": "HK Järnvägen:Gul",
-              "antal_spelade": "1",
-              "vinster": "1",
+              "lag": "Katrineholms AIK",
+              "antal_spelade": "2",
+              "vinster": "2",
               "oavgjorda": "0",
               "forluster": "0",
-              "mal": "20 - 15",
-              "diff": "+5",
-              "poang": "2"
+              "mal": "41 - 31",
+              "diff": "+10",
+              "poang": "4"
             },
             {
-              "lag": "Katrineholms AIK",
-              "antal_spelade": "1",
+              "lag": "HK Järnvägen:Gul",
+              "antal_spelade": "2",
               "vinster": "1",
               "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "17 - 15",
+              "forluster": "1",
+              "mal": "35 - 33",
               "diff": "+2",
               "poang": "2"
             },
             {
               "lag": "IF Hellton Karlstad",
-              "antal_spelade": "1",
-              "vinster": "0",
+              "antal_spelade": "2",
+              "vinster": "1",
               "oavgjorda": "0",
               "forluster": "1",
-              "mal": "15 - 17",
-              "diff": "-2",
-              "poang": "0"
+              "mal": "33 - 32",
+              "diff": "+1",
+              "poang": "2"
             },
             {
               "lag": "GT Söder HK",
-              "antal_spelade": "1",
+              "antal_spelade": "2",
               "vinster": "0",
               "oavgjorda": "0",
-              "forluster": "1",
-              "mal": "15 - 20",
-              "diff": "-5",
+              "forluster": "2",
+              "mal": "31 - 44",
+              "diff": "-13",
               "poang": "0"
             }
           ],
@@ -348,42 +348,42 @@
           "table": [
             {
               "lag": "IFK Hammarö",
-              "antal_spelade": "1",
-              "vinster": "1",
+              "antal_spelade": "2",
+              "vinster": "2",
               "oavgjorda": "0",
               "forluster": "0",
-              "mal": "32 - 17",
-              "diff": "+15",
+              "mal": "61 - 41",
+              "diff": "+20",
+              "poang": "4"
+            },
+            {
+              "lag": "Hammarby IF HF:2",
+              "antal_spelade": "2",
+              "vinster": "1",
+              "oavgjorda": "0",
+              "forluster": "1",
+              "mal": "45 - 39",
+              "diff": "+6",
               "poang": "2"
             },
             {
               "lag": "HK Järnvägen",
-              "antal_spelade": "1",
+              "antal_spelade": "2",
               "vinster": "1",
               "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "23 - 14",
-              "diff": "+9",
+              "forluster": "1",
+              "mal": "47 - 43",
+              "diff": "+4",
               "poang": "2"
             },
             {
-              "lag": "Hammarby IF HF:2",
-              "antal_spelade": "1",
-              "vinster": "0",
-              "oavgjorda": "0",
-              "forluster": "1",
-              "mal": "14 - 23",
-              "diff": "-9",
-              "poang": "0"
-            },
-            {
               "lag": "Hultic BK",
-              "antal_spelade": "1",
+              "antal_spelade": "2",
               "vinster": "0",
               "oavgjorda": "0",
-              "forluster": "1",
-              "mal": "17 - 32",
-              "diff": "-15",
+              "forluster": "2",
+              "mal": "33 - 63",
+              "diff": "-30",
               "poang": "0"
             }
           ],
@@ -462,22 +462,22 @@
           "table": [
             {
               "lag": "BK Heid",
-              "antal_spelade": "1",
-              "vinster": "1",
+              "antal_spelade": "2",
+              "vinster": "2",
               "oavgjorda": "0",
               "forluster": "0",
-              "mal": "24 - 11",
-              "diff": "+13",
-              "poang": "2"
+              "mal": "41 - 23",
+              "diff": "+18",
+              "poang": "4"
             },
             {
               "lag": "GT Söder HK",
-              "antal_spelade": "1",
+              "antal_spelade": "2",
               "vinster": "1",
               "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "17 - 15",
-              "diff": "+2",
+              "forluster": "1",
+              "mal": "29 - 32",
+              "diff": "-3",
               "poang": "2"
             },
             {
