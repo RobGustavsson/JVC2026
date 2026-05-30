@@ -3,7 +3,7 @@
     "cup": "Järnvägen Cup 2026",
     "ev": "39543",
     "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
-    "scraped_at": "2026-05-29T23:31:04.990338+02:00"
+    "scraped_at": "2026-05-30T10:15:35.296967+02:00"
   },
   "classes": [
     {
@@ -18,43 +18,43 @@
           "grupp": "2",
           "table": [
             {
-              "lag": "Västervik HF",
-              "antal_spelade": "0",
-              "vinster": "0",
+              "lag": "Backa HK Vit",
+              "antal_spelade": "1",
+              "vinster": "1",
               "oavgjorda": "0",
               "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
-              "poang": "0"
+              "mal": "22 - 12",
+              "diff": "+10",
+              "poang": "2"
             },
             {
               "lag": "HK Järnvägen:2",
-              "antal_spelade": "0",
-              "vinster": "0",
+              "antal_spelade": "1",
+              "vinster": "1",
               "oavgjorda": "0",
               "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
+              "mal": "22 - 15",
+              "diff": "+7",
+              "poang": "2"
+            },
+            {
+              "lag": "Västervik HF",
+              "antal_spelade": "1",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "1",
+              "mal": "15 - 22",
+              "diff": "-7",
               "poang": "0"
             },
             {
               "lag": "Skogås HK",
-              "antal_spelade": "0",
+              "antal_spelade": "1",
               "vinster": "0",
               "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
-              "poang": "0"
-            },
-            {
-              "lag": "Backa HK Vit",
-              "antal_spelade": "0",
-              "vinster": "0",
-              "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
+              "forluster": "1",
+              "mal": "12 - 22",
+              "diff": "-10",
               "poang": "0"
             }
           ],
@@ -127,24 +127,14 @@
           "grupp": "6",
           "table": [
             {
-              "lag": "GT Söder HK",
-              "antal_spelade": "0",
-              "vinster": "0",
-              "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
-              "poang": "0"
-            },
-            {
               "lag": "BK Heid:Röd",
-              "antal_spelade": "0",
-              "vinster": "0",
+              "antal_spelade": "1",
+              "vinster": "1",
               "oavgjorda": "0",
               "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
-              "poang": "0"
+              "mal": "15 - 12",
+              "diff": "+3",
+              "poang": "2"
             },
             {
               "lag": "Arbrå HK",
@@ -164,6 +154,16 @@
               "forluster": "0",
               "mal": "0 - 0",
               "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "GT Söder HK",
+              "antal_spelade": "1",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "1",
+              "mal": "12 - 15",
+              "diff": "-3",
               "poang": "0"
             }
           ],
@@ -185,42 +185,42 @@
           "table": [
             {
               "lag": "HK Järnvägen:Gul",
-              "antal_spelade": "0",
-              "vinster": "0",
+              "antal_spelade": "1",
+              "vinster": "1",
               "oavgjorda": "0",
               "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
+              "mal": "20 - 15",
+              "diff": "+5",
+              "poang": "2"
+            },
+            {
+              "lag": "Katrineholms AIK",
+              "antal_spelade": "1",
+              "vinster": "1",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "17 - 15",
+              "diff": "+2",
+              "poang": "2"
+            },
+            {
+              "lag": "IF Hellton Karlstad",
+              "antal_spelade": "1",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "1",
+              "mal": "15 - 17",
+              "diff": "-2",
               "poang": "0"
             },
             {
               "lag": "GT Söder HK",
-              "antal_spelade": "0",
+              "antal_spelade": "1",
               "vinster": "0",
               "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
-              "poang": "0"
-            },
-            {
-              "lag": "Katrineholms AIK",
-              "antal_spelade": "0",
-              "vinster": "0",
-              "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
-              "poang": "0"
-            },
-            {
-              "lag": "IF Hellton Karlstad",
-              "antal_spelade": "0",
-              "vinster": "0",
-              "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
+              "forluster": "1",
+              "mal": "15 - 20",
+              "diff": "-5",
               "poang": "0"
             }
           ],
@@ -236,24 +236,14 @@
           "grupp": "5",
           "table": [
             {
-              "lag": "HK Järnvägen:Svart",
-              "antal_spelade": "0",
-              "vinster": "0",
-              "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
-              "poang": "0"
-            },
-            {
               "lag": "Årsta AIK",
-              "antal_spelade": "0",
-              "vinster": "0",
+              "antal_spelade": "1",
+              "vinster": "1",
               "oavgjorda": "0",
               "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
-              "poang": "0"
+              "mal": "12 - 9",
+              "diff": "+3",
+              "poang": "2"
             },
             {
               "lag": "BK Heid:Vit",
@@ -274,6 +264,16 @@
               "mal": "0 - 0",
               "diff": "0",
               "poang": "0"
+            },
+            {
+              "lag": "HK Järnvägen:Svart",
+              "antal_spelade": "1",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "1",
+              "mal": "9 - 12",
+              "diff": "-3",
+              "poang": "0"
             }
           ],
           "teams": [
@@ -293,24 +293,14 @@
           "grupp": "2",
           "table": [
             {
-              "lag": "Backa HK",
-              "antal_spelade": "0",
-              "vinster": "0",
-              "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
-              "poang": "0"
-            },
-            {
               "lag": "HK Järnvägen",
-              "antal_spelade": "0",
-              "vinster": "0",
+              "antal_spelade": "1",
+              "vinster": "1",
               "oavgjorda": "0",
               "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
-              "poang": "0"
+              "mal": "13 - 11",
+              "diff": "+2",
+              "poang": "2"
             },
             {
               "lag": "Ludvika HF",
@@ -320,6 +310,16 @@
               "forluster": "0",
               "mal": "0 - 0",
               "diff": "0",
+              "poang": "0"
+            },
+            {
+              "lag": "Backa HK",
+              "antal_spelade": "1",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "1",
+              "mal": "11 - 13",
+              "diff": "-2",
               "poang": "0"
             }
           ],
@@ -348,42 +348,42 @@
           "table": [
             {
               "lag": "IFK Hammarö",
-              "antal_spelade": "0",
-              "vinster": "0",
+              "antal_spelade": "1",
+              "vinster": "1",
               "oavgjorda": "0",
               "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
+              "mal": "32 - 17",
+              "diff": "+15",
+              "poang": "2"
+            },
+            {
+              "lag": "HK Järnvägen",
+              "antal_spelade": "1",
+              "vinster": "1",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "23 - 14",
+              "diff": "+9",
+              "poang": "2"
+            },
+            {
+              "lag": "Hammarby IF HF:2",
+              "antal_spelade": "1",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "1",
+              "mal": "14 - 23",
+              "diff": "-9",
               "poang": "0"
             },
             {
               "lag": "Hultic BK",
-              "antal_spelade": "0",
+              "antal_spelade": "1",
               "vinster": "0",
               "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
-              "poang": "0"
-            },
-            {
-              "lag": "HK Järnvägen",
-              "antal_spelade": "0",
-              "vinster": "0",
-              "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
-              "poang": "0"
-            },
-            {
-              "lag": "Hammarby IF HF:2",
-              "antal_spelade": "0",
-              "vinster": "0",
-              "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
+              "forluster": "1",
+              "mal": "17 - 32",
+              "diff": "-15",
               "poang": "0"
             }
           ],
@@ -405,23 +405,13 @@
           "table": [
             {
               "lag": "H43:1",
-              "antal_spelade": "0",
-              "vinster": "0",
+              "antal_spelade": "1",
+              "vinster": "1",
               "oavgjorda": "0",
               "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
-              "poang": "0"
-            },
-            {
-              "lag": "HK Järnvägen",
-              "antal_spelade": "0",
-              "vinster": "0",
-              "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
-              "poang": "0"
+              "mal": "18 - 17",
+              "diff": "+1",
+              "poang": "2"
             },
             {
               "lag": "BK Heid",
@@ -442,6 +432,16 @@
               "mal": "0 - 0",
               "diff": "0",
               "poang": "0"
+            },
+            {
+              "lag": "HK Järnvägen",
+              "antal_spelade": "1",
+              "vinster": "0",
+              "oavgjorda": "0",
+              "forluster": "1",
+              "mal": "17 - 18",
+              "diff": "-1",
+              "poang": "0"
             }
           ],
           "teams": [
@@ -461,43 +461,43 @@
           "grupp": "1",
           "table": [
             {
-              "lag": "GT Söder HK",
-              "antal_spelade": "0",
-              "vinster": "0",
+              "lag": "BK Heid",
+              "antal_spelade": "1",
+              "vinster": "1",
               "oavgjorda": "0",
               "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
-              "poang": "0"
+              "mal": "24 - 11",
+              "diff": "+13",
+              "poang": "2"
+            },
+            {
+              "lag": "GT Söder HK",
+              "antal_spelade": "1",
+              "vinster": "1",
+              "oavgjorda": "0",
+              "forluster": "0",
+              "mal": "17 - 15",
+              "diff": "+2",
+              "poang": "2"
             },
             {
               "lag": "HK Järnvägen",
-              "antal_spelade": "0",
+              "antal_spelade": "1",
               "vinster": "0",
               "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
-              "poang": "0"
-            },
-            {
-              "lag": "BK Heid",
-              "antal_spelade": "0",
-              "vinster": "0",
-              "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
+              "forluster": "1",
+              "mal": "15 - 17",
+              "diff": "-2",
               "poang": "0"
             },
             {
               "lag": "Sannadals SK",
-              "antal_spelade": "0",
+              "antal_spelade": "1",
               "vinster": "0",
               "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "0 - 0",
-              "diff": "0",
+              "forluster": "1",
+              "mal": "11 - 24",
+              "diff": "-13",
               "poang": "0"
             }
           ],
