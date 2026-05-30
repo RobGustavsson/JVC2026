@@ -3,7 +3,7 @@
     "cup": "Järnvägen Cup 2026",
     "ev": "39543",
     "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
-    "scraped_at": "2026-05-30T19:46:23.676203+02:00"
+    "scraped_at": "2026-05-30T20:54:04.615466+02:00"
   },
   "brackets": [
     {
@@ -41,7 +41,7 @@
           "namn": "A-8-dels:05",
           "datum": "Sön 31/5",
           "tid": "09:10",
-          "match": "2:an från Grupp 7 - NKIK",
+          "match": "HK Järnvägen:1 - NKIK",
           "bana": "Bana 23"
         },
         {
@@ -65,7 +65,7 @@
           "namn": "A-8-dels:04",
           "datum": "Sön 31/5",
           "tid": "09:10",
-          "match": "Särökometernas HK blå - 1:an från Grupp 7",
+          "match": "Särökometernas HK blå - BK Heid:svart",
           "bana": "Bana 22"
         },
         {
@@ -143,7 +143,7 @@
           "namn": "B-8-dels:04",
           "datum": "Sön 31/5",
           "tid": "08:20",
-          "match": "Huddinge HK:Blå - 3:an från Grupp 7",
+          "match": "Huddinge HK:Blå - HK Brukspöjkera",
           "bana": "Bana 22"
         },
         {
@@ -175,7 +175,7 @@
           "namn": "B-8-dels:05",
           "datum": "Sön 31/5",
           "tid": "08:20",
-          "match": "4:an från Grupp 7 - Karlskoga HK",
+          "match": "IFK Nora - Karlskoga HK",
           "bana": "Bana 23"
         },
         {
@@ -577,7 +577,7 @@
           "namn": "A-8-dels:02",
           "datum": "Sön 31/5",
           "tid": "10:00",
-          "match": "IF Hellton Karlstad - 2:an från Grupp 2",
+          "match": "IF Hellton Karlstad - HK Brukspöjkera",
           "bana": "Bana 40"
         },
         {
@@ -609,7 +609,7 @@
           "namn": "A-kvartsfinal:04",
           "datum": "Sön 31/5",
           "tid": "12:00",
-          "match": "1:an från Grupp 2 - Vinn.1/8 : 1",
+          "match": "Eskilstuna Guif:2 - Vinn.1/8 : 1",
           "bana": "Bana 42"
         },
         {
@@ -647,7 +647,7 @@
           "namn": "B-8-dels:02",
           "datum": "Sön 31/5",
           "tid": "09:10",
-          "match": "Årsta AIK - 4:an från Grupp 2",
+          "match": "Årsta AIK - Lidingö SK",
           "bana": "Bana 34"
         },
         {
@@ -695,7 +695,7 @@
           "namn": "B-kvartsfinal:04",
           "datum": "Sön 31/5",
           "tid": "10:50",
-          "match": "3:an från Grupp 2 - Vinn.1/8 : 8",
+          "match": "Mantorps IF HF - Vinn.1/8 : 8",
           "bana": "Bana 39"
         },
         {
@@ -805,7 +805,7 @@
           "namn": "A-kvartsfinal:01",
           "datum": "Sön 31/5",
           "tid": "12:00",
-          "match": "Eskilstuna Guif - 2:an från Grupp 2",
+          "match": "Eskilstuna Guif - IK Baltichov:Blå",
           "bana": "Bana 23"
         },
         {
@@ -813,7 +813,7 @@
           "namn": "A-kvartsfinal:02",
           "datum": "Sön 31/5",
           "tid": "12:00",
-          "match": "1:an från Grupp 3 - HK Järnvägen",
+          "match": "Täby HBK - HK Järnvägen",
           "bana": "Bana 24"
         },
         {
@@ -821,7 +821,7 @@
           "namn": "A-kvartsfinal:03",
           "datum": "Sön 31/5",
           "tid": "12:00",
-          "match": "IFK Hammarö - 2:an från Grupp 3",
+          "match": "IFK Hammarö - IFK Nyköping",
           "bana": "Bana 25"
         },
         {
@@ -829,7 +829,7 @@
           "namn": "A-kvartsfinal:04",
           "datum": "Sön 31/5",
           "tid": "12:00",
-          "match": "1:an från Grupp 2 - IK Baltichov:Vit",
+          "match": "Lidingö SK - IK Baltichov:Vit",
           "bana": "Bana 26"
         },
         {
@@ -867,7 +867,7 @@
           "namn": "B-8-dels:08",
           "datum": "Sön 31/5",
           "tid": "08:20",
-          "match": "4:an från Grupp 3 - IK Bolton",
+          "match": "GT Söder HK - IK Bolton",
           "bana": "Bana 28"
         },
         {
@@ -875,7 +875,7 @@
           "namn": "B-8-dels:06",
           "datum": "Sön 31/5",
           "tid": "08:20",
-          "match": "Hultic BK - 5:an från Grupp 2",
+          "match": "Hultic BK - Skogås HK",
           "bana": "Bana 27"
         },
         {
@@ -883,7 +883,7 @@
           "namn": "B-8-dels:02",
           "datum": "Sön 31/5",
           "tid": "08:20",
-          "match": "4:an från Grupp 2 - 5:an från Grupp 3",
+          "match": "LIF Lindesberg - Vadstena HF",
           "bana": "Bana 26"
         },
         {
@@ -899,7 +899,7 @@
           "namn": "B-kvartsfinal:02",
           "datum": "Sön 31/5",
           "tid": "10:50",
-          "match": "3:an från Grupp 2 - Malmslätt Ljungsbro HF:1",
+          "match": "Malmslätt Ljungsbro HF:2 - Malmslätt Ljungsbro HF:1",
           "bana": "Bana 21"
         },
         {
@@ -907,7 +907,7 @@
           "namn": "B-kvartsfinal:03",
           "datum": "Sön 31/5",
           "tid": "10:50",
-          "match": "3:an från Grupp 3 - Vinn.1/8 : 6",
+          "match": "IFK Örebro - Vinn.1/8 : 6",
           "bana": "Bana 22"
         },
         {
@@ -961,7 +961,7 @@
           "namn": "A-8-dels:08",
           "datum": "Sön 31/5",
           "tid": "10:00",
-          "match": "LIF Lindesberg:Orange - 2:an från Grupp 3",
+          "match": "LIF Lindesberg:Orange - H43:1",
           "bana": "Bana 42"
         },
         {
@@ -977,7 +977,7 @@
           "namn": "A-kvartsfinal:02",
           "datum": "Sön 31/5",
           "tid": "12:00",
-          "match": "H43:2 - 1:an från Grupp 3",
+          "match": "H43:2 - BK Heid",
           "bana": "Bana 36"
         },
         {
@@ -1055,7 +1055,7 @@
           "namn": "B-8-dels:07",
           "datum": "Sön 31/5",
           "tid": "07:30",
-          "match": "Västervik HF - 4:an från Grupp 3",
+          "match": "Västervik HF - NAIS HF",
           "bana": "Bana 41"
         },
         {
@@ -1071,7 +1071,7 @@
           "namn": "B-kvartsfinal:02",
           "datum": "Sön 31/5",
           "tid": "10:50",
-          "match": "3:an från Grupp 3 - Vinn.1/8 : 4",
+          "match": "HK Järnvägen - Vinn.1/8 : 4",
           "bana": "Bana 33"
         },
         {
@@ -1125,7 +1125,7 @@
           "namn": "A-semifinal:01",
           "datum": "Sön 31/5",
           "tid": "14:00",
-          "match": "BK Heid - 2:an från Grupp 2",
+          "match": "BK Heid - Örebro SK Herr",
           "bana": "Bana 41"
         },
         {
@@ -1133,7 +1133,7 @@
           "namn": "A-semifinal:02",
           "datum": "Sön 31/5",
           "tid": "14:00",
-          "match": "1:an från Grupp 2 - Sannadals SK",
+          "match": "LIF Lindesberg - Sannadals SK",
           "bana": "Bana 42"
         },
         {
@@ -1155,7 +1155,7 @@
           "namn": "B-semifinal:02",
           "datum": "Sön 31/5",
           "tid": "13:00",
-          "match": "3:an från Grupp 2 - HK Järnvägen",
+          "match": "Backa HK - HK Järnvägen",
           "bana": "Bana 41"
         },
         {
@@ -1163,7 +1163,7 @@
           "namn": "B-semifinal:01",
           "datum": "Sön 31/5",
           "tid": "13:00",
-          "match": "GT Söder HK - 4:an från Grupp 2",
+          "match": "GT Söder HK - Lidingö SK",
           "bana": "Bana 42"
         },
         {

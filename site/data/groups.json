@@ -3,7 +3,7 @@
     "cup": "Järnvägen Cup 2026",
     "ev": "39543",
     "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
-    "scraped_at": "2026-05-30T19:46:23.676203+02:00"
+    "scraped_at": "2026-05-30T20:54:04.615466+02:00"
   },
   "classes": [
     {
@@ -133,42 +133,42 @@
           "table": [
             {
               "lag": "BK Heid:svart",
-              "antal_spelade": "2",
-              "vinster": "2",
+              "antal_spelade": "3",
+              "vinster": "3",
               "oavgjorda": "0",
               "forluster": "0",
-              "mal": "49 - 14",
-              "diff": "+35",
-              "poang": "4"
+              "mal": "67 - 23",
+              "diff": "+44",
+              "poang": "6"
             },
             {
               "lag": "HK Järnvägen:1",
-              "antal_spelade": "2",
+              "antal_spelade": "3",
               "vinster": "2",
               "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "31 - 20",
-              "diff": "+11",
+              "forluster": "1",
+              "mal": "40 - 38",
+              "diff": "+2",
               "poang": "4"
             },
             {
               "lag": "HK Brukspöjkera",
-              "antal_spelade": "2",
-              "vinster": "0",
+              "antal_spelade": "3",
+              "vinster": "1",
               "oavgjorda": "0",
               "forluster": "2",
-              "mal": "16 - 38",
-              "diff": "-22",
-              "poang": "0"
+              "mal": "22 - 43",
+              "diff": "-21",
+              "poang": "2"
             },
             {
               "lag": "IFK Nora",
-              "antal_spelade": "2",
+              "antal_spelade": "3",
               "vinster": "0",
               "oavgjorda": "0",
-              "forluster": "2",
-              "mal": "18 - 42",
-              "diff": "-24",
+              "forluster": "3",
+              "mal": "23 - 48",
+              "diff": "-25",
               "poang": "0"
             }
           ],
@@ -227,7 +227,7 @@
               "hemmalag": "BK Heid:svart",
               "bortalag": "HK Järnvägen:1",
               "bana": "Bana 21",
-              "resultat": null
+              "resultat": "18-9"
             },
             {
               "mnr": "1087",
@@ -237,7 +237,7 @@
               "hemmalag": "IFK Nora",
               "bortalag": "HK Brukspöjkera",
               "bana": "Bana 20",
-              "resultat": null
+              "resultat": "5-6"
             }
           ]
         }
@@ -614,22 +614,22 @@
             },
             {
               "lag": "Ludvika HF",
-              "antal_spelade": "2",
-              "vinster": "1",
+              "antal_spelade": "3",
+              "vinster": "2",
               "oavgjorda": "0",
               "forluster": "1",
-              "mal": "22 - 24",
-              "diff": "-2",
-              "poang": "2"
+              "mal": "29 - 30",
+              "diff": "-1",
+              "poang": "4"
             },
             {
               "lag": "Backa HK",
-              "antal_spelade": "3",
+              "antal_spelade": "4",
               "vinster": "0",
               "oavgjorda": "0",
-              "forluster": "3",
-              "mal": "30 - 39",
-              "diff": "-9",
+              "forluster": "4",
+              "mal": "36 - 46",
+              "diff": "-10",
               "poang": "0"
             }
           ],
@@ -687,7 +687,7 @@
               "hemmalag": "Ludvika HF",
               "bortalag": "Backa HK",
               "bana": "Bana 40",
-              "resultat": null
+              "resultat": "7-6"
             },
             {
               "mnr": "1236",
@@ -839,13 +839,13 @@
           "table": [
             {
               "lag": "BK Heid",
-              "antal_spelade": "2",
-              "vinster": "2",
+              "antal_spelade": "3",
+              "vinster": "3",
               "oavgjorda": "0",
               "forluster": "0",
-              "mal": "46 - 29",
-              "diff": "+17",
-              "poang": "4"
+              "mal": "70 - 37",
+              "diff": "+33",
+              "poang": "6"
             },
             {
               "lag": "H43:1",
@@ -869,12 +869,12 @@
             },
             {
               "lag": "NAIS HF",
-              "antal_spelade": "2",
+              "antal_spelade": "3",
               "vinster": "0",
               "oavgjorda": "0",
-              "forluster": "2",
-              "mal": "21 - 53",
-              "diff": "-32",
+              "forluster": "3",
+              "mal": "29 - 77",
+              "diff": "-48",
               "poang": "0"
             }
           ],
@@ -943,7 +943,7 @@
               "hemmalag": "BK Heid",
               "bortalag": "NAIS HF",
               "bana": "Bana 35",
-              "resultat": null
+              "resultat": "24-8"
             }
           ]
         }

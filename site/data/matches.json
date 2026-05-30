@@ -3,7 +3,7 @@
     "cup": "Järnvägen Cup 2026",
     "ev": "39543",
     "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
-    "scraped_at": "2026-05-30T19:46:23.676203+02:00"
+    "scraped_at": "2026-05-30T20:54:04.615466+02:00"
   },
   "matches": [
     {
@@ -166,7 +166,7 @@
       "hemmalag": "BK Heid:svart",
       "bortalag": "HK Järnvägen:1",
       "bana": "Bana 21",
-      "resultat": null,
+      "resultat": "18-9",
       "hk_team_raw": "HK Järnvägen:1",
       "opponent": "BK Heid:svart",
       "is_home": false
@@ -892,19 +892,49 @@
       "is_home": true
     },
     {
+      "mnr": "664",
+      "klass": "F12",
+      "grupp": "A-8-dels:05",
+      "datum": "2026-05-31",
+      "tid": "09:10",
+      "iso_start": "2026-05-31T09:10:00+02:00",
+      "hemmalag": "HK Järnvägen:1",
+      "bortalag": "NKIK",
+      "bana": "Bana 23",
+      "resultat": null,
+      "hk_team_raw": "HK Järnvägen:1",
+      "opponent": "NKIK",
+      "is_home": true
+    },
+    {
       "mnr": "669",
       "klass": "P19/17",
       "grupp": "B-semifinal:02",
       "datum": "2026-05-31",
       "tid": "13:00",
       "iso_start": "2026-05-31T13:00:00+02:00",
-      "hemmalag": "3:an från Grupp 2",
+      "hemmalag": "Backa HK",
       "bortalag": "HK Järnvägen",
       "bana": "Bana 41",
       "resultat": null,
       "hk_team_raw": "HK Järnvägen",
-      "opponent": "3:an från Grupp 2",
+      "opponent": "Backa HK",
       "is_home": false
+    },
+    {
+      "mnr": "560",
+      "klass": "P16/15",
+      "grupp": "B-kvartsfinal:02",
+      "datum": "2026-05-31",
+      "tid": "10:50",
+      "iso_start": "2026-05-31T10:50:00+02:00",
+      "hemmalag": "HK Järnvägen",
+      "bortalag": "Vinn.1/8 : 4",
+      "bana": "Bana 33",
+      "resultat": null,
+      "hk_team_raw": "HK Järnvägen",
+      "opponent": "Vinn.1/8 : 4",
+      "is_home": true
     },
     {
       "mnr": "579",
@@ -913,12 +943,12 @@
       "datum": "2026-05-31",
       "tid": "12:00",
       "iso_start": "2026-05-31T12:00:00+02:00",
-      "hemmalag": "1:an från Grupp 3",
+      "hemmalag": "Täby HBK",
       "bortalag": "HK Järnvägen",
       "bana": "Bana 24",
       "resultat": null,
       "hk_team_raw": "HK Järnvägen",
-      "opponent": "1:an från Grupp 3",
+      "opponent": "Täby HBK",
       "is_home": false
     },
     {
