@@ -3,7 +3,7 @@
     "cup": "Järnvägen Cup 2026",
     "ev": "39543",
     "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
-    "scraped_at": "2026-05-30T15:58:17.228482+02:00"
+    "scraped_at": "2026-05-30T17:18:43.622189+02:00"
   },
   "brackets": [
     {
@@ -285,7 +285,7 @@
           "namn": "A-8-dels:02",
           "datum": "Sön 31/5",
           "tid": "10:00",
-          "match": "1:an från Grupp 3 - 2:an från Grupp 2",
+          "match": "1:an från Grupp 3 - LIF Lindesberg",
           "bana": "Bana 26"
         },
         {
@@ -333,7 +333,7 @@
           "namn": "A-8-dels:08",
           "datum": "Sön 31/5",
           "tid": "10:00",
-          "match": "1:an från Grupp 2 - 1:an från Grupp 10",
+          "match": "Skånela IF - 1:an från Grupp 10",
           "bana": "Bana 32"
         },
         {
@@ -435,7 +435,7 @@
           "namn": "B-16-dels:04",
           "datum": "Sön 31/5",
           "tid": "07:30",
-          "match": "4:an från Grupp 8 - 4:an från Grupp 2",
+          "match": "4:an från Grupp 8 - Backa HK:Röd",
           "bana": "Bana 26"
         },
         {
@@ -443,7 +443,7 @@
           "namn": "B-8-dels:08",
           "datum": "Sön 31/5",
           "tid": "09:10",
-          "match": "3:an från Grupp 2 - 3:an från Grupp 10",
+          "match": "Skåre HK:Vit - 3:an från Grupp 10",
           "bana": "Bana 33"
         },
         {

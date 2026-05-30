@@ -3,7 +3,7 @@
     "cup": "Järnvägen Cup 2026",
     "ev": "39543",
     "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
-    "scraped_at": "2026-05-30T15:58:17.228482+02:00"
+    "scraped_at": "2026-05-30T17:18:43.622189+02:00"
   },
   "classes": [
     {
@@ -294,13 +294,13 @@
           "table": [
             {
               "lag": "HK Järnvägen",
-              "antal_spelade": "2",
-              "vinster": "2",
+              "antal_spelade": "3",
+              "vinster": "3",
               "oavgjorda": "0",
               "forluster": "0",
-              "mal": "27 - 21",
-              "diff": "+6",
-              "poang": "4"
+              "mal": "41 - 30",
+              "diff": "+11",
+              "poang": "6"
             },
             {
               "lag": "Ludvika HF",
@@ -314,12 +314,12 @@
             },
             {
               "lag": "Backa HK",
-              "antal_spelade": "2",
+              "antal_spelade": "3",
               "vinster": "0",
               "oavgjorda": "0",
-              "forluster": "2",
-              "mal": "21 - 25",
-              "diff": "-4",
+              "forluster": "3",
+              "mal": "30 - 39",
+              "diff": "-9",
               "poang": "0"
             }
           ],
@@ -404,24 +404,24 @@
           "grupp": "3",
           "table": [
             {
-              "lag": "H43:1",
+              "lag": "BK Heid",
               "antal_spelade": "2",
               "vinster": "2",
               "oavgjorda": "0",
               "forluster": "0",
-              "mal": "48 - 29",
-              "diff": "+19",
+              "mal": "46 - 29",
+              "diff": "+17",
               "poang": "4"
             },
             {
-              "lag": "BK Heid",
-              "antal_spelade": "1",
-              "vinster": "1",
+              "lag": "H43:1",
+              "antal_spelade": "3",
+              "vinster": "2",
               "oavgjorda": "0",
-              "forluster": "0",
-              "mal": "24 - 11",
-              "diff": "+13",
-              "poang": "2"
+              "forluster": "1",
+              "mal": "66 - 51",
+              "diff": "+15",
+              "poang": "4"
             },
             {
               "lag": "HK Järnvägen",
