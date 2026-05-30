@@ -3,7 +3,7 @@
     "cup": "Järnvägen Cup 2026",
     "ev": "39543",
     "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
-    "scraped_at": "2026-05-30T18:33:32.468039+02:00"
+    "scraped_at": "2026-05-30T18:56:38.624541+02:00"
   },
   "classes": [
     {
@@ -63,6 +63,68 @@
             "Västervik HF - Röd",
             "HK Järnvägen:2 - Gul",
             "Skogås HK - Grön"
+          ],
+          "matches": [
+            {
+              "mnr": "825",
+              "datum": "2026-05-30",
+              "tid": "07:30",
+              "iso_start": "2026-05-30T07:30:00+02:00",
+              "hemmalag": "Västervik HF",
+              "bortalag": "HK Järnvägen:2",
+              "bana": "Bana 19",
+              "resultat": "15-22"
+            },
+            {
+              "mnr": "824",
+              "datum": "2026-05-30",
+              "tid": "08:20",
+              "iso_start": "2026-05-30T08:20:00+02:00",
+              "hemmalag": "Skogås HK",
+              "bortalag": "Backa HK Vit",
+              "bana": "Bana 19",
+              "resultat": "12-22"
+            },
+            {
+              "mnr": "801",
+              "datum": "2026-05-30",
+              "tid": "11:40",
+              "iso_start": "2026-05-30T11:40:00+02:00",
+              "hemmalag": "Backa HK Vit",
+              "bortalag": "HK Järnvägen:2",
+              "bana": "Bana 19",
+              "resultat": "18-25"
+            },
+            {
+              "mnr": "813",
+              "datum": "2026-05-30",
+              "tid": "11:40",
+              "iso_start": "2026-05-30T11:40:00+02:00",
+              "hemmalag": "Skogås HK",
+              "bortalag": "Västervik HF",
+              "bana": "Bana 20",
+              "resultat": "5-23"
+            },
+            {
+              "mnr": "7",
+              "datum": "2026-05-30",
+              "tid": "15:50",
+              "iso_start": "2026-05-30T15:50:00+02:00",
+              "hemmalag": "Backa HK Vit",
+              "bortalag": "Västervik HF",
+              "bana": "Bana 21",
+              "resultat": "8-18"
+            },
+            {
+              "mnr": "786",
+              "datum": "2026-05-30",
+              "tid": "15:50",
+              "iso_start": "2026-05-30T15:50:00+02:00",
+              "hemmalag": "HK Järnvägen:2",
+              "bortalag": "Skogås HK",
+              "bana": "Bana 19",
+              "resultat": "35-9"
+            }
           ]
         },
         {
@@ -115,6 +177,68 @@
             "HK Järnvägen:1 - Gul",
             "IFK Nora - Blå",
             "HK Brukspöjkera - Blå"
+          ],
+          "matches": [
+            {
+              "mnr": "1108",
+              "datum": "2026-05-30",
+              "tid": "10:50",
+              "iso_start": "2026-05-30T10:50:00+02:00",
+              "hemmalag": "HK Brukspöjkera",
+              "bortalag": "BK Heid:svart",
+              "bana": "Bana 20",
+              "resultat": "7-23"
+            },
+            {
+              "mnr": "1112",
+              "datum": "2026-05-30",
+              "tid": "10:50",
+              "iso_start": "2026-05-30T10:50:00+02:00",
+              "hemmalag": "HK Järnvägen:1",
+              "bortalag": "IFK Nora",
+              "bana": "Bana 19",
+              "resultat": "16-11"
+            },
+            {
+              "mnr": "1098",
+              "datum": "2026-05-30",
+              "tid": "14:10",
+              "iso_start": "2026-05-30T14:10:00+02:00",
+              "hemmalag": "HK Brukspöjkera",
+              "bortalag": "HK Järnvägen:1",
+              "bana": "Bana 20",
+              "resultat": "9-15"
+            },
+            {
+              "mnr": "1090",
+              "datum": "2026-05-30",
+              "tid": "15:00",
+              "iso_start": "2026-05-30T15:00:00+02:00",
+              "hemmalag": "BK Heid:svart",
+              "bortalag": "IFK Nora",
+              "bana": "Bana 19",
+              "resultat": "26-7"
+            },
+            {
+              "mnr": "1078",
+              "datum": "2026-05-30",
+              "tid": "19:10",
+              "iso_start": "2026-05-30T19:10:00+02:00",
+              "hemmalag": "BK Heid:svart",
+              "bortalag": "HK Järnvägen:1",
+              "bana": "Bana 21",
+              "resultat": null
+            },
+            {
+              "mnr": "1087",
+              "datum": "2026-05-30",
+              "tid": "19:10",
+              "iso_start": "2026-05-30T19:10:00+02:00",
+              "hemmalag": "IFK Nora",
+              "bortalag": "HK Brukspöjkera",
+              "bana": "Bana 20",
+              "resultat": null
+            }
           ]
         }
       ]
@@ -172,6 +296,68 @@
             "Arbrå HK - Blå",
             "HK Järnvägen - Gul",
             "GT Söder HK - Blå"
+          ],
+          "matches": [
+            {
+              "mnr": "43",
+              "datum": "2026-05-30",
+              "tid": "09:10",
+              "iso_start": "2026-05-30T09:10:00+02:00",
+              "hemmalag": "GT Söder HK",
+              "bortalag": "BK Heid:Röd",
+              "bana": "Bana 34",
+              "resultat": "12-15"
+            },
+            {
+              "mnr": "1124",
+              "datum": "2026-05-30",
+              "tid": "09:10",
+              "iso_start": "2026-05-30T09:10:00+02:00",
+              "hemmalag": "Arbrå HK",
+              "bortalag": "HK Järnvägen",
+              "bana": "Bana 31",
+              "resultat": "23-15"
+            },
+            {
+              "mnr": "41",
+              "datum": "2026-05-30",
+              "tid": "13:20",
+              "iso_start": "2026-05-30T13:20:00+02:00",
+              "hemmalag": "BK Heid:Röd",
+              "bortalag": "HK Järnvägen",
+              "bana": "Bana 32",
+              "resultat": "14-15"
+            },
+            {
+              "mnr": "1111",
+              "datum": "2026-05-30",
+              "tid": "13:20",
+              "iso_start": "2026-05-30T13:20:00+02:00",
+              "hemmalag": "GT Söder HK",
+              "bortalag": "Arbrå HK",
+              "bana": "Bana 31",
+              "resultat": "17-19"
+            },
+            {
+              "mnr": "1089",
+              "datum": "2026-05-30",
+              "tid": "17:30",
+              "iso_start": "2026-05-30T17:30:00+02:00",
+              "hemmalag": "BK Heid:Röd",
+              "bortalag": "Arbrå HK",
+              "bana": "Bana 30",
+              "resultat": "11-15"
+            },
+            {
+              "mnr": "1097",
+              "datum": "2026-05-30",
+              "tid": "17:30",
+              "iso_start": "2026-05-30T17:30:00+02:00",
+              "hemmalag": "HK Järnvägen",
+              "bortalag": "GT Söder HK",
+              "bana": "Bana 29",
+              "resultat": "15-10"
+            }
           ]
         }
       ]
@@ -229,6 +415,68 @@
             "HK Järnvägen:Gul - Svart",
             "GT Söder HK - Blå",
             "IF Hellton Karlstad - Röd"
+          ],
+          "matches": [
+            {
+              "mnr": "239",
+              "datum": "2026-05-30",
+              "tid": "09:10",
+              "iso_start": "2026-05-30T09:10:00+02:00",
+              "hemmalag": "HK Järnvägen:Gul",
+              "bortalag": "GT Söder HK",
+              "bana": "Bana 38",
+              "resultat": "20-15"
+            },
+            {
+              "mnr": "240",
+              "datum": "2026-05-30",
+              "tid": "09:10",
+              "iso_start": "2026-05-30T09:10:00+02:00",
+              "hemmalag": "Katrineholms AIK",
+              "bortalag": "IF Hellton Karlstad",
+              "bana": "Bana 39",
+              "resultat": "17-15"
+            },
+            {
+              "mnr": "311",
+              "datum": "2026-05-30",
+              "tid": "12:30",
+              "iso_start": "2026-05-30T12:30:00+02:00",
+              "hemmalag": "HK Järnvägen:Gul",
+              "bortalag": "IF Hellton Karlstad",
+              "bana": "Bana 38",
+              "resultat": "15-18"
+            },
+            {
+              "mnr": "312",
+              "datum": "2026-05-30",
+              "tid": "12:30",
+              "iso_start": "2026-05-30T12:30:00+02:00",
+              "hemmalag": "Katrineholms AIK",
+              "bortalag": "GT Söder HK",
+              "bana": "Bana 39",
+              "resultat": "24-16"
+            },
+            {
+              "mnr": "407",
+              "datum": "2026-05-30",
+              "tid": "16:40",
+              "iso_start": "2026-05-30T16:40:00+02:00",
+              "hemmalag": "GT Söder HK",
+              "bortalag": "IF Hellton Karlstad",
+              "bana": "Bana 39",
+              "resultat": "11-22"
+            },
+            {
+              "mnr": "408",
+              "datum": "2026-05-30",
+              "tid": "16:40",
+              "iso_start": "2026-05-30T16:40:00+02:00",
+              "hemmalag": "Katrineholms AIK",
+              "bortalag": "HK Järnvägen:Gul",
+              "bana": "Bana 40",
+              "resultat": "18-18"
+            }
           ]
         },
         {
@@ -281,6 +529,68 @@
             "HK Järnvägen:Svart - Svart",
             "Årsta AIK - Röd",
             "Eskilstuna Guif:3 - Röd"
+          ],
+          "matches": [
+            {
+              "mnr": "241",
+              "datum": "2026-05-30",
+              "tid": "09:10",
+              "iso_start": "2026-05-30T09:10:00+02:00",
+              "hemmalag": "HK Järnvägen:Svart",
+              "bortalag": "Årsta AIK",
+              "bana": "Bana 40",
+              "resultat": "9-12"
+            },
+            {
+              "mnr": "260",
+              "datum": "2026-05-30",
+              "tid": "10:00",
+              "iso_start": "2026-05-30T10:00:00+02:00",
+              "hemmalag": "BK Heid:Vit",
+              "bortalag": "Eskilstuna Guif:3",
+              "bana": "Bana 38",
+              "resultat": "11-11"
+            },
+            {
+              "mnr": "350",
+              "datum": "2026-05-30",
+              "tid": "13:20",
+              "iso_start": "2026-05-30T13:20:00+02:00",
+              "hemmalag": "HK Järnvägen:Svart",
+              "bortalag": "Eskilstuna Guif:3",
+              "bana": "Bana 38",
+              "resultat": "9-21"
+            },
+            {
+              "mnr": "351",
+              "datum": "2026-05-30",
+              "tid": "13:20",
+              "iso_start": "2026-05-30T13:20:00+02:00",
+              "hemmalag": "BK Heid:Vit",
+              "bortalag": "Årsta AIK",
+              "bana": "Bana 39",
+              "resultat": "31-10"
+            },
+            {
+              "mnr": "418",
+              "datum": "2026-05-30",
+              "tid": "17:30",
+              "iso_start": "2026-05-30T17:30:00+02:00",
+              "hemmalag": "Årsta AIK",
+              "bortalag": "Eskilstuna Guif:3",
+              "bana": "Bana 39",
+              "resultat": "5-13"
+            },
+            {
+              "mnr": "419",
+              "datum": "2026-05-30",
+              "tid": "17:30",
+              "iso_start": "2026-05-30T17:30:00+02:00",
+              "hemmalag": "BK Heid:Vit",
+              "bortalag": "HK Järnvägen:Svart",
+              "bana": "Bana 40",
+              "resultat": "16-6"
+            }
           ]
         }
       ]
@@ -327,6 +637,68 @@
             "Ludvika HF - Svart",
             "HK Järnvägen - Svart",
             "Backa HK - Röd"
+          ],
+          "matches": [
+            {
+              "mnr": "804",
+              "datum": "2026-05-30",
+              "tid": "07:30",
+              "iso_start": "2026-05-30T07:30:00+02:00",
+              "hemmalag": "Backa HK",
+              "bortalag": "HK Järnvägen",
+              "bana": "Bana 41",
+              "resultat": "11-13"
+            },
+            {
+              "mnr": "817",
+              "datum": "2026-05-30",
+              "tid": "10:00",
+              "iso_start": "2026-05-30T10:00:00+02:00",
+              "hemmalag": "Backa HK",
+              "bortalag": "Ludvika HF",
+              "bana": "Bana 41",
+              "resultat": "10-12"
+            },
+            {
+              "mnr": "775",
+              "datum": "2026-05-30",
+              "tid": "13:20",
+              "iso_start": "2026-05-30T13:20:00+02:00",
+              "hemmalag": "Ludvika HF",
+              "bortalag": "HK Järnvägen",
+              "bana": "Bana 41",
+              "resultat": "10-14"
+            },
+            {
+              "mnr": "1235",
+              "datum": "2026-05-30",
+              "tid": "15:50",
+              "iso_start": "2026-05-30T15:50:00+02:00",
+              "hemmalag": "HK Järnvägen",
+              "bortalag": "Backa HK",
+              "bana": "Bana 40",
+              "resultat": "14-9"
+            },
+            {
+              "mnr": "1237",
+              "datum": "2026-05-30",
+              "tid": "19:10",
+              "iso_start": "2026-05-30T19:10:00+02:00",
+              "hemmalag": "Ludvika HF",
+              "bortalag": "Backa HK",
+              "bana": "Bana 40",
+              "resultat": null
+            },
+            {
+              "mnr": "1236",
+              "datum": "2026-05-31",
+              "tid": "08:20",
+              "iso_start": "2026-05-31T08:20:00+02:00",
+              "hemmalag": "HK Järnvägen",
+              "bortalag": "Ludvika HF",
+              "bana": "Bana 41",
+              "resultat": null
+            }
           ]
         }
       ]
@@ -392,6 +764,68 @@
             "HK Järnvägen - Gul",
             "Hammarby IF HF:2 - Grön",
             "IFK Hammarö - Vita"
+          ],
+          "matches": [
+            {
+              "mnr": "1051",
+              "datum": "2026-05-30",
+              "tid": "09:10",
+              "iso_start": "2026-05-30T09:10:00+02:00",
+              "hemmalag": "IFK Hammarö",
+              "bortalag": "Hultic BK",
+              "bana": "Bana 23",
+              "resultat": "32-17"
+            },
+            {
+              "mnr": "1064",
+              "datum": "2026-05-30",
+              "tid": "09:10",
+              "iso_start": "2026-05-30T09:10:00+02:00",
+              "hemmalag": "HK Järnvägen",
+              "bortalag": "Hammarby IF HF:2",
+              "bana": "Bana 22",
+              "resultat": "23-14"
+            },
+            {
+              "mnr": "1043",
+              "datum": "2026-05-30",
+              "tid": "11:40",
+              "iso_start": "2026-05-30T11:40:00+02:00",
+              "hemmalag": "IFK Hammarö",
+              "bortalag": "HK Järnvägen",
+              "bana": "Bana 22",
+              "resultat": "29-24"
+            },
+            {
+              "mnr": "1033",
+              "datum": "2026-05-30",
+              "tid": "12:30",
+              "iso_start": "2026-05-30T12:30:00+02:00",
+              "hemmalag": "Hultic BK",
+              "bortalag": "Hammarby IF HF:2",
+              "bana": "Bana 23",
+              "resultat": "16-31"
+            },
+            {
+              "mnr": "1014",
+              "datum": "2026-05-30",
+              "tid": "17:30",
+              "iso_start": "2026-05-30T17:30:00+02:00",
+              "hemmalag": "Hultic BK",
+              "bortalag": "HK Järnvägen",
+              "bana": "Bana 24",
+              "resultat": "9-25"
+            },
+            {
+              "mnr": "1028",
+              "datum": "2026-05-30",
+              "tid": "17:30",
+              "iso_start": "2026-05-30T17:30:00+02:00",
+              "hemmalag": "Hammarby IF HF:2",
+              "bortalag": "IFK Hammarö",
+              "bana": "Bana 23",
+              "resultat": null
+            }
           ]
         }
       ]
@@ -449,6 +883,68 @@
             "NAIS HF - Svart",
             "HK Järnvägen - Svart",
             "H43:1 - Blå"
+          ],
+          "matches": [
+            {
+              "mnr": "1001",
+              "datum": "2026-05-30",
+              "tid": "08:20",
+              "iso_start": "2026-05-30T08:20:00+02:00",
+              "hemmalag": "H43:1",
+              "bortalag": "HK Järnvägen",
+              "bana": "Bana 36",
+              "resultat": "18-17"
+            },
+            {
+              "mnr": "984",
+              "datum": "2026-05-30",
+              "tid": "10:50",
+              "iso_start": "2026-05-30T10:50:00+02:00",
+              "hemmalag": "HK Järnvägen",
+              "bortalag": "BK Heid",
+              "bana": "Bana 36",
+              "resultat": "11-24"
+            },
+            {
+              "mnr": "976",
+              "datum": "2026-05-30",
+              "tid": "11:40",
+              "iso_start": "2026-05-30T11:40:00+02:00",
+              "hemmalag": "NAIS HF",
+              "bortalag": "H43:1",
+              "bana": "Bana 35",
+              "resultat": "12-30"
+            },
+            {
+              "mnr": "959",
+              "datum": "2026-05-30",
+              "tid": "14:10",
+              "iso_start": "2026-05-30T14:10:00+02:00",
+              "hemmalag": "NAIS HF",
+              "bortalag": "HK Järnvägen",
+              "bana": "Bana 36",
+              "resultat": "9-23"
+            },
+            {
+              "mnr": "945",
+              "datum": "2026-05-30",
+              "tid": "15:50",
+              "iso_start": "2026-05-30T15:50:00+02:00",
+              "hemmalag": "H43:1",
+              "bortalag": "BK Heid",
+              "bana": "Bana 36",
+              "resultat": "18-22"
+            },
+            {
+              "mnr": "930",
+              "datum": "2026-05-30",
+              "tid": "19:10",
+              "iso_start": "2026-05-30T19:10:00+02:00",
+              "hemmalag": "BK Heid",
+              "bortalag": "NAIS HF",
+              "bana": "Bana 35",
+              "resultat": null
+            }
           ]
         }
       ]
@@ -506,6 +1002,68 @@
             "GT Söder HK - Blå",
             "HK Järnvägen - Svart",
             "BK Heid - Röd"
+          ],
+          "matches": [
+            {
+              "mnr": "755",
+              "datum": "2026-05-30",
+              "tid": "07:30",
+              "iso_start": "2026-05-30T07:30:00+02:00",
+              "hemmalag": "GT Söder HK",
+              "bortalag": "HK Järnvägen",
+              "bana": "Bana 42",
+              "resultat": "17-15"
+            },
+            {
+              "mnr": "752",
+              "datum": "2026-05-30",
+              "tid": "08:20",
+              "iso_start": "2026-05-30T08:20:00+02:00",
+              "hemmalag": "BK Heid",
+              "bortalag": "Sannadals SK",
+              "bana": "Bana 42",
+              "resultat": "24-11"
+            },
+            {
+              "mnr": "728",
+              "datum": "2026-05-30",
+              "tid": "10:50",
+              "iso_start": "2026-05-30T10:50:00+02:00",
+              "hemmalag": "Sannadals SK",
+              "bortalag": "HK Järnvägen",
+              "bana": "Bana 41",
+              "resultat": "18-11"
+            },
+            {
+              "mnr": "740",
+              "datum": "2026-05-30",
+              "tid": "11:40",
+              "iso_start": "2026-05-30T11:40:00+02:00",
+              "hemmalag": "BK Heid",
+              "bortalag": "GT Söder HK",
+              "bana": "Bana 41",
+              "resultat": "17-12"
+            },
+            {
+              "mnr": "1",
+              "datum": "2026-05-30",
+              "tid": "16:40",
+              "iso_start": "2026-05-30T16:40:00+02:00",
+              "hemmalag": "Sannadals SK",
+              "bortalag": "GT Söder HK",
+              "bana": "Bana 42",
+              "resultat": "19-17"
+            },
+            {
+              "mnr": "716",
+              "datum": "2026-05-30",
+              "tid": "16:40",
+              "iso_start": "2026-05-30T16:40:00+02:00",
+              "hemmalag": "HK Järnvägen",
+              "bortalag": "BK Heid",
+              "bana": "Bana 41",
+              "resultat": "17-27"
+            }
           ]
         }
       ]

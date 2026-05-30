@@ -3,7 +3,7 @@
     "cup": "Järnvägen Cup 2026",
     "ev": "39543",
     "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
-    "scraped_at": "2026-05-30T18:33:32.468039+02:00"
+    "scraped_at": "2026-05-30T18:56:38.624541+02:00"
   },
   "matches": [
     {
@@ -16,7 +16,7 @@
       "hemmalag": "Katrineholms AIK",
       "bortalag": "HK Järnvägen:Gul",
       "bana": "Bana 40",
-      "resultat": null,
+      "resultat": "18-18",
       "hk_team_raw": "HK Järnvägen:Gul",
       "opponent": "Katrineholms AIK",
       "is_home": false
@@ -31,7 +31,7 @@
       "hemmalag": "HK Järnvägen",
       "bortalag": "Backa HK",
       "bana": "Bana 40",
-      "resultat": null,
+      "resultat": "14-9",
       "hk_team_raw": "HK Järnvägen",
       "opponent": "Backa HK",
       "is_home": true
@@ -46,7 +46,7 @@
       "hemmalag": "Ludvika HF",
       "bortalag": "HK Järnvägen",
       "bana": "Bana 41",
-      "resultat": null,
+      "resultat": "10-14",
       "hk_team_raw": "HK Järnvägen",
       "opponent": "Ludvika HF",
       "is_home": false
@@ -61,7 +61,7 @@
       "hemmalag": "Backa HK",
       "bortalag": "HK Järnvägen",
       "bana": "Bana 41",
-      "resultat": null,
+      "resultat": "11-13",
       "hk_team_raw": "HK Järnvägen",
       "opponent": "Backa HK",
       "is_home": false
@@ -76,7 +76,7 @@
       "hemmalag": "BK Heid:Vit",
       "bortalag": "HK Järnvägen:Svart",
       "bana": "Bana 40",
-      "resultat": null,
+      "resultat": "16-6",
       "hk_team_raw": "HK Järnvägen:Svart",
       "opponent": "BK Heid:Vit",
       "is_home": false
@@ -91,7 +91,7 @@
       "hemmalag": "HK Järnvägen",
       "bortalag": "GT Söder HK",
       "bana": "Bana 29",
-      "resultat": null,
+      "resultat": "15-10",
       "hk_team_raw": "HK Järnvägen",
       "opponent": "GT Söder HK",
       "is_home": true
@@ -106,7 +106,7 @@
       "hemmalag": "Arbrå HK",
       "bortalag": "HK Järnvägen",
       "bana": "Bana 31",
-      "resultat": null,
+      "resultat": "23-15",
       "hk_team_raw": "HK Järnvägen",
       "opponent": "Arbrå HK",
       "is_home": false
@@ -121,7 +121,7 @@
       "hemmalag": "HK Järnvägen:2",
       "bortalag": "Skogås HK",
       "bana": "Bana 19",
-      "resultat": null,
+      "resultat": "35-9",
       "hk_team_raw": "HK Järnvägen:2",
       "opponent": "Skogås HK",
       "is_home": true
@@ -136,7 +136,7 @@
       "hemmalag": "Backa HK Vit",
       "bortalag": "HK Järnvägen:2",
       "bana": "Bana 19",
-      "resultat": null,
+      "resultat": "18-25",
       "hk_team_raw": "HK Järnvägen:2",
       "opponent": "Backa HK Vit",
       "is_home": false
@@ -151,7 +151,7 @@
       "hemmalag": "Västervik HF",
       "bortalag": "HK Järnvägen:2",
       "bana": "Bana 19",
-      "resultat": null,
+      "resultat": "15-22",
       "hk_team_raw": "HK Järnvägen:2",
       "opponent": "Västervik HF",
       "is_home": false
@@ -271,7 +271,7 @@
       "hemmalag": "Sannadals SK",
       "bortalag": "HK Järnvägen",
       "bana": "Bana 41",
-      "resultat": null,
+      "resultat": "18-11",
       "hk_team_raw": "HK Järnvägen",
       "opponent": "Sannadals SK",
       "is_home": false
@@ -286,7 +286,7 @@
       "hemmalag": "GT Söder HK",
       "bortalag": "HK Järnvägen",
       "bana": "Bana 42",
-      "resultat": null,
+      "resultat": "17-15",
       "hk_team_raw": "HK Järnvägen",
       "opponent": "GT Söder HK",
       "is_home": false
@@ -301,7 +301,7 @@
       "hemmalag": "H43:1",
       "bortalag": "HK Järnvägen",
       "bana": "Bana 36",
-      "resultat": null,
+      "resultat": "18-17",
       "hk_team_raw": "HK Järnvägen",
       "opponent": "H43:1",
       "is_home": false
@@ -316,7 +316,7 @@
       "hemmalag": "HK Järnvägen",
       "bortalag": "BK Heid",
       "bana": "Bana 36",
-      "resultat": null,
+      "resultat": "11-24",
       "hk_team_raw": "HK Järnvägen",
       "opponent": "BK Heid",
       "is_home": true
@@ -331,7 +331,7 @@
       "hemmalag": "NAIS HF",
       "bortalag": "HK Järnvägen",
       "bana": "Bana 36",
-      "resultat": null,
+      "resultat": "9-23",
       "hk_team_raw": "HK Järnvägen",
       "opponent": "NAIS HF",
       "is_home": false
@@ -346,7 +346,7 @@
       "hemmalag": "Hultic BK",
       "bortalag": "HK Järnvägen",
       "bana": "Bana 24",
-      "resultat": null,
+      "resultat": "9-25",
       "hk_team_raw": "HK Järnvägen",
       "opponent": "Hultic BK",
       "is_home": false
@@ -361,7 +361,7 @@
       "hemmalag": "IFK Hammarö",
       "bortalag": "HK Järnvägen",
       "bana": "Bana 22",
-      "resultat": null,
+      "resultat": "29-24",
       "hk_team_raw": "HK Järnvägen",
       "opponent": "IFK Hammarö",
       "is_home": false
@@ -376,7 +376,7 @@
       "hemmalag": "HK Järnvägen",
       "bortalag": "Hammarby IF HF:2",
       "bana": "Bana 22",
-      "resultat": null,
+      "resultat": "23-14",
       "hk_team_raw": "HK Järnvägen",
       "opponent": "Hammarby IF HF:2",
       "is_home": true
@@ -451,7 +451,7 @@
       "hemmalag": "HK Järnvägen:Svart",
       "bortalag": "Eskilstuna Guif:3",
       "bana": "Bana 38",
-      "resultat": null,
+      "resultat": "9-21",
       "hk_team_raw": "HK Järnvägen:Svart",
       "opponent": "Eskilstuna Guif:3",
       "is_home": true
@@ -466,7 +466,7 @@
       "hemmalag": "HK Järnvägen:Gul",
       "bortalag": "IF Hellton Karlstad",
       "bana": "Bana 38",
-      "resultat": null,
+      "resultat": "15-18",
       "hk_team_raw": "HK Järnvägen:Gul",
       "opponent": "IF Hellton Karlstad",
       "is_home": true
@@ -481,7 +481,7 @@
       "hemmalag": "HK Järnvägen:Gul",
       "bortalag": "GT Söder HK",
       "bana": "Bana 38",
-      "resultat": null,
+      "resultat": "20-15",
       "hk_team_raw": "HK Järnvägen:Gul",
       "opponent": "GT Söder HK",
       "is_home": true
@@ -496,7 +496,7 @@
       "hemmalag": "HK Järnvägen:Svart",
       "bortalag": "Årsta AIK",
       "bana": "Bana 40",
-      "resultat": null,
+      "resultat": "9-12",
       "hk_team_raw": "HK Järnvägen:Svart",
       "opponent": "Årsta AIK",
       "is_home": true
@@ -511,7 +511,7 @@
       "hemmalag": "HK Järnvägen",
       "bortalag": "BK Heid",
       "bana": "Bana 41",
-      "resultat": null,
+      "resultat": "17-27",
       "hk_team_raw": "HK Järnvägen",
       "opponent": "BK Heid",
       "is_home": true
@@ -541,7 +541,7 @@
       "hemmalag": "HK Järnvägen:1",
       "bortalag": "IFK Nora",
       "bana": "Bana 19",
-      "resultat": null,
+      "resultat": "16-11",
       "hk_team_raw": "HK Järnvägen:1",
       "opponent": "IFK Nora",
       "is_home": true
@@ -556,7 +556,7 @@
       "hemmalag": "HK Brukspöjkera",
       "bortalag": "HK Järnvägen:1",
       "bana": "Bana 20",
-      "resultat": null,
+      "resultat": "9-15",
       "hk_team_raw": "HK Järnvägen:1",
       "opponent": "HK Brukspöjkera",
       "is_home": false
@@ -616,7 +616,7 @@
       "hemmalag": "BK Heid:Röd",
       "bortalag": "HK Järnvägen",
       "bana": "Bana 32",
-      "resultat": null,
+      "resultat": "14-15",
       "hk_team_raw": "HK Järnvägen",
       "opponent": "BK Heid:Röd",
       "is_home": false
