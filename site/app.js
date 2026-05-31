@@ -277,6 +277,12 @@ function todayDateString() {
   return `${y}-${m}-${day}`;
 }
 
+function weekdayName(datum) {
+  if (!datum) return "";
+  const d = new Date(datum + "T12:00:00");
+  return DAYS_LONG[d.getDay()].toLowerCase();  // "söndag", "lördag", ...
+}
+
 function appendDoneSection(root, days, extraClass, titleOverride) {
   for (const day of days.slice().reverse()) {
     const section = renderDaySection(day, { titleOverride });
@@ -313,24 +319,29 @@ function renderTimeline(root, matches) {
     root.appendChild(section);
   }
 
-  // SPELADE — högst upp så man alltid ser resultat utan att scrolla
-  // - "Spelade idag" full opacitet (när dagens matcher börjar bli klara)
-  // - "Spelade tidigare" dimmad, men UPPE — inte begravd längst ned
-  const today = todayDateString();
-  const doneToday = done.filter(m => m.datum === today);
-  const doneOther = done.filter(m => m.datum !== today);
-  if (doneToday.length) {
-    appendDoneSection(root, groupByDateAndTime(doneToday), "today-done", "Spelade idag");
-  }
-  if (doneOther.length) {
-    appendDoneSection(root, groupByDateAndTime(doneOther), "done-day");
-  }
-
   // KOMMANDE
   if (upcoming.length) {
     const upcomingDays = groupByDateAndTime(upcoming);
     for (const day of upcomingDays) {
       root.appendChild(renderDaySection(day, { nextMnrs }));
+    }
+  }
+
+  // SPELADE — efter Kommande. Idag först (full opacitet), gårdagens dimmade.
+  // Rubriker som "Spelade söndag" / "Spelade lördag" istället för dag-datum.
+  const today = todayDateString();
+  const doneToday = done.filter(m => m.datum === today);
+  const doneOther = done.filter(m => m.datum !== today);
+  if (doneToday.length) {
+    for (const day of groupByDateAndTime(doneToday)) {
+      appendDoneSection(root, [day], "today-done", `Spelade ${weekdayName(day.date)}`);
+    }
+  }
+  if (doneOther.length) {
+    // Senaste tidigare dag först
+    const otherDays = groupByDateAndTime(doneOther).slice().reverse();
+    for (const day of otherDays) {
+      appendDoneSection(root, [day], "done-day", `Spelade ${weekdayName(day.date)}`);
     }
   }
 }
