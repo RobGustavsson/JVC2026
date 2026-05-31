@@ -3,7 +3,7 @@
     "cup": "Järnvägen Cup 2026",
     "ev": "39543",
     "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
-    "scraped_at": "2026-05-31T09:56:10.936172+02:00"
+    "scraped_at": "2026-05-31T10:46:16.310671+02:00"
   },
   "teams": [
     {
@@ -93,51 +93,6 @@
           "resultat": null,
           "is_home": false,
           "team_raw": "HK Järnvägen"
-        }
-      ]
-    },
-    {
-      "klass": "F16/15",
-      "team_raw": "HK Järnvägen:Svart",
-      "squad": "Svart",
-      "abcd": "B",
-      "status": "ongoing",
-      "current_round": "1/8",
-      "current_round_label": "Åttondelsfinal",
-      "latest_match": {
-        "mnr": "465",
-        "typ": "B-8-dels:08",
-        "round_short": "1/8",
-        "round_label": "Åttondelsfinal",
-        "klass": "F16/15",
-        "abcd": "B",
-        "datum": "2026-05-31",
-        "tid": "09:10",
-        "iso_start": "2026-05-31T09:10:00+02:00",
-        "hemmalag": "HK Järnvägen:Svart",
-        "bortalag": "Vadstena HF",
-        "bana": "Bana 39",
-        "resultat": null,
-        "is_home": true,
-        "team_raw": "HK Järnvägen:Svart"
-      },
-      "all_matches": [
-        {
-          "mnr": "465",
-          "typ": "B-8-dels:08",
-          "round_short": "1/8",
-          "round_label": "Åttondelsfinal",
-          "klass": "F16/15",
-          "abcd": "B",
-          "datum": "2026-05-31",
-          "tid": "09:10",
-          "iso_start": "2026-05-31T09:10:00+02:00",
-          "hemmalag": "HK Järnvägen:Svart",
-          "bortalag": "Vadstena HF",
-          "bana": "Bana 39",
-          "resultat": null,
-          "is_home": true,
-          "team_raw": "HK Järnvägen:Svart"
         }
       ]
     },
@@ -250,7 +205,7 @@
         "tid": "12:00",
         "iso_start": "2026-05-31T12:00:00+02:00",
         "hemmalag": "HK Järnvägen:1",
-        "bortalag": "Vinn.1/8 : 6",
+        "bortalag": "Eskilstuna Guif:1",
         "bana": "Bana 21",
         "resultat": null,
         "is_home": true,
@@ -285,7 +240,7 @@
           "tid": "12:00",
           "iso_start": "2026-05-31T12:00:00+02:00",
           "hemmalag": "HK Järnvägen:1",
-          "bortalag": "Vinn.1/8 : 6",
+          "bortalag": "Eskilstuna Guif:1",
           "bana": "Bana 21",
           "resultat": null,
           "is_home": true,
@@ -312,7 +267,7 @@
         "tid": "12:00",
         "iso_start": "2026-05-31T12:00:00+02:00",
         "hemmalag": "HK Järnvägen:2",
-        "bortalag": "Vinn.1/8 : 8",
+        "bortalag": "LIF Lindesberg",
         "bana": "Bana 22",
         "resultat": null,
         "is_home": true,
@@ -330,7 +285,7 @@
           "tid": "12:00",
           "iso_start": "2026-05-31T12:00:00+02:00",
           "hemmalag": "HK Järnvägen:2",
-          "bortalag": "Vinn.1/8 : 8",
+          "bortalag": "LIF Lindesberg",
           "bana": "Bana 22",
           "resultat": null,
           "is_home": true,
@@ -380,6 +335,51 @@
           "resultat": null,
           "is_home": false,
           "team_raw": "HK Järnvägen"
+        }
+      ]
+    },
+    {
+      "klass": "F16/15",
+      "team_raw": "HK Järnvägen:Svart",
+      "squad": "Svart",
+      "abcd": "B",
+      "status": "eliminated",
+      "current_round": "1/8",
+      "current_round_label": "Åttondelsfinal",
+      "latest_match": {
+        "mnr": "465",
+        "typ": "B-8-dels:08",
+        "round_short": "1/8",
+        "round_label": "Åttondelsfinal",
+        "klass": "F16/15",
+        "abcd": "B",
+        "datum": "2026-05-31",
+        "tid": "09:10",
+        "iso_start": "2026-05-31T09:10:00+02:00",
+        "hemmalag": "HK Järnvägen:Svart",
+        "bortalag": "Vadstena HF",
+        "bana": "Bana 39",
+        "resultat": "6-14",
+        "is_home": true,
+        "team_raw": "HK Järnvägen:Svart"
+      },
+      "all_matches": [
+        {
+          "mnr": "465",
+          "typ": "B-8-dels:08",
+          "round_short": "1/8",
+          "round_label": "Åttondelsfinal",
+          "klass": "F16/15",
+          "abcd": "B",
+          "datum": "2026-05-31",
+          "tid": "09:10",
+          "iso_start": "2026-05-31T09:10:00+02:00",
+          "hemmalag": "HK Järnvägen:Svart",
+          "bortalag": "Vadstena HF",
+          "bana": "Bana 39",
+          "resultat": "6-14",
+          "is_home": true,
+          "team_raw": "HK Järnvägen:Svart"
         }
       ]
     },
@@ -443,7 +443,7 @@
       "hemmalag": "BK Heid:röd",
       "bortalag": "Västervik HF",
       "bana": "Bana 20",
-      "resultat": null
+      "resultat": "16-7"
     },
     {
       "mnr": "662",
@@ -458,7 +458,7 @@
       "hemmalag": "Alingsås HK:Vit",
       "bortalag": "Backa HK Röd",
       "bana": "Bana 21",
-      "resultat": null
+      "resultat": "18-13"
     },
     {
       "mnr": "664",
@@ -488,7 +488,7 @@
       "hemmalag": "IFK Nyköping:2",
       "bortalag": "Eskilstuna Guif:1",
       "bana": "Bana 24",
-      "resultat": null
+      "resultat": "8-12"
     },
     {
       "mnr": "666",
@@ -503,7 +503,7 @@
       "hemmalag": "LIF Lindesberg",
       "bortalag": "IFK Nyköping:1",
       "bana": "Bana 25",
-      "resultat": null
+      "resultat": "12-5"
     },
     {
       "mnr": "1160",
@@ -518,7 +518,7 @@
       "hemmalag": "Särökometernas HK blå",
       "bortalag": "BK Heid:svart",
       "bana": "Bana 22",
-      "resultat": null
+      "resultat": "14-20"
     },
     {
       "mnr": "547",
@@ -531,7 +531,7 @@
       "tid": "12:00",
       "iso_start": "2026-05-31T12:00:00+02:00",
       "hemmalag": "Alingsås HK:Blå",
-      "bortalag": "Vinn.1/8 : 2",
+      "bortalag": "BK Heid:röd",
       "bana": "Bana 19",
       "resultat": null
     },
@@ -545,8 +545,8 @@
       "datum": "2026-05-31",
       "tid": "12:00",
       "iso_start": "2026-05-31T12:00:00+02:00",
-      "hemmalag": "Vinn.1/8 : 3",
-      "bortalag": "Vinn.1/8 : 4",
+      "hemmalag": "Alingsås HK:Vit",
+      "bortalag": "BK Heid:svart",
       "bana": "Bana 20",
       "resultat": null
     },
@@ -561,7 +561,7 @@
       "tid": "12:00",
       "iso_start": "2026-05-31T12:00:00+02:00",
       "hemmalag": "HK Järnvägen:1",
-      "bortalag": "Vinn.1/8 : 6",
+      "bortalag": "Eskilstuna Guif:1",
       "bana": "Bana 21",
       "resultat": null
     },
@@ -576,7 +576,7 @@
       "tid": "12:00",
       "iso_start": "2026-05-31T12:00:00+02:00",
       "hemmalag": "HK Järnvägen:2",
-      "bortalag": "Vinn.1/8 : 8",
+      "bortalag": "LIF Lindesberg",
       "bana": "Bana 22",
       "resultat": null
     },
@@ -1193,7 +1193,7 @@
       "hemmalag": "Skåre HK:Vit",
       "bortalag": "IFK Nyköping:2 F13",
       "bana": "Bana 33",
-      "resultat": null
+      "resultat": "12-5"
     },
     {
       "mnr": "506",
@@ -1208,7 +1208,7 @@
       "hemmalag": "Hultic BK",
       "bortalag": "Särökometernas HK",
       "bana": "Bana 32",
-      "resultat": null
+      "resultat": "8-23"
     },
     {
       "mnr": "507",
@@ -1223,7 +1223,7 @@
       "hemmalag": "BK Heid:Röd",
       "bortalag": "IK Baltichov:1",
       "bana": "Bana 31",
-      "resultat": null
+      "resultat": "16-7"
     },
     {
       "mnr": "508",
@@ -1238,7 +1238,7 @@
       "hemmalag": "IK Baltichov:2 Vit",
       "bortalag": "Västervik HF",
       "bana": "Bana 30",
-      "resultat": null
+      "resultat": "24-12"
     },
     {
       "mnr": "509",
@@ -1253,7 +1253,7 @@
       "hemmalag": "Katrineholms AIK",
       "bortalag": "GT Söder HK",
       "bana": "Bana 29",
-      "resultat": null
+      "resultat": "12-11"
     },
     {
       "mnr": "510",
@@ -1268,7 +1268,7 @@
       "hemmalag": "Örebro SK U:1",
       "bortalag": "Lidingö SK:1 2012",
       "bana": "Bana 28",
-      "resultat": null
+      "resultat": "20-12"
     },
     {
       "mnr": "511",
@@ -1283,7 +1283,7 @@
       "hemmalag": "AIK HF",
       "bortalag": "IFK Hammarö",
       "bana": "Bana 27",
-      "resultat": null
+      "resultat": "11-20"
     },
     {
       "mnr": "512",
@@ -1298,7 +1298,7 @@
       "hemmalag": "Huddinge HK:Vit",
       "bortalag": "HK Brukspöjkera",
       "bana": "Bana 26",
-      "resultat": null
+      "resultat": "16-5"
     },
     {
       "mnr": "551",
@@ -1310,8 +1310,8 @@
       "datum": "2026-05-31",
       "tid": "10:50",
       "iso_start": "2026-05-31T10:50:00+02:00",
-      "hemmalag": "Vinn.1/8 : 1",
-      "bortalag": "Vinn.1/8 : 2",
+      "hemmalag": "Huddinge HK:Vit",
+      "bortalag": "IFK Hammarö",
       "bana": "Bana 28",
       "resultat": null
     },
@@ -1325,8 +1325,8 @@
       "datum": "2026-05-31",
       "tid": "10:50",
       "iso_start": "2026-05-31T10:50:00+02:00",
-      "hemmalag": "Vinn.1/8 : 3",
-      "bortalag": "Vinn.1/8 : 4",
+      "hemmalag": "Örebro SK U:1",
+      "bortalag": "Katrineholms AIK",
       "bana": "Bana 29",
       "resultat": null
     },
@@ -1340,8 +1340,8 @@
       "datum": "2026-05-31",
       "tid": "10:50",
       "iso_start": "2026-05-31T10:50:00+02:00",
-      "hemmalag": "Vinn.1/8 : 5",
-      "bortalag": "Vinn.1/8 : 6",
+      "hemmalag": "IK Baltichov:2 Vit",
+      "bortalag": "BK Heid:Röd",
       "bana": "Bana 30",
       "resultat": null
     },
@@ -1355,8 +1355,8 @@
       "datum": "2026-05-31",
       "tid": "10:50",
       "iso_start": "2026-05-31T10:50:00+02:00",
-      "hemmalag": "Vinn.1/8 : 7",
-      "bortalag": "Vinn.1/8 : 8",
+      "hemmalag": "Särökometernas HK",
+      "bortalag": "Skåre HK:Vit",
       "bana": "Bana 31",
       "resultat": null
     },
@@ -1418,7 +1418,7 @@
       "hemmalag": "Eskilstuna Guif:3",
       "bortalag": "Vintrosa IS",
       "bana": "Bana 39",
-      "resultat": null
+      "resultat": "20-10"
     },
     {
       "mnr": "491",
@@ -1491,7 +1491,7 @@
       "tid": "12:00",
       "iso_start": "2026-05-31T12:00:00+02:00",
       "hemmalag": "Eskilstuna Guif:2",
-      "bortalag": "Vinn.1/8 : 1",
+      "bortalag": "Eskilstuna Guif:3",
       "bana": "Bana 42",
       "resultat": null
     },
@@ -1553,7 +1553,7 @@
       "hemmalag": "Årsta AIK",
       "bortalag": "Lidingö SK",
       "bana": "Bana 34",
-      "resultat": null
+      "resultat": "18-9"
     },
     {
       "mnr": "463",
@@ -1583,7 +1583,7 @@
       "hemmalag": "HK Järnvägen:Svart",
       "bortalag": "Vadstena HF",
       "bana": "Bana 39",
-      "resultat": null
+      "resultat": "6-14"
     },
     {
       "mnr": "563",
@@ -1596,7 +1596,7 @@
       "tid": "10:50",
       "iso_start": "2026-05-31T10:50:00+02:00",
       "hemmalag": "Skåre HK",
-      "bortalag": "Vinn.1/8 : 2",
+      "bortalag": "Årsta AIK",
       "bana": "Bana 40",
       "resultat": null
     },
@@ -1641,7 +1641,7 @@
       "tid": "10:50",
       "iso_start": "2026-05-31T10:50:00+02:00",
       "hemmalag": "Mantorps IF HF",
-      "bortalag": "Vinn.1/8 : 8",
+      "bortalag": "Vadstena HF",
       "bana": "Bana 39",
       "resultat": null
     },
