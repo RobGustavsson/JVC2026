@@ -278,60 +278,60 @@ a { color: inherit; text-decoration: none; }
   .gm-score { min-width: 48px; }
 }
 
-/* SLUTSPELS-KORT */
-.playoff-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 14px 16px;
-  margin: 8px 0;
-  display: flex; flex-direction: column; gap: 8px;
+/* SLUTSPELS-KORT — använder match-card-stommen + extra ron-rad ovanför matchen */
+.match.playoff-card {
+  margin: 10px 0;
+  gap: 10px;
 }
-.playoff-card.is-elim { opacity: 0.55; }
-.playoff-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-.playoff-squad { font-size: 1.05rem; font-weight: 800; color: var(--hk-yellow); }
-.playoff-meta {
-  display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
-  font-size: 0.78rem; color: var(--text-dim); font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.12em;
+.match.playoff-card.is-loss { opacity: 0.65; }
+
+.playoff-team-name {
+  font-size: 1rem; font-weight: 900; color: var(--hk-yellow);
+  letter-spacing: 0.01em;
+  flex: 1;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+.playoff-round-row {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 6px 0;
+  border-top: 1px dashed var(--border);
+  border-bottom: 1px dashed var(--border);
 }
 .playoff-bracket {
-  background: rgba(255, 214, 10, 0.16);
+  background: rgba(255, 214, 10, 0.18);
   color: var(--hk-yellow);
-  padding: 3px 8px; border-radius: 6px;
+  padding: 4px 9px; border-radius: 6px;
+  font-size: 0.7rem; font-weight: 900;
+  letter-spacing: 0.14em; text-transform: uppercase;
 }
-.playoff-round { color: var(--text); }
-.playoff-next {
-  display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
-  padding-top: 8px; border-top: 1.5px dashed var(--border-strong);
+.playoff-round-label {
+  font-size: 0.86rem; font-weight: 800;
+  color: var(--text);
+  text-transform: uppercase; letter-spacing: 0.1em;
 }
-.playoff-tid {
-  font-size: 1.3rem; font-weight: 900; color: var(--time);
-  letter-spacing: -0.02em; font-variant-numeric: tabular-nums;
-}
-.playoff-bana {
-  background: var(--hk-yellow); color: #000;
-  padding: 4px 10px; border-radius: 6px;
-  font-size: 0.85rem; font-weight: 800;
-}
-.playoff-tag {
-  background: rgba(255,255,255,0.06);
-  color: var(--text-dim);
-  padding: 3px 9px; border-radius: 6px;
-  font-size: 0.78rem; font-weight: 700;
-}
-.playoff-result {
-  font-size: 1.1rem; font-weight: 900;
-  font-variant-numeric: tabular-nums;
+.playoff-round-row .playoff-tid {
   margin-left: auto;
+  font-size: 1.25rem; font-weight: 900;
+  color: var(--time);
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
 }
-.playoff-result.win { color: #22c55e; }
-.playoff-result.loss { color: var(--live); }
-.playoff-elim {
-  padding-top: 8px; border-top: 1.5px dashed var(--border-strong);
-  font-size: 0.92rem; font-weight: 700; color: var(--text-dim);
+
+.badge.champion {
+  background: linear-gradient(135deg, #ffd60a, #ffaa00);
+  color: #000;
+  box-shadow: 0 0 12px rgba(255, 214, 10, 0.5);
 }
+
 .section-title.elim-title { color: var(--text-very-dim); margin-top: 32px; }
+
+@media (max-width: 480px) {
+  .playoff-team-name { font-size: 0.95rem; }
+  .playoff-round-row .playoff-tid { font-size: 1.1rem; }
+  .playoff-bracket { font-size: 0.62rem; padding: 3px 7px; letter-spacing: 0.1em; }
+  .playoff-round-label { font-size: 0.78rem; }
+}
 
 @keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }

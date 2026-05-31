@@ -55,55 +55,94 @@
           return;
         }
 
-        // Statusgrupper
         const active = teams.filter(t => t.status === "ongoing" || t.status === "won_awaiting_next" || t.status === "champion");
         const eliminated = teams.filter(t => t.status === "eliminated" || t.status === "drew");
 
-        function statusLabel(t) {
-          if (t.status === "champion") return "🏆 Mästare";
-          if (t.status === "eliminated") return "Utslaget";
-          if (t.status === "drew") return "Oavgjort (straffar avgjorde)";
-          if (t.status === "won_awaiting_next") return "Vidare — väntar på lottning";
-          return ""; // ongoing
+        function banaNumber(bana) {
+          if (!bana) return null;
+          const m = String(bana).match(/(\d+)/);
+          return m ? m[1] : bana;
         }
 
         function renderTeam(t) {
           const klass = t.klass;
-          const squad = t.squad ? ` ${t.squad}` : "";
           const colors = window.JVC_TEAMS.classColor(klass);
           const lm = t.latest_match || {};
           const isElim = t.status === "eliminated" || t.status === "drew";
+          const isChamp = t.status === "champion";
 
-          const card = JVC.el("div", { class: `playoff-card ${isElim ? "is-elim" : ""}` });
+          // Bestäm outcome-färg om matchen är spelad
+          let outcomeClass = "";
+          if (lm.resultat) {
+            const sc = JVC.parseScore(lm.resultat);
+            if (sc) {
+              const hk = lm.is_home ? sc.home : sc.away;
+              const op = lm.is_home ? sc.away : sc.home;
+              if (hk > op) outcomeClass = "is-win";
+              else if (hk < op) outcomeClass = "is-loss";
+              else outcomeClass = "is-draw";
+            }
+          }
 
-          const head = JVC.el("div", { class: "playoff-head" });
-          head.appendChild(JVC.el("span", {
+          const card = JVC.el("div", {
+            class: `match playoff-card ${isElim ? "is-loss" : outcomeClass}`.trim()
+          });
+
+          // Toppraden: klass-pill, HK-namn, status-badge
+          const top = JVC.el("div", { class: "match-top" });
+          top.appendChild(JVC.el("span", {
             class: "team-pill",
             text: klass,
             style: `background:${colors.bg};color:${colors.fg};`
           }));
-          head.appendChild(JVC.el("span", { class: "playoff-squad", text: `HK Järnvägen${squad}` }));
-          card.appendChild(head);
+          top.appendChild(JVC.el("span", { class: "playoff-team-name", text: `HK Järnvägen${t.squad ? " " + t.squad : ""}` }));
+          if (isChamp) top.appendChild(JVC.el("span", { class: "badge champion", text: "🏆 MÄSTARE" }));
+          else if (isElim) top.appendChild(JVC.el("span", { class: "badge done", text: "UTSLAGEN" }));
+          else if (t.status === "won_awaiting_next") top.appendChild(JVC.el("span", { class: "badge next", text: "VIDARE" }));
+          else top.appendChild(JVC.el("span", { class: "badge next", text: "NÄSTA" }));
+          card.appendChild(top);
 
-          const meta = JVC.el("div", { class: "playoff-meta" });
-          meta.appendChild(JVC.el("span", { class: "playoff-bracket", text: `${t.abcd}-Slutspel` }));
-          meta.appendChild(JVC.el("span", { class: "playoff-round", text: t.current_round_label }));
-          card.appendChild(meta);
-
-          if (isElim) {
-            card.appendChild(JVC.el("div", { class: "playoff-elim", text: statusLabel(t) }));
-          } else {
-            // Visa nästa match — tid, bana och resultat om matchen ligger i nutid
-            const row = JVC.el("div", { class: "playoff-next" });
-            row.appendChild(JVC.el("span", { class: "playoff-tid", text: lm.tid || "?" }));
-            if (lm.bana) row.appendChild(JVC.el("span", { class: "playoff-bana", text: lm.bana }));
-            if (lm.resultat) {
-              row.appendChild(JVC.el("span", { class: "playoff-result win", text: lm.resultat.replace("-", " – ") }));
-            } else if (t.status === "won_awaiting_next") {
-              row.appendChild(JVC.el("span", { class: "playoff-tag", text: statusLabel(t) }));
-            }
-            card.appendChild(row);
+          // Rond + tid-rad
+          const roundRow = JVC.el("div", { class: "playoff-round-row" });
+          roundRow.appendChild(JVC.el("span", { class: "playoff-bracket", text: `${t.abcd}-Slutspel` }));
+          roundRow.appendChild(JVC.el("span", { class: "playoff-round-label", text: t.current_round_label }));
+          if (lm.tid) {
+            roundRow.appendChild(JVC.el("span", { class: "playoff-tid", text: lm.tid }));
           }
+          card.appendChild(roundRow);
+
+          // Match-rad (samma struktur som index.html)
+          const row = JVC.el("div", { class: "match-row" });
+          row.appendChild(JVC.el("div", {
+            class: `match-team home ${lm.is_home ? "hk" : ""}`.trim(),
+            text: lm.hemmalag || "?"
+          }));
+
+          const vs = JVC.el("div", { class: "match-vs" });
+          if (lm.resultat) {
+            vs.classList.add(outcomeClass.replace("is-", ""));
+            vs.textContent = lm.resultat.replace("-", " – ");
+          } else {
+            vs.textContent = "–";
+          }
+          row.appendChild(vs);
+
+          row.appendChild(JVC.el("div", {
+            class: `match-team away ${!lm.is_home ? "hk" : ""}`.trim(),
+            text: lm.bortalag || "?"
+          }));
+
+          const banaNum = banaNumber(lm.bana);
+          if (banaNum) {
+            const gate = JVC.el("div", { class: "match-gate" });
+            gate.appendChild(JVC.el("div", { class: "gate-label", text: "Bana" }));
+            gate.appendChild(JVC.el("div", { class: "gate-num", text: banaNum }));
+            row.appendChild(gate);
+          } else {
+            row.appendChild(JVC.el("div"));
+          }
+          card.appendChild(row);
+
           return card;
         }
 
