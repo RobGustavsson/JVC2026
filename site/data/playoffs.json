@@ -3,7 +3,7 @@
     "cup": "Järnvägen Cup 2026",
     "ev": "39543",
     "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
-    "scraped_at": "2026-05-31T09:43:21.338284+02:00"
+    "scraped_at": "2026-05-31T09:56:10.936172+02:00"
   },
   "teams": [
     {
@@ -237,21 +237,21 @@
       "squad": "1",
       "abcd": "A",
       "status": "ongoing",
-      "current_round": "1/8",
-      "current_round_label": "Åttondelsfinal",
+      "current_round": "Kvart",
+      "current_round_label": "Kvartsfinal",
       "latest_match": {
-        "mnr": "664",
-        "typ": "A-8-dels:05",
-        "round_short": "1/8",
-        "round_label": "Åttondelsfinal",
+        "mnr": "549",
+        "typ": "A-kvartsfinal:03",
+        "round_short": "Kvart",
+        "round_label": "Kvartsfinal",
         "klass": "F12",
         "abcd": "A",
         "datum": "2026-05-31",
-        "tid": "09:10",
-        "iso_start": "2026-05-31T09:10:00+02:00",
+        "tid": "12:00",
+        "iso_start": "2026-05-31T12:00:00+02:00",
         "hemmalag": "HK Järnvägen:1",
-        "bortalag": "NKIK",
-        "bana": "Bana 23",
+        "bortalag": "Vinn.1/8 : 6",
+        "bana": "Bana 21",
         "resultat": null,
         "is_home": true,
         "team_raw": "HK Järnvägen:1"
@@ -270,6 +270,23 @@
           "hemmalag": "HK Järnvägen:1",
           "bortalag": "NKIK",
           "bana": "Bana 23",
+          "resultat": "16-15",
+          "is_home": true,
+          "team_raw": "HK Järnvägen:1"
+        },
+        {
+          "mnr": "549",
+          "typ": "A-kvartsfinal:03",
+          "round_short": "Kvart",
+          "round_label": "Kvartsfinal",
+          "klass": "F12",
+          "abcd": "A",
+          "datum": "2026-05-31",
+          "tid": "12:00",
+          "iso_start": "2026-05-31T12:00:00+02:00",
+          "hemmalag": "HK Järnvägen:1",
+          "bortalag": "Vinn.1/8 : 6",
+          "bana": "Bana 21",
           "resultat": null,
           "is_home": true,
           "team_raw": "HK Järnvägen:1"
@@ -456,7 +473,7 @@
       "hemmalag": "HK Järnvägen:1",
       "bortalag": "NKIK",
       "bana": "Bana 23",
-      "resultat": null
+      "resultat": "16-15"
     },
     {
       "mnr": "665",
@@ -543,7 +560,7 @@
       "datum": "2026-05-31",
       "tid": "12:00",
       "iso_start": "2026-05-31T12:00:00+02:00",
-      "hemmalag": "Vinn.1/8 : 5",
+      "hemmalag": "HK Järnvägen:1",
       "bortalag": "Vinn.1/8 : 6",
       "bana": "Bana 21",
       "resultat": null
@@ -1551,7 +1568,7 @@
       "hemmalag": "Gökstens BK",
       "bortalag": "GT Söder HK",
       "bana": "Bana 37",
-      "resultat": null
+      "resultat": "10-7"
     },
     {
       "mnr": "465",
@@ -1594,7 +1611,7 @@
       "tid": "10:50",
       "iso_start": "2026-05-31T10:50:00+02:00",
       "hemmalag": "NKIK",
-      "bortalag": "Vinn.1/8 : 4",
+      "bortalag": "Gökstens BK",
       "bana": "Bana 37",
       "resultat": null
     },
