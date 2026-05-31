@@ -3,7 +3,7 @@
     "cup": "Järnvägen Cup 2026",
     "ev": "39543",
     "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
-    "scraped_at": "2026-05-31T09:19:41.216388+02:00"
+    "scraped_at": "2026-05-31T09:31:30.703955+02:00"
   },
   "teams": [
     {
@@ -666,7 +666,7 @@
       "hemmalag": "Huddinge HK:Vit",
       "bortalag": "Skogås HK",
       "bana": "Bana 20",
-      "resultat": null
+      "resultat": "21-3"
     },
     {
       "mnr": "668",
@@ -709,7 +709,7 @@
       "tid": "10:00",
       "iso_start": "2026-05-31T10:00:00+02:00",
       "hemmalag": "Särökometernas HK:Svart",
-      "bortalag": "Vinn.1/8 : 2",
+      "bortalag": "Huddinge HK:Vit",
       "bana": "Bana 20",
       "resultat": null
     },
