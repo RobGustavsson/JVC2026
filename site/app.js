@@ -327,21 +327,20 @@ function renderTimeline(root, matches) {
     }
   }
 
-  // SPELADE — efter Kommande. Idag först (full opacitet), gårdagens dimmade.
-  // Rubriker som "Spelade söndag" / "Spelade lördag" istället för dag-datum.
-  const today = todayDateString();
-  const doneToday = done.filter(m => m.datum === today);
-  const doneOther = done.filter(m => m.datum !== today);
-  if (doneToday.length) {
-    for (const day of groupByDateAndTime(doneToday)) {
-      appendDoneSection(root, [day], "today-done", `Spelade ${weekdayName(day.date)}`);
-    }
-  }
-  if (doneOther.length) {
-    // Senaste tidigare dag först
-    const otherDays = groupByDateAndTime(doneOther).slice().reverse();
-    for (const day of otherDays) {
-      appendDoneSection(root, [day], "done-day", `Spelade ${weekdayName(day.date)}`);
+  // SPELADE — efter Kommande. Senaste dag först alltid (oberoende av klientens klocka).
+  // Den senaste dagen med spelade matcher = full opacitet ("idag"-känsla),
+  // tidigare dagar = dimmade arkiv. Rubriker alltid "Spelade <veckodag>".
+  if (done.length) {
+    const doneDays = groupByDateAndTime(done).slice().reverse();  // senaste datum först
+    for (let i = 0; i < doneDays.length; i++) {
+      const day = doneDays[i];
+      const isLatest = i === 0;
+      appendDoneSection(
+        root,
+        [day],
+        isLatest ? "today-done" : "done-day",
+        `Spelade ${weekdayName(day.date)}`
+      );
     }
   }
 }
