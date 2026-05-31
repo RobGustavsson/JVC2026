@@ -3,7 +3,7 @@
     "cup": "Järnvägen Cup 2026",
     "ev": "39543",
     "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
-    "scraped_at": "2026-05-31T08:14:34.333019+02:00"
+    "scraped_at": "2026-05-31T08:21:55.403795+02:00"
   },
   "matches": [
     {
@@ -929,11 +929,11 @@
       "tid": "10:50",
       "iso_start": "2026-05-31T10:50:00+02:00",
       "hemmalag": "HK Järnvägen",
-      "bortalag": "Vinn.1/8 : 4",
+      "bortalag": "Eskilstuna Guif:Röd",
       "bana": "Bana 33",
       "resultat": null,
       "hk_team_raw": "HK Järnvägen",
-      "opponent": "Vinn.1/8 : 4",
+      "opponent": "Eskilstuna Guif:Röd",
       "is_home": true
     },
     {

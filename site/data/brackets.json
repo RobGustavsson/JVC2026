@@ -3,7 +3,7 @@
     "cup": "Järnvägen Cup 2026",
     "ev": "39543",
     "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
-    "scraped_at": "2026-05-31T08:14:34.333019+02:00"
+    "scraped_at": "2026-05-31T08:21:55.403795+02:00"
   },
   "brackets": [
     {
@@ -459,7 +459,7 @@
           "namn": "B-8-dels:06",
           "datum": "Sön 31/5",
           "tid": "09:10",
-          "match": "BK Heid:Röd - Vinn.1/16 : 12",
+          "match": "BK Heid:Röd - IK Baltichov:1",
           "bana": "Bana 31"
         },
         {
@@ -475,7 +475,7 @@
           "namn": "B-8-dels:04",
           "datum": "Sön 31/5",
           "tid": "09:10",
-          "match": "Katrineholms AIK - Vinn.1/16 : 8",
+          "match": "Katrineholms AIK - GT Söder HK",
           "bana": "Bana 29"
         },
         {
@@ -483,7 +483,7 @@
           "namn": "B-8-dels:03",
           "datum": "Sön 31/5",
           "tid": "09:10",
-          "match": "Örebro SK U:1 - Vinn.1/16 : 6",
+          "match": "Örebro SK U:1 - Lidingö SK:1 2012",
           "bana": "Bana 28"
         },
         {
@@ -491,7 +491,7 @@
           "namn": "B-8-dels:02",
           "datum": "Sön 31/5",
           "tid": "09:10",
-          "match": "AIK HF - Vinn.1/16 : 4",
+          "match": "AIK HF - IFK Hammarö",
           "bana": "Bana 27"
         },
         {
@@ -1063,7 +1063,7 @@
           "namn": "B-kvartsfinal:01",
           "datum": "Sön 31/5",
           "tid": "10:50",
-          "match": "GT Söder HK - Vinn.1/8 : 2",
+          "match": "GT Söder HK - Backa HK",
           "bana": "Bana 32"
         },
         {
@@ -1071,7 +1071,7 @@
           "namn": "B-kvartsfinal:02",
           "datum": "Sön 31/5",
           "tid": "10:50",
-          "match": "HK Järnvägen - Vinn.1/8 : 4",
+          "match": "HK Järnvägen - Eskilstuna Guif:Röd",
           "bana": "Bana 33"
         },
         {
@@ -1087,7 +1087,7 @@
           "namn": "B-kvartsfinal:04",
           "datum": "Sön 31/5",
           "tid": "10:50",
-          "match": "Vinn.1/8 : 7 - Vinn.1/8 : 8",
+          "match": "Västervik HF - IK Baltichov",
           "bana": "Bana 35"
         },
         {
