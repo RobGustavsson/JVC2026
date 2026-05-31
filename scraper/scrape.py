@@ -483,11 +483,13 @@ def build_hk_playoff_summary(playoff_matches: list[dict]) -> list[dict]:
             "latest_match": latest,
             "all_matches": ms_sorted,
         })
-    # Sortera: ongoing/won_awaiting_next/champion först, eliminated/drew sist
+    # Sortera: aktiva först, eliminated sist; inom varje grupp äldre klass först (U19→U12)
+    def class_age(klass: str) -> int:
+        nums = [int(n) for n in re.findall(r"\d+", klass or "")]
+        return max(nums) if nums else 0
     def sort_key(t):
         active = 0 if t["status"] in ("ongoing", "won_awaiting_next", "champion") else 1
-        ri = round_idx(t["current_round"])
-        return (active, -ri, t["klass"])
+        return (active, -class_age(t["klass"]), t["klass"])
     teams_out.sort(key=sort_key)
     return teams_out
 
