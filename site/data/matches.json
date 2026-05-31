@@ -3,7 +3,7 @@
     "cup": "Järnvägen Cup 2026",
     "ev": "39543",
     "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
-    "scraped_at": "2026-05-31T13:05:37.107531+02:00"
+    "scraped_at": "2026-05-31T14:21:44.545470+02:00"
   },
   "matches": [
     {
@@ -646,10 +646,25 @@
       "hemmalag": "HK Järnvägen:Gul",
       "bortalag": "Mantorps IF HF",
       "bana": "Bana 40",
-      "resultat": null,
+      "resultat": "12-10",
       "hk_team_raw": "HK Järnvägen:Gul",
       "opponent": "Mantorps IF HF",
       "is_home": true
+    },
+    {
+      "mnr": "659",
+      "klass": "F16/15",
+      "grupp": "B-final",
+      "datum": "2026-05-31",
+      "tid": "15:00",
+      "iso_start": "2026-05-31T15:00:00+02:00",
+      "hemmalag": "NKIK",
+      "bortalag": "HK Järnvägen:Gul",
+      "bana": "Bana 38",
+      "resultat": null,
+      "hk_team_raw": "HK Järnvägen:Gul",
+      "opponent": "NKIK",
+      "is_home": false
     },
     {
       "mnr": "1236",
@@ -961,7 +976,7 @@
       "hemmalag": "Backa HK",
       "bortalag": "HK Järnvägen",
       "bana": "Bana 41",
-      "resultat": null,
+      "resultat": "19-8",
       "hk_team_raw": "HK Järnvägen",
       "opponent": "Backa HK",
       "is_home": false
