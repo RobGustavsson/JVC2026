@@ -25,14 +25,14 @@
   <main class="container">
     <section class="hero">
       <h1>Slutspel</h1>
-      <div class="sub">Publiceras under cupdagen när grupperna är klara</div>
+      <div class="sub">HK Järnvägens lag i cup-slutspelen</div>
     </section>
 
     <div id="content"><div class="empty">Laddar…</div></div>
   </main>
 
   <footer class="footer">
-    <div class="container">Heja gula och svarta</div>
+    <div class="container"><span class="heja">Heja gula och svarta</span></div>
   </footer>
 
   <script src="teams.js"></script>
@@ -42,50 +42,78 @@
       const content = JVC.$("#content");
       const updated = JVC.$("#updated");
       try {
-        const [brackets, meta] = await Promise.all([
-          JVC.fetchJson("brackets.json"),
+        const [playoffs, meta] = await Promise.all([
+          JVC.fetchJson("playoffs.json"),
           JVC.fetchJson("last_updated.json"),
         ]);
         updated.textContent = `Uppdaterad ${JVC.fmtRelative(meta.iso)}`;
         content.innerHTML = "";
 
-        // Group brackets by klass
-        const byKlass = {};
-        for (const b of brackets.brackets || []) {
-          if (!byKlass[b.klass]) byKlass[b.klass] = [];
-          byKlass[b.klass].push(b);
-        }
-
-        const klasses = Object.keys(byKlass).filter(k => byKlass[k].some(b => (b.matches || []).length > 0));
-        if (!klasses.length) {
+        const teams = playoffs.teams || [];
+        if (!teams.length) {
           content.innerHTML = '<div class="empty">Slutspelet publiceras under cupdagen.</div>';
           return;
         }
 
-        for (const klass of klasses) {
-          const color = window.JVC_TEAMS.classColor(klass);
-          const title = JVC.el("div", { class: "section-title" });
-          title.innerHTML = `<span class="badge" style="background:${color.bg};color:${color.fg};">${klass}</span>`;
-          content.appendChild(title);
+        // Statusgrupper
+        const active = teams.filter(t => t.status === "ongoing" || t.status === "won_awaiting_next" || t.status === "champion");
+        const eliminated = teams.filter(t => t.status === "eliminated" || t.status === "drew");
 
-          for (const b of byKlass[klass]) {
-            if (!b.matches || !b.matches.length) continue;
-            const card = JVC.el("div", { class: "standings" });
-            card.appendChild(JVC.el("h3", { text: `Slutspel ${b.abcd}` }));
-            const tbl = JVC.el("table");
-            tbl.innerHTML = `<thead><tr><th>Match</th><th>Tid</th><th>Bana</th></tr></thead>`;
-            const tb = JVC.el("tbody");
-            for (const r of b.matches) {
-              const tr = JVC.el("tr");
-              const isHk = /järnvägen/i.test(r.match || "");
-              if (isHk) tr.classList.add("is-hk");
-              tr.innerHTML = `<td>${r.match || r.namn || ""}</td><td>${r.tid || ""}</td><td>${r.bana || ""}</td>`;
-              tb.appendChild(tr);
+        function statusLabel(t) {
+          if (t.status === "champion") return "🏆 Mästare";
+          if (t.status === "eliminated") return "Utslaget";
+          if (t.status === "drew") return "Oavgjort (straffar avgjorde)";
+          if (t.status === "won_awaiting_next") return "Vidare — väntar på lottning";
+          return ""; // ongoing
+        }
+
+        function renderTeam(t) {
+          const klass = t.klass;
+          const squad = t.squad ? ` ${t.squad}` : "";
+          const colors = window.JVC_TEAMS.classColor(klass);
+          const lm = t.latest_match || {};
+          const isElim = t.status === "eliminated" || t.status === "drew";
+
+          const card = JVC.el("div", { class: `playoff-card ${isElim ? "is-elim" : ""}` });
+
+          const head = JVC.el("div", { class: "playoff-head" });
+          head.appendChild(JVC.el("span", {
+            class: "team-pill",
+            text: klass,
+            style: `background:${colors.bg};color:${colors.fg};`
+          }));
+          head.appendChild(JVC.el("span", { class: "playoff-squad", text: `HK Järnvägen${squad}` }));
+          card.appendChild(head);
+
+          const meta = JVC.el("div", { class: "playoff-meta" });
+          meta.appendChild(JVC.el("span", { class: "playoff-bracket", text: `${t.abcd}-Slutspel` }));
+          meta.appendChild(JVC.el("span", { class: "playoff-round", text: t.current_round_label }));
+          card.appendChild(meta);
+
+          if (isElim) {
+            card.appendChild(JVC.el("div", { class: "playoff-elim", text: statusLabel(t) }));
+          } else {
+            // Visa nästa match — tid, bana och resultat om matchen ligger i nutid
+            const row = JVC.el("div", { class: "playoff-next" });
+            row.appendChild(JVC.el("span", { class: "playoff-tid", text: lm.tid || "?" }));
+            if (lm.bana) row.appendChild(JVC.el("span", { class: "playoff-bana", text: lm.bana }));
+            if (lm.resultat) {
+              row.appendChild(JVC.el("span", { class: "playoff-result win", text: lm.resultat.replace("-", " – ") }));
+            } else if (t.status === "won_awaiting_next") {
+              row.appendChild(JVC.el("span", { class: "playoff-tag", text: statusLabel(t) }));
             }
-            tbl.appendChild(tb);
-            card.appendChild(tbl);
-            content.appendChild(card);
+            card.appendChild(row);
           }
+          return card;
+        }
+
+        if (active.length) {
+          content.appendChild(JVC.el("div", { class: "section-title", text: `${active.length} lag kvar i slutspelet` }));
+          for (const t of active) content.appendChild(renderTeam(t));
+        }
+        if (eliminated.length) {
+          content.appendChild(JVC.el("div", { class: "section-title elim-title", text: `Utslagna (${eliminated.length})` }));
+          for (const t of eliminated) content.appendChild(renderTeam(t));
         }
       } catch (e) {
         console.error(e);

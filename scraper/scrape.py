@@ -320,28 +320,176 @@ def parse_standings(html: str) -> list[dict]:
     return rows
 
 
-def parse_playoff(html: str, klass: str, abcd: str) -> dict:
-    """Best-effort: read the playoff list page. Empty pre-cup. Returns a list of matches."""
+ROUND_ORDER = ["1/16", "1/8", "Kvart", "Semi", "Brons", "Final"]
+ROUND_LABELS = {
+    "1/16": "Sextondelsfinal",
+    "1/8": "Åttondelsfinal",
+    "Kvart": "Kvartsfinal",
+    "Semi": "Semifinal",
+    "Brons": "Bronsmatch",
+    "Final": "Final",
+}
+
+
+def typ_to_round(typ: str) -> str:
+    """Map procup Typ-string to canonical round name. Examples:
+        'A-8-dels:05' -> '1/8'
+        'B-Kvart:02'  -> 'Kvart'
+        'A-Semi:01'   -> 'Semi'
+        'A-Final'     -> 'Final'
+        'B-Brons'     -> 'Brons'
+    """
+    t = typ.lower()
+    if "16-dels" in t: return "1/16"
+    if "8-dels" in t: return "1/8"
+    if "kvart" in t: return "Kvart"
+    if "brons" in t or "3:e" in t or "3e" in t: return "Brons"
+    # "Semi" måste kollas före "final" (Semifinal innehåller båda)
+    if "semi" in t: return "Semi"
+    if "final" in t: return "Final"
+    return typ
+
+
+SWEDISH_DAYS = {"mån": 0, "tis": 1, "ons": 2, "tor": 3, "fre": 4, "lör": 5, "sön": 6}
+
+
+def parse_swedish_date(s: str, year: int = 2026) -> str | None:
+    """'Sön 31/5' -> '2026-05-31'"""
+    if not s:
+        return None
+    m = re.search(r"(\d{1,2})/(\d{1,2})", s)
+    if not m:
+        return None
+    day, month = int(m.group(1)), int(m.group(2))
+    return f"{year:04d}-{month:02d}-{day:02d}"
+
+
+def parse_playoff_list(html: str, klass: str, abcd: str) -> list[dict]:
+    """Parse cupresplayoff_lista_skin04.php — all matches in this playoff branch
+    with round info derived from the Typ column.
+
+    Columns: Mnr | Typ | Datum | Tid | Lag (home/-/away) | Bana | Resultat
+    """
     soup = BeautifulSoup(html, "lxml")
+    out: list[dict] = []
     table = soup.find("table", class_="custom-table")
-    rows: list[dict] = []
-    if table and table.find("tbody"):
-        for tr in table.find("tbody").find_all("tr"):
-            tds = tr.find_all("td")
+    if not table:
+        return out
+    tbody = table.find("tbody")
+    if not tbody:
+        return out
+    for tr in tbody.find_all("tr", recursive=False):
+        try:
+            tds = tr.find_all("td", recursive=False)
             if len(tds) < 6:
                 continue
-            try:
-                rows.append({
-                    "mnr": text(tds[0]),
-                    "namn": text(tds[1]) if len(tds) > 1 else "",
-                    "datum": text(tds[2]) if len(tds) > 2 else "",
-                    "tid": text(tds[3]) if len(tds) > 3 else "",
-                    "match": text(tds[4]) if len(tds) > 4 else "",
-                    "bana": text(tds[5]) if len(tds) > 5 else "",
-                })
-            except Exception:  # noqa: BLE001
-                continue
-    return {"klass": klass, "abcd": abcd, "matches": rows}
+            mnr = text(tds[0])
+            typ = text(tds[1])
+            datum_raw = text(tds[2])
+            tid = text(tds[3])
+            match_cell = tds[4]
+            divs = match_cell.find_all("div", recursive=True)
+            teams = [text(d) for d in divs if d.get("style") and "width:49%" in d.get("style", "")]
+            if len(teams) < 2:
+                team_divs = [d for d in match_cell.find_all("div") if text(d)]
+                if len(team_divs) < 2:
+                    continue
+                teams = [text(team_divs[0]), text(team_divs[1])]
+            hemma, borta = teams[0], teams[1]
+            bana = text(tds[5])
+            resultat = None
+            if len(tds) >= 7:
+                b = tds[6].find("b")
+                cand = (text(b) if b else text(tds[6])).replace("–", "-").strip()
+                sm = SCORE_RE.match(cand)
+                if sm:
+                    resultat = f"{sm.group(1)}-{sm.group(2)}"
+
+            datum = parse_swedish_date(datum_raw)
+            iso_start = None
+            if datum and re.match(r"^\d{2}:\d{2}$", tid):
+                try:
+                    iso_start = datetime.strptime(f"{datum} {tid}", "%Y-%m-%d %H:%M").replace(tzinfo=TZ).isoformat()
+                except ValueError:
+                    pass
+
+            round_short = typ_to_round(typ)
+            out.append({
+                "mnr": mnr,
+                "typ": typ,
+                "round_short": round_short,
+                "round_label": ROUND_LABELS.get(round_short, round_short),
+                "klass": klass,
+                "abcd": abcd,
+                "datum": datum,
+                "tid": tid,
+                "iso_start": iso_start,
+                "hemmalag": hemma,
+                "bortalag": borta,
+                "bana": bana,
+                "resultat": resultat,
+            })
+        except Exception as e:  # noqa: BLE001
+            print(f"  ! playoff row {klass}/{abcd}: {e}", file=sys.stderr)
+            continue
+    return out
+
+
+def build_hk_playoff_summary(playoff_matches: list[dict]) -> list[dict]:
+    """For each HK Järnvägen team appearing in any playoff list, gather their
+    matches across rounds and compute current status (next match / eliminated).
+    """
+    by_team: dict[tuple[str, str], list[dict]] = {}
+    for m in playoff_matches:
+        for side in ("hemmalag", "bortalag"):
+            name = m.get(side, "")
+            if involves_hk(name):
+                key = (m["klass"], name)
+                by_team.setdefault(key, []).append({**m, "is_home": side == "hemmalag", "team_raw": name})
+
+    def round_idx(r: str) -> int:
+        try:
+            return ROUND_ORDER.index(r)
+        except ValueError:
+            return -1
+
+    teams_out = []
+    for (klass, team_raw), ms in by_team.items():
+        ms_sorted = sorted(ms, key=lambda x: (round_idx(x["round_short"]), x.get("iso_start") or ""))
+        latest = ms_sorted[-1]
+        # Avgör status utifrån den senaste rondens match
+        status = "ongoing"
+        if latest.get("resultat"):
+            sm = SCORE_RE.match(latest["resultat"].replace("–", "-"))
+            if sm:
+                hk_score = int(sm.group(1)) if latest["is_home"] else int(sm.group(2))
+                op_score = int(sm.group(2)) if latest["is_home"] else int(sm.group(1))
+                if hk_score < op_score:
+                    status = "eliminated"
+                elif hk_score > op_score:
+                    # Vinst i senaste — om det var Final har vi vunnit cupen, annars väntar nästa rond
+                    status = "champion" if latest["round_short"] == "Final" else "won_awaiting_next"
+                else:
+                    # Oavgjort i slutspel betyder normalt straffar — utfallet ligger i procup, men vi vet inte här
+                    status = "drew"
+        teams_out.append({
+            "klass": klass,
+            "team_raw": team_raw,
+            "squad": team_raw.replace("HK Järnvägen", "").lstrip(": ").strip(),
+            "abcd": latest["abcd"],
+            "status": status,
+            "current_round": latest["round_short"],
+            "current_round_label": latest["round_label"],
+            "latest_match": latest,
+            "all_matches": ms_sorted,
+        })
+    # Sortera: ongoing/won_awaiting_next/champion först, eliminated/drew sist
+    def sort_key(t):
+        active = 0 if t["status"] in ("ongoing", "won_awaiting_next", "champion") else 1
+        ri = round_idx(t["current_round"])
+        return (active, -ri, t["klass"])
+    teams_out.sort(key=sort_key)
+    return teams_out
 
 
 def main() -> int:
@@ -373,15 +521,20 @@ def main() -> int:
         except Exception as e:  # noqa: BLE001
             print(f"  ! class {klass}: {e}", file=sys.stderr)
 
-    brackets_data: list[dict] = []
+    all_playoff_matches: list[dict] = []
     for klass in classes:
         for abcd in ("A", "B"):
             time.sleep(2)
             try:
                 po_html = fetch(playoff_url(klass, abcd))
-                brackets_data.append(parse_playoff(po_html, klass, abcd))
+                rows = parse_playoff_list(po_html, klass, abcd)
+                all_playoff_matches.extend(rows)
             except Exception as e:  # noqa: BLE001
                 print(f"  ! playoff {klass}/{abcd}: {e}", file=sys.stderr)
+
+    # Bygg per-lag-sammanfattning för slutspels-fliken
+    hk_playoff_teams = build_hk_playoff_summary(all_playoff_matches)
+    print(f"  HK i slutspel: {len(hk_playoff_teams)} lag")
 
     payload_meta = {
         "cup": "Järnvägen Cup 2026",
@@ -398,15 +551,15 @@ def main() -> int:
         json.dumps({"meta": payload_meta, "classes": groups_data}, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
-    (DATA_DIR / "brackets.json").write_text(
-        json.dumps({"meta": payload_meta, "brackets": brackets_data}, ensure_ascii=False, indent=2),
+    (DATA_DIR / "playoffs.json").write_text(
+        json.dumps({"meta": payload_meta, "teams": hk_playoff_teams, "all_matches": all_playoff_matches}, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
     (DATA_DIR / "last_updated.json").write_text(
         json.dumps({"iso": datetime.now(TZ).isoformat(), "matches_count": len(matches)}, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
-    print(f"[{datetime.now(TZ).isoformat()}] Done. Wrote {len(matches)} matches, {len(groups_data)} classes, {len(brackets_data)} bracket sheets.")
+    print(f"[{datetime.now(TZ).isoformat()}] Done. Wrote {len(matches)} matches, {len(groups_data)} classes, {len(hk_playoff_teams)} playoff teams.")
     return 0
 
 

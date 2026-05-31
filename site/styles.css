@@ -278,6 +278,61 @@ a { color: inherit; text-decoration: none; }
   .gm-score { min-width: 48px; }
 }
 
+/* SLUTSPELS-KORT */
+.playoff-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin: 8px 0;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.playoff-card.is-elim { opacity: 0.55; }
+.playoff-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.playoff-squad { font-size: 1.05rem; font-weight: 800; color: var(--hk-yellow); }
+.playoff-meta {
+  display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+  font-size: 0.78rem; color: var(--text-dim); font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.12em;
+}
+.playoff-bracket {
+  background: rgba(255, 214, 10, 0.16);
+  color: var(--hk-yellow);
+  padding: 3px 8px; border-radius: 6px;
+}
+.playoff-round { color: var(--text); }
+.playoff-next {
+  display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+  padding-top: 8px; border-top: 1.5px dashed var(--border-strong);
+}
+.playoff-tid {
+  font-size: 1.3rem; font-weight: 900; color: var(--time);
+  letter-spacing: -0.02em; font-variant-numeric: tabular-nums;
+}
+.playoff-bana {
+  background: var(--hk-yellow); color: #000;
+  padding: 4px 10px; border-radius: 6px;
+  font-size: 0.85rem; font-weight: 800;
+}
+.playoff-tag {
+  background: rgba(255,255,255,0.06);
+  color: var(--text-dim);
+  padding: 3px 9px; border-radius: 6px;
+  font-size: 0.78rem; font-weight: 700;
+}
+.playoff-result {
+  font-size: 1.1rem; font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  margin-left: auto;
+}
+.playoff-result.win { color: #22c55e; }
+.playoff-result.loss { color: var(--live); }
+.playoff-elim {
+  padding-top: 8px; border-top: 1.5px dashed var(--border-strong);
+  font-size: 0.92rem; font-weight: 700; color: var(--text-dim);
+}
+.section-title.elim-title { color: var(--text-very-dim); margin-top: 32px; }
+
 @keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.55; transform: scale(0.94); }
