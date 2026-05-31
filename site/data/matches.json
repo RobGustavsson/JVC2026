@@ -3,7 +3,7 @@
     "cup": "Järnvägen Cup 2026",
     "ev": "39543",
     "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
-    "scraped_at": "2026-05-31T14:21:44.545470+02:00"
+    "scraped_at": "2026-05-31T15:59:34.988767+02:00"
   },
   "matches": [
     {
@@ -661,7 +661,7 @@
       "hemmalag": "NKIK",
       "bortalag": "HK Järnvägen:Gul",
       "bana": "Bana 38",
-      "resultat": null,
+      "resultat": "15-6",
       "hk_team_raw": "HK Järnvägen:Gul",
       "opponent": "NKIK",
       "is_home": false
@@ -901,7 +901,7 @@
       "hemmalag": "HK Järnvägen",
       "bortalag": "LIF Lindesberg",
       "bana": "Bana 40",
-      "resultat": null,
+      "resultat": "7-24",
       "hk_team_raw": "HK Järnvägen",
       "opponent": "LIF Lindesberg",
       "is_home": true
