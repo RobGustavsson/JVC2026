@@ -154,6 +154,112 @@
           content.appendChild(JVC.el("div", { class: "section-title elim-title", text: `Utslagna (${eliminated.length})` }));
           for (const t of eliminated) content.appendChild(renderTeam(t));
         }
+
+        // ─── Slutspelsträd per klass ───
+        const ROUND_ORDER = ["1/16", "1/8", "Kvart", "Semi", "Brons", "Final"];
+        const ROUND_LABELS_LONG = {
+          "1/16": "Sextondelsfinal",
+          "1/8": "Åttondelsfinal",
+          "Kvart": "Kvartsfinal",
+          "Semi": "Semifinal",
+          "Brons": "Bronsmatch",
+          "Final": "Final"
+        };
+
+        function classAge(klass) {
+          const ns = String(klass).match(/\d+/g) || [];
+          return ns.length ? Math.max(...ns.map(Number)) : 0;
+        }
+
+        // Gruppera alla slutspelsmatcher per (klass, abcd)
+        const allPlayoff = playoffs.all_matches || [];
+        const byBracket = new Map();
+        for (const m of allPlayoff) {
+          const key = `${m.klass}|${m.abcd}`;
+          if (!byBracket.has(key)) byBracket.set(key, []);
+          byBracket.get(key).push(m);
+        }
+        // Sortera brackets: U19 → U12, A före B inom ålder
+        const brackets = [...byBracket.keys()].sort((a, b) => {
+          const [ka, aba] = a.split("|");
+          const [kb, abb] = b.split("|");
+          const ageDiff = classAge(kb) - classAge(ka);
+          if (ageDiff !== 0) return ageDiff;
+          if (ka !== kb) return ka.localeCompare(kb);
+          return aba.localeCompare(abb);
+        });
+
+        if (brackets.length) {
+          content.appendChild(JVC.el("div", { class: "section-title bracket-title", text: "Slutspelsträd per klass" }));
+          for (const key of brackets) {
+            const [klass, abcd] = key.split("|");
+            const matches = byBracket.get(key);
+            const colors = window.JVC_TEAMS.classColor(klass);
+            const wrap = JVC.el("div", { class: "bracket" });
+
+            const head = JVC.el("div", { class: "bracket-head" });
+            head.appendChild(JVC.el("span", {
+              class: "team-pill",
+              text: klass,
+              style: `background:${colors.bg};color:${colors.fg};`
+            }));
+            head.appendChild(JVC.el("span", { class: "bracket-label", text: `${abcd}-Slutspel` }));
+            wrap.appendChild(head);
+
+            // Gruppera matcher per rond
+            const byRound = new Map();
+            for (const m of matches) {
+              const r = m.round_short || "?";
+              if (!byRound.has(r)) byRound.set(r, []);
+              byRound.get(r).push(m);
+            }
+            const sortedRounds = [...byRound.keys()].sort((a, b) => ROUND_ORDER.indexOf(a) - ROUND_ORDER.indexOf(b));
+
+            for (const r of sortedRounds) {
+              const roundWrap = JVC.el("div", { class: "bracket-round" });
+              const roundHead = JVC.el("div", { class: "bracket-round-head" });
+              roundHead.appendChild(JVC.el("span", { class: "bracket-round-name", text: ROUND_LABELS_LONG[r] || r }));
+              roundHead.appendChild(JVC.el("span", { class: "bracket-round-count", text: `${byRound.get(r).length} match${byRound.get(r).length > 1 ? "er" : ""}` }));
+              roundWrap.appendChild(roundHead);
+
+              const ms = byRound.get(r).slice().sort((a, b) => (a.iso_start || "").localeCompare(b.iso_start || ""));
+              for (const m of ms) {
+                const hkHome = /järnvägen/i.test(m.hemmalag || "");
+                const hkAway = /järnvägen/i.test(m.bortalag || "");
+                const isHk = hkHome || hkAway;
+
+                // Outcome ur HK:s perspektiv (om HK är inblandad), annars neutral
+                let scoreClass = "pending";
+                if (m.resultat) {
+                  const sc = JVC.parseScore(m.resultat);
+                  if (sc) {
+                    if (isHk) {
+                      const hk = hkHome ? sc.home : sc.away;
+                      const op = hkHome ? sc.away : sc.home;
+                      scoreClass = hk > op ? "win" : hk < op ? "loss" : "draw";
+                    } else {
+                      scoreClass = "neutral";
+                    }
+                  }
+                }
+                const score = m.resultat ? m.resultat.replace("-", " – ") : "–";
+                const isPlaceholder = (s) => /^vinn\.|^\d:an från|^förl\./i.test(s || "");
+
+                const row = JVC.el("div", { class: `bracket-match ${isHk ? "is-hk" : ""}` });
+                row.innerHTML = `
+                  <span class="bm-tid">${m.tid || ""}</span>
+                  <span class="bm-team home ${hkHome ? "hk" : ""} ${isPlaceholder(m.hemmalag) ? "ph" : ""}">${m.hemmalag || "?"}</span>
+                  <span class="bm-score ${scoreClass}">${score}</span>
+                  <span class="bm-team away ${hkAway ? "hk" : ""} ${isPlaceholder(m.bortalag) ? "ph" : ""}">${m.bortalag || "?"}</span>
+                  <span class="bm-bana">${m.bana || ""}</span>
+                `;
+                roundWrap.appendChild(row);
+              }
+              wrap.appendChild(roundWrap);
+            }
+            content.appendChild(wrap);
+          }
+        }
       } catch (e) {
         console.error(e);
         content.innerHTML = `<div class="empty">Kunde inte ladda data.<br><small>${e.message}</small></div>`;

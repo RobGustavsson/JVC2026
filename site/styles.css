@@ -333,6 +333,106 @@ a { color: inherit; text-decoration: none; }
   .playoff-round-label { font-size: 0.78rem; }
 }
 
+/* ─── SLUTSPELSTRÄD per klass ─── */
+.section-title.bracket-title {
+  margin-top: 40px;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  color: var(--hk-yellow);
+}
+
+.bracket {
+  background: var(--bg-day);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 16px 14px;
+  margin: 10px 0 18px;
+}
+.bracket-head {
+  display: flex; align-items: center; gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--border-strong);
+  margin-bottom: 12px;
+}
+.bracket-label {
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+.bracket-round {
+  margin: 14px 0 6px;
+}
+.bracket-round-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin: 0 0 6px;
+}
+.bracket-round-name {
+  font-size: 0.74rem; font-weight: 900;
+  color: var(--time);
+  text-transform: uppercase; letter-spacing: 0.14em;
+}
+.bracket-round-count {
+  font-size: 0.68rem; color: var(--text-very-dim);
+  text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;
+}
+.bracket-match {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) auto minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: baseline;
+  padding: 7px 6px;
+  border-bottom: 1px dashed rgba(255,255,255,0.04);
+  font-size: 0.86rem;
+}
+.bracket-match:last-child { border-bottom: none; }
+.bracket-match.is-hk {
+  background: rgba(255, 214, 10, 0.06);
+  border-radius: 6px;
+  border-bottom-color: transparent;
+  padding-left: 8px; padding-right: 8px;
+}
+.bm-tid {
+  font-family: inherit;
+  font-weight: 800; color: var(--time);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.82rem;
+}
+.bm-team {
+  font-weight: 600; color: var(--text-dim);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.bm-team.home { text-align: right; }
+.bm-team.away { text-align: left; }
+.bm-team.hk { color: var(--hk-yellow); font-weight: 800; }
+.bm-team.ph { color: var(--text-very-dim); font-style: italic; }
+.bm-score {
+  font-weight: 900; font-variant-numeric: tabular-nums;
+  min-width: 56px; text-align: center;
+}
+.bm-score.pending { color: var(--text-very-dim); font-weight: 600; }
+.bm-score.win { color: #22c55e; }
+.bm-score.loss { color: var(--live); }
+.bm-score.draw { color: var(--hk-yellow); }
+.bm-score.neutral { color: var(--text); }
+.bm-bana {
+  font-size: 0.7rem; font-weight: 700;
+  color: var(--text-very-dim);
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .bracket { padding: 14px 10px; border-radius: 14px; }
+  .bracket-match {
+    grid-template-columns: 36px minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: 6px;
+    font-size: 0.8rem;
+    padding: 6px 4px;
+  }
+  .bm-bana { display: none; }  /* sparar bredd på smal mobil */
+  .bm-score { min-width: 48px; }
+}
+
 @keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.55; transform: scale(0.94); }
