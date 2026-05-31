@@ -3,7 +3,7 @@
     "cup": "Järnvägen Cup 2026",
     "ev": "39543",
     "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
-    "scraped_at": "2026-05-31T08:38:08.719810+02:00"
+    "scraped_at": "2026-05-31T09:19:41.216388+02:00"
   },
   "matches": [
     {
@@ -646,7 +646,7 @@
       "hemmalag": "HK Järnvägen",
       "bortalag": "Ludvika HF",
       "bana": "Bana 41",
-      "resultat": null,
+      "resultat": "10-10",
       "hk_team_raw": "HK Järnvägen",
       "opponent": "Ludvika HF",
       "is_home": true
@@ -862,6 +862,21 @@
       "is_home": false
     },
     {
+      "mnr": "621",
+      "klass": "F19/17",
+      "grupp": "A-semifinal:02",
+      "datum": "2026-05-31",
+      "tid": "14:00",
+      "iso_start": "2026-05-31T14:00:00+02:00",
+      "hemmalag": "HK Järnvägen",
+      "bortalag": "LIF Lindesberg",
+      "bana": "Bana 40",
+      "resultat": null,
+      "hk_team_raw": "HK Järnvägen",
+      "opponent": "LIF Lindesberg",
+      "is_home": true
+    },
+    {
       "mnr": "482",
       "klass": "F14/13",
       "grupp": "A-16-dels:08",
@@ -871,7 +886,7 @@
       "hemmalag": "Örebro SK U:2",
       "bortalag": "HK Järnvägen",
       "bana": "Bana 30",
-      "resultat": null,
+      "resultat": "13-12",
       "hk_team_raw": "HK Järnvägen",
       "opponent": "Örebro SK U:2",
       "is_home": false

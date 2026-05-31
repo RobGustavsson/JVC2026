@@ -3,7 +3,7 @@
     "cup": "Järnvägen Cup 2026",
     "ev": "39543",
     "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
-    "scraped_at": "2026-05-31T08:38:08.719810+02:00"
+    "scraped_at": "2026-05-31T09:19:41.216388+02:00"
   },
   "classes": [
     {
@@ -604,23 +604,23 @@
           "table": [
             {
               "lag": "HK Järnvägen",
-              "antal_spelade": "3",
+              "antal_spelade": "4",
               "vinster": "3",
-              "oavgjorda": "0",
+              "oavgjorda": "1",
               "forluster": "0",
-              "mal": "41 - 30",
+              "mal": "51 - 40",
               "diff": "+11",
-              "poang": "6"
+              "poang": "7"
             },
             {
               "lag": "Ludvika HF",
-              "antal_spelade": "3",
+              "antal_spelade": "4",
               "vinster": "2",
-              "oavgjorda": "0",
+              "oavgjorda": "1",
               "forluster": "1",
-              "mal": "29 - 30",
+              "mal": "39 - 40",
               "diff": "-1",
-              "poang": "4"
+              "poang": "5"
             },
             {
               "lag": "Backa HK",
@@ -697,7 +697,7 @@
               "hemmalag": "HK Järnvägen",
               "bortalag": "Ludvika HF",
               "bana": "Bana 41",
-              "resultat": null
+              "resultat": "10-10"
             }
           ]
         }
