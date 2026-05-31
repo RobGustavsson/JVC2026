@@ -3,7 +3,7 @@
     "cup": "Järnvägen Cup 2026",
     "ev": "39543",
     "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
-    "scraped_at": "2026-05-31T16:18:10.361725+02:00"
+    "scraped_at": "2026-05-31T17:12:09.078407+02:00"
   },
   "teams": [
     {
@@ -657,7 +657,7 @@
       "hemmalag": "Alingsås HK:Blå",
       "bortalag": "Eskilstuna Guif:1",
       "bana": "Bana 21",
-      "resultat": null
+      "resultat": "27-11"
     },
     {
       "mnr": "442",
@@ -1137,7 +1137,7 @@
       "hemmalag": "BK Heid:2",
       "bortalag": "Skånela IF",
       "bana": "Bana 33",
-      "resultat": null
+      "resultat": "21-16"
     },
     {
       "mnr": "447",
@@ -1572,7 +1572,7 @@
       "hemmalag": "BK Heid:Vit",
       "bortalag": "Eskilstuna Guif:3",
       "bana": "Bana 39",
-      "resultat": null
+      "resultat": "21-13"
     },
     {
       "mnr": "462",
@@ -1767,7 +1767,7 @@
       "hemmalag": "GT Söder HK:Blå",
       "bortalag": "LIF Lindesberg",
       "bana": "Bana 40",
-      "resultat": null
+      "resultat": "24-18"
     },
     {
       "mnr": "689",
@@ -1902,7 +1902,7 @@
       "hemmalag": "Täby HBK",
       "bortalag": "IFK Hammarö",
       "bana": "Bana 23",
-      "resultat": null
+      "resultat": "19-39"
     },
     {
       "mnr": "446",
@@ -2187,7 +2187,7 @@
       "hemmalag": "BK Heid",
       "bortalag": "Uppsala HK:1",
       "bana": "Bana 37",
-      "resultat": null
+      "resultat": "23-17"
     },
     {
       "mnr": "458",
@@ -2397,7 +2397,7 @@
       "hemmalag": "BK Heid",
       "bortalag": "LIF Lindesberg",
       "bana": "Bana 41",
-      "resultat": null
+      "resultat": "20-27"
     },
     {
       "mnr": "669",
