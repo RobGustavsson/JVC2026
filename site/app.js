@@ -258,7 +258,8 @@ function renderTimeSlot(slot, opts = {}) {
 function renderDaySection(day, opts = {}) {
   const section = el("section", { class: "day-section" });
   const header = el("div", { class: "day-header" });
-  header.appendChild(el("div", { class: "day-name", text: fmtDayLong(day.date) }));
+  const titleText = opts.titleOverride || fmtDayLong(day.date);
+  header.appendChild(el("div", { class: "day-name", text: titleText }));
   header.appendChild(el("div", { class: "day-count", text: `${day.slots.reduce((n, s) => n + s.matches.length, 0)} matcher` }));
   section.appendChild(header);
 
@@ -266,6 +267,27 @@ function renderDaySection(day, opts = {}) {
     section.appendChild(renderTimeSlot(slot, opts));
   }
   return section;
+}
+
+function todayDateString() {
+  const d = new Date();
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
+}
+
+function appendDoneSection(root, days, extraClass, titleOverride) {
+  for (const day of days.slice().reverse()) {
+    const section = renderDaySection(day, { titleOverride });
+    if (extraClass) section.classList.add(extraClass);
+    // omvänd ordning inom dagen — senaste matchen först
+    const slots = $$(".time-slot", section);
+    const head = $(".day-header", section);
+    const parent = head.parentNode;
+    for (const s of slots.reverse()) parent.appendChild(s);
+    root.appendChild(section);
+  }
 }
 
 function renderTimeline(root, matches) {
@@ -279,6 +301,7 @@ function renderTimeline(root, matches) {
   const nextMatches = findNextMatches(matches, now);
   const nextMnrs = new Set(nextMatches.map(m => m.mnr));
 
+  // PÅGÅR NU
   if (live.length) {
     const section = el("section", { class: "day-section live-section" });
     const header = el("div", { class: "day-header live" });
@@ -290,6 +313,16 @@ function renderTimeline(root, matches) {
     root.appendChild(section);
   }
 
+  // SPELADE IDAG — full opacitet, högst upp så man slipper scrolla
+  const today = todayDateString();
+  const doneToday = done.filter(m => m.datum === today);
+  const doneOther = done.filter(m => m.datum !== today);
+  if (doneToday.length) {
+    const todayDays = groupByDateAndTime(doneToday);
+    appendDoneSection(root, todayDays, "today-done", "Spelade idag");
+  }
+
+  // KOMMANDE
   if (upcoming.length) {
     const upcomingDays = groupByDateAndTime(upcoming);
     for (const day of upcomingDays) {
@@ -297,17 +330,10 @@ function renderTimeline(root, matches) {
     }
   }
 
-  if (done.length) {
-    const doneDays = groupByDateAndTime(done);
-    for (const day of doneDays.reverse()) {
-      const section = renderDaySection(day);
-      section.classList.add("done-day");
-      const slots = $$(".time-slot", section);
-      const head = $(".day-header", section);
-      const parent = head.parentNode;
-      for (const s of slots.reverse()) parent.appendChild(s);
-      root.appendChild(section);
-    }
+  // SPELADE TIDIGARE — dimmad arkivsektion längst ner
+  if (doneOther.length) {
+    const otherDays = groupByDateAndTime(doneOther);
+    appendDoneSection(root, otherDays, "done-day");
   }
 }
 
