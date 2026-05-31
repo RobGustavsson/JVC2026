@@ -313,13 +313,17 @@ function renderTimeline(root, matches) {
     root.appendChild(section);
   }
 
-  // SPELADE IDAG — full opacitet, högst upp så man slipper scrolla
+  // SPELADE — högst upp så man alltid ser resultat utan att scrolla
+  // - "Spelade idag" full opacitet (när dagens matcher börjar bli klara)
+  // - "Spelade tidigare" dimmad, men UPPE — inte begravd längst ned
   const today = todayDateString();
   const doneToday = done.filter(m => m.datum === today);
   const doneOther = done.filter(m => m.datum !== today);
   if (doneToday.length) {
-    const todayDays = groupByDateAndTime(doneToday);
-    appendDoneSection(root, todayDays, "today-done", "Spelade idag");
+    appendDoneSection(root, groupByDateAndTime(doneToday), "today-done", "Spelade idag");
+  }
+  if (doneOther.length) {
+    appendDoneSection(root, groupByDateAndTime(doneOther), "done-day");
   }
 
   // KOMMANDE
@@ -328,12 +332,6 @@ function renderTimeline(root, matches) {
     for (const day of upcomingDays) {
       root.appendChild(renderDaySection(day, { nextMnrs }));
     }
-  }
-
-  // SPELADE TIDIGARE — dimmad arkivsektion längst ner
-  if (doneOther.length) {
-    const otherDays = groupByDateAndTime(doneOther);
-    appendDoneSection(root, otherDays, "done-day");
   }
 }
 
