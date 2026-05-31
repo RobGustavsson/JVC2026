@@ -3,7 +3,7 @@
     "cup": "Järnvägen Cup 2026",
     "ev": "39543",
     "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
-    "scraped_at": "2026-05-31T11:05:37.627644+02:00"
+    "scraped_at": "2026-05-31T11:59:33.762353+02:00"
   },
   "teams": [
     {
@@ -102,21 +102,21 @@
       "squad": "Gul",
       "abcd": "B",
       "status": "ongoing",
-      "current_round": "Kvart",
-      "current_round_label": "Kvartsfinal",
+      "current_round": "Semi",
+      "current_round_label": "Semifinal",
       "latest_match": {
-        "mnr": "565",
-        "typ": "B-kvartsfinal:03",
-        "round_short": "Kvart",
-        "round_label": "Kvartsfinal",
+        "mnr": "619",
+        "typ": "B-semifinal:02",
+        "round_short": "Semi",
+        "round_label": "Semifinal",
         "klass": "F16/15",
         "abcd": "B",
         "datum": "2026-05-31",
-        "tid": "10:50",
-        "iso_start": "2026-05-31T10:50:00+02:00",
+        "tid": "13:00",
+        "iso_start": "2026-05-31T13:00:00+02:00",
         "hemmalag": "HK Järnvägen:Gul",
-        "bortalag": "Vallentuna HK",
-        "bana": "Bana 38",
+        "bortalag": "Mantorps IF HF",
+        "bana": "Bana 40",
         "resultat": null,
         "is_home": true,
         "team_raw": "HK Järnvägen:Gul"
@@ -135,54 +135,26 @@
           "hemmalag": "HK Järnvägen:Gul",
           "bortalag": "Vallentuna HK",
           "bana": "Bana 38",
+          "resultat": "18-12",
+          "is_home": true,
+          "team_raw": "HK Järnvägen:Gul"
+        },
+        {
+          "mnr": "619",
+          "typ": "B-semifinal:02",
+          "round_short": "Semi",
+          "round_label": "Semifinal",
+          "klass": "F16/15",
+          "abcd": "B",
+          "datum": "2026-05-31",
+          "tid": "13:00",
+          "iso_start": "2026-05-31T13:00:00+02:00",
+          "hemmalag": "HK Järnvägen:Gul",
+          "bortalag": "Mantorps IF HF",
+          "bana": "Bana 40",
           "resultat": null,
           "is_home": true,
           "team_raw": "HK Järnvägen:Gul"
-        }
-      ]
-    },
-    {
-      "klass": "P16/15",
-      "team_raw": "HK Järnvägen",
-      "squad": "",
-      "abcd": "B",
-      "status": "ongoing",
-      "current_round": "Kvart",
-      "current_round_label": "Kvartsfinal",
-      "latest_match": {
-        "mnr": "560",
-        "typ": "B-kvartsfinal:02",
-        "round_short": "Kvart",
-        "round_label": "Kvartsfinal",
-        "klass": "P16/15",
-        "abcd": "B",
-        "datum": "2026-05-31",
-        "tid": "10:50",
-        "iso_start": "2026-05-31T10:50:00+02:00",
-        "hemmalag": "HK Järnvägen",
-        "bortalag": "Eskilstuna Guif:Röd",
-        "bana": "Bana 33",
-        "resultat": null,
-        "is_home": true,
-        "team_raw": "HK Järnvägen"
-      },
-      "all_matches": [
-        {
-          "mnr": "560",
-          "typ": "B-kvartsfinal:02",
-          "round_short": "Kvart",
-          "round_label": "Kvartsfinal",
-          "klass": "P16/15",
-          "abcd": "B",
-          "datum": "2026-05-31",
-          "tid": "10:50",
-          "iso_start": "2026-05-31T10:50:00+02:00",
-          "hemmalag": "HK Järnvägen",
-          "bortalag": "Eskilstuna Guif:Röd",
-          "bana": "Bana 33",
-          "resultat": null,
-          "is_home": true,
-          "team_raw": "HK Järnvägen"
         }
       ]
     },
@@ -380,6 +352,51 @@
           "resultat": "6-14",
           "is_home": true,
           "team_raw": "HK Järnvägen:Svart"
+        }
+      ]
+    },
+    {
+      "klass": "P16/15",
+      "team_raw": "HK Järnvägen",
+      "squad": "",
+      "abcd": "B",
+      "status": "eliminated",
+      "current_round": "Kvart",
+      "current_round_label": "Kvartsfinal",
+      "latest_match": {
+        "mnr": "560",
+        "typ": "B-kvartsfinal:02",
+        "round_short": "Kvart",
+        "round_label": "Kvartsfinal",
+        "klass": "P16/15",
+        "abcd": "B",
+        "datum": "2026-05-31",
+        "tid": "10:50",
+        "iso_start": "2026-05-31T10:50:00+02:00",
+        "hemmalag": "HK Järnvägen",
+        "bortalag": "Eskilstuna Guif:Röd",
+        "bana": "Bana 33",
+        "resultat": "19-20",
+        "is_home": true,
+        "team_raw": "HK Järnvägen"
+      },
+      "all_matches": [
+        {
+          "mnr": "560",
+          "typ": "B-kvartsfinal:02",
+          "round_short": "Kvart",
+          "round_label": "Kvartsfinal",
+          "klass": "P16/15",
+          "abcd": "B",
+          "datum": "2026-05-31",
+          "tid": "10:50",
+          "iso_start": "2026-05-31T10:50:00+02:00",
+          "hemmalag": "HK Järnvägen",
+          "bortalag": "Eskilstuna Guif:Röd",
+          "bana": "Bana 33",
+          "resultat": "19-20",
+          "is_home": true,
+          "team_raw": "HK Järnvägen"
         }
       ]
     },
@@ -758,7 +775,7 @@
       "hemmalag": "IFK Nora",
       "bortalag": "Gökstens BK",
       "bana": "Bana 22",
-      "resultat": null
+      "resultat": "8-18"
     },
     {
       "mnr": "524",
@@ -800,7 +817,7 @@
       "datum": "2026-05-31",
       "tid": "13:00",
       "iso_start": "2026-05-31T13:00:00+02:00",
-      "hemmalag": "Vinn.kvart : 3",
+      "hemmalag": "Gökstens BK",
       "bortalag": "Backa HK Vit",
       "bana": "Bana 20",
       "resultat": null
@@ -1313,7 +1330,7 @@
       "hemmalag": "Huddinge HK:Vit",
       "bortalag": "IFK Hammarö",
       "bana": "Bana 28",
-      "resultat": null
+      "resultat": "19-23"
     },
     {
       "mnr": "552",
@@ -1328,7 +1345,7 @@
       "hemmalag": "Örebro SK U:1",
       "bortalag": "Katrineholms AIK",
       "bana": "Bana 29",
-      "resultat": null
+      "resultat": "10-20"
     },
     {
       "mnr": "553",
@@ -1343,7 +1360,7 @@
       "hemmalag": "IK Baltichov:2 Vit",
       "bortalag": "BK Heid:Röd",
       "bana": "Bana 30",
-      "resultat": null
+      "resultat": "14-15"
     },
     {
       "mnr": "554",
@@ -1358,7 +1375,7 @@
       "hemmalag": "Särökometernas HK",
       "bortalag": "Skåre HK:Vit",
       "bana": "Bana 31",
-      "resultat": null
+      "resultat": "22-12"
     },
     {
       "mnr": "612",
@@ -1370,8 +1387,8 @@
       "datum": "2026-05-31",
       "tid": "13:00",
       "iso_start": "2026-05-31T13:00:00+02:00",
-      "hemmalag": "Vinn.kvart : 1",
-      "bortalag": "Vinn.kvart : 2",
+      "hemmalag": "IFK Hammarö",
+      "bortalag": "Katrineholms AIK",
       "bana": "Bana 33",
       "resultat": null
     },
@@ -1385,8 +1402,8 @@
       "datum": "2026-05-31",
       "tid": "13:00",
       "iso_start": "2026-05-31T13:00:00+02:00",
-      "hemmalag": "Vinn.kvart : 3",
-      "bortalag": "Vinn.kvart : 4",
+      "hemmalag": "BK Heid:Röd",
+      "bortalag": "Särökometernas HK",
       "bana": "Bana 34",
       "resultat": null
     },
@@ -1598,7 +1615,7 @@
       "hemmalag": "Skåre HK",
       "bortalag": "Årsta AIK",
       "bana": "Bana 40",
-      "resultat": null
+      "resultat": "5-6"
     },
     {
       "mnr": "564",
@@ -1613,7 +1630,7 @@
       "hemmalag": "NKIK",
       "bortalag": "Gökstens BK",
       "bana": "Bana 37",
-      "resultat": null
+      "resultat": "25-7"
     },
     {
       "mnr": "565",
@@ -1628,7 +1645,7 @@
       "hemmalag": "HK Järnvägen:Gul",
       "bortalag": "Vallentuna HK",
       "bana": "Bana 38",
-      "resultat": null
+      "resultat": "18-12"
     },
     {
       "mnr": "566",
@@ -1643,7 +1660,7 @@
       "hemmalag": "Mantorps IF HF",
       "bortalag": "Vadstena HF",
       "bana": "Bana 39",
-      "resultat": null
+      "resultat": "14-4"
     },
     {
       "mnr": "618",
@@ -1655,8 +1672,8 @@
       "datum": "2026-05-31",
       "tid": "13:00",
       "iso_start": "2026-05-31T13:00:00+02:00",
-      "hemmalag": "Vinn.kvart : 1",
-      "bortalag": "Vinn.kvart : 2",
+      "hemmalag": "Årsta AIK",
+      "bortalag": "NKIK",
       "bana": "Bana 39",
       "resultat": null
     },
@@ -1670,8 +1687,8 @@
       "datum": "2026-05-31",
       "tid": "13:00",
       "iso_start": "2026-05-31T13:00:00+02:00",
-      "hemmalag": "Vinn.kvart : 3",
-      "bortalag": "Vinn.kvart : 4",
+      "hemmalag": "HK Järnvägen:Gul",
+      "bortalag": "Mantorps IF HF",
       "bana": "Bana 40",
       "resultat": null
     },
@@ -1748,7 +1765,7 @@
       "hemmalag": "Backa HK",
       "bortalag": "Kramfors alliansen",
       "bana": "Bana 42",
-      "resultat": null
+      "resultat": "17-7"
     },
     {
       "mnr": "685",
@@ -1761,7 +1778,7 @@
       "tid": "15:00",
       "iso_start": "2026-05-31T15:00:00+02:00",
       "hemmalag": "Västervik HF",
-      "bortalag": "Vinn.semi",
+      "bortalag": "Backa HK",
       "bana": "Bana 41",
       "resultat": null
     },
@@ -1928,7 +1945,7 @@
       "hemmalag": "Hammarby IF HF:1",
       "bortalag": "LIF Lindesberg",
       "bana": "Bana 20",
-      "resultat": null
+      "resultat": "22-16"
     },
     {
       "mnr": "526",
@@ -1943,7 +1960,7 @@
       "hemmalag": "Malmslätt Ljungsbro HF:2",
       "bortalag": "Malmslätt Ljungsbro HF:1",
       "bana": "Bana 21",
-      "resultat": null
+      "resultat": "9-18"
     },
     {
       "mnr": "527",
@@ -1958,7 +1975,7 @@
       "hemmalag": "IFK Örebro",
       "bortalag": "Hultic BK",
       "bana": "Bana 22",
-      "resultat": null
+      "resultat": "12-14"
     },
     {
       "mnr": "528",
@@ -1973,7 +1990,7 @@
       "hemmalag": "Hammarby IF HF:2",
       "bortalag": "GT Söder HK",
       "bana": "Bana 23",
-      "resultat": null
+      "resultat": "36-18"
     },
     {
       "mnr": "610",
@@ -1985,8 +2002,8 @@
       "datum": "2026-05-31",
       "tid": "13:00",
       "iso_start": "2026-05-31T13:00:00+02:00",
-      "hemmalag": "Vinn.kvart : 1",
-      "bortalag": "Vinn.kvart : 2",
+      "hemmalag": "Hammarby IF HF:1",
+      "bortalag": "Malmslätt Ljungsbro HF:1",
       "bana": "Bana 22",
       "resultat": null
     },
@@ -2000,8 +2017,8 @@
       "datum": "2026-05-31",
       "tid": "13:00",
       "iso_start": "2026-05-31T13:00:00+02:00",
-      "hemmalag": "Vinn.kvart : 3",
-      "bortalag": "Vinn.kvart : 4",
+      "hemmalag": "Hultic BK",
+      "bortalag": "Hammarby IF HF:2",
       "bana": "Bana 21",
       "resultat": null
     },
@@ -2228,7 +2245,7 @@
       "hemmalag": "GT Söder HK",
       "bortalag": "Backa HK",
       "bana": "Bana 32",
-      "resultat": null
+      "resultat": "20-18"
     },
     {
       "mnr": "560",
@@ -2243,7 +2260,7 @@
       "hemmalag": "HK Järnvägen",
       "bortalag": "Eskilstuna Guif:Röd",
       "bana": "Bana 33",
-      "resultat": null
+      "resultat": "19-20"
     },
     {
       "mnr": "561",
@@ -2258,7 +2275,7 @@
       "hemmalag": "Örebro SK U",
       "bortalag": "Mantorps IF HF",
       "bana": "Bana 34",
-      "resultat": null
+      "resultat": "30-8"
     },
     {
       "mnr": "562",
@@ -2273,7 +2290,7 @@
       "hemmalag": "Västervik HF",
       "bortalag": "IK Baltichov",
       "bana": "Bana 35",
-      "resultat": null
+      "resultat": "14-15"
     },
     {
       "mnr": "616",
@@ -2285,8 +2302,8 @@
       "datum": "2026-05-31",
       "tid": "13:00",
       "iso_start": "2026-05-31T13:00:00+02:00",
-      "hemmalag": "Vinn.kvart : 1",
-      "bortalag": "Vinn.kvart : 2",
+      "hemmalag": "GT Söder HK",
+      "bortalag": "Eskilstuna Guif:Röd",
       "bana": "Bana 37",
       "resultat": null
     },
@@ -2300,8 +2317,8 @@
       "datum": "2026-05-31",
       "tid": "13:00",
       "iso_start": "2026-05-31T13:00:00+02:00",
-      "hemmalag": "Vinn.kvart : 3",
-      "bortalag": "Vinn.kvart : 4",
+      "hemmalag": "Örebro SK U",
+      "bortalag": "IK Baltichov",
       "bana": "Bana 38",
       "resultat": null
     },

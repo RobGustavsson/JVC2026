@@ -3,7 +3,7 @@
     "cup": "Järnvägen Cup 2026",
     "ev": "39543",
     "source": "https://www.procup.se/cup/cupresgeneric_skin04.php?ev=39543&lang=SVE",
-    "scraped_at": "2026-05-31T11:05:37.627644+02:00"
+    "scraped_at": "2026-05-31T11:59:33.762353+02:00"
   },
   "matches": [
     {
@@ -631,9 +631,24 @@
       "hemmalag": "HK Järnvägen:Gul",
       "bortalag": "Vallentuna HK",
       "bana": "Bana 38",
-      "resultat": null,
+      "resultat": "18-12",
       "hk_team_raw": "HK Järnvägen:Gul",
       "opponent": "Vallentuna HK",
+      "is_home": true
+    },
+    {
+      "mnr": "619",
+      "klass": "F16/15",
+      "grupp": "B-semifinal:02",
+      "datum": "2026-05-31",
+      "tid": "13:00",
+      "iso_start": "2026-05-31T13:00:00+02:00",
+      "hemmalag": "HK Järnvägen:Gul",
+      "bortalag": "Mantorps IF HF",
+      "bana": "Bana 40",
+      "resultat": null,
+      "hk_team_raw": "HK Järnvägen:Gul",
+      "opponent": "Mantorps IF HF",
       "is_home": true
     },
     {
@@ -961,7 +976,7 @@
       "hemmalag": "HK Järnvägen",
       "bortalag": "Eskilstuna Guif:Röd",
       "bana": "Bana 33",
-      "resultat": null,
+      "resultat": "19-20",
       "hk_team_raw": "HK Järnvägen",
       "opponent": "Eskilstuna Guif:Röd",
       "is_home": true
